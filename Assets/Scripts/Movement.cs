@@ -4,8 +4,33 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    [SerializeField] private float riverSpeed;
+
     [SerializeField] private float acceleration;
+    [SerializeField] private float currentSpeed;
+    [SerializeField] private float maxSpeed;
+
     [SerializeField] private bool isAccelerating;
+    [SerializeField] private bool isRight;
+    [SerializeField] private bool isLeft;
+
+    [SerializeField] private Vector3 forwardForceDirection;
+    [SerializeField] private Vector3 leftForceDirection;
+    [SerializeField] private Vector3 rightForceDirection;
+
+    [SerializeField] private float forwardForcePower;
+    [SerializeField] private float turnForcePower;
+
+    [SerializeField] private Transform leftPointForce;
+    [SerializeField] private Transform rightPointForce;
+    [SerializeField] private Transform centerPointForce;
+
+    [SerializeField] private Transform pointTransform;
+
+    [SerializeField] private float boatRotationY = 0f;
+
+    [SerializeField] private float rotationSpeed; 
+
     private Rigidbody rb;
 
     private void Awake()
@@ -14,6 +39,7 @@ public class Movement : MonoBehaviour
     }
     private void Update()
     {
+        HandleInputs();
         if (Input.GetKey(KeyCode.Space))
         {
             isAccelerating = true;
@@ -22,12 +48,103 @@ public class Movement : MonoBehaviour
         {
             isAccelerating = false;
         }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            isLeft = true;
+        }
+        else
+        {
+            isLeft = false;
+        }
+        
+        if (Input.GetKey(KeyCode.A))
+        {
+            isRight = true;
+        }
+        else
+        {
+            isRight = false;
+        }
     }
+
+    private void HandleInputs()
+    {
+        
+        if (Input.GetKey(KeyCode.W))
+        {
+            if (currentSpeed < maxSpeed)
+            {
+                currentSpeed += 1f * acceleration * Time.deltaTime;
+            }
+        }
+        else
+        {
+            if (currentSpeed > 0f)
+            {
+                currentSpeed -= 1* acceleration * Time.deltaTime;
+            }
+            else
+            {
+                currentSpeed = 0f;
+            }
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            boatRotationY = pointTransform.localEulerAngles.y + rotationSpeed * Time.deltaTime;
+
+            if (boatRotationY > 5f && boatRotationY < 270f)
+            {
+                boatRotationY = 5f;
+            }
+
+            Vector3 newRotation = new Vector3(0f, boatRotationY, 0f);
+
+            pointTransform.localEulerAngles = newRotation;
+        }
+        //else
+        //{
+        //    pointTransform.localEulerAngles = Vector3.zero;
+        //}
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            boatRotationY = pointTransform.localEulerAngles.y - rotationSpeed * Time.deltaTime;
+
+            if (boatRotationY < 355f && boatRotationY > 90f)
+            {
+                boatRotationY = 355f;
+            }
+
+            Vector3 newRotation = new Vector3(0f, boatRotationY, 0f);
+
+            pointTransform.localEulerAngles = newRotation;
+        }
+        //else
+        //{
+        //    pointTransform.localEulerAngles = Vector3.zero;
+        //}
+    } 
     private void FixedUpdate()
     {
-        if (isAccelerating)
-        {
-            rb.velocity += transform.forward * acceleration * Time.deltaTime;
-        }
+        Vector3 forceToAdd = pointTransform.forward * currentSpeed;
+
+        rb.AddForceAtPosition(forceToAdd, pointTransform.position);
+        //if (isAccelerating)
+        //{
+        //    rb.AddForceAtPosition(transform.forward * forwardForcePower, centerPointForce.position, ForceMode.Force);
+        //} 
+
+        //if (isLeft && isAccelerating)
+        //{
+        //    rb.AddForceAtPosition(-transform.right * turnForcePower, leftPointForce.position, ForceMode.Force);
+        //}
+
+        //if (isRight && isAccelerating)
+        //{
+        //    rb.AddForceAtPosition(transform.right * turnForcePower, leftPointForce.position, ForceMode.Force);
+        //}
+        
     }
 }
