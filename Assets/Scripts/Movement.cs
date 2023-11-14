@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float acceleration;
+    [SerializeField] private bool isAccelerating;
+    private Rigidbody rb;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        rb = GetComponent<Rigidbody>();
+    }
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            isAccelerating = true;
+        }
+        else
+        {
+            isAccelerating = false;
+        }
+    }
+    private void FixedUpdate()
+    {
+        if (isAccelerating)
+        {
+            rb.velocity += transform.forward * acceleration * Time.deltaTime;
+        }
     }
 }
