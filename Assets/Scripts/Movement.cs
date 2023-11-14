@@ -10,27 +10,15 @@ public class Movement : MonoBehaviour
     [SerializeField] private float currentSpeed;
     [SerializeField] private float maxSpeed;
 
-    [SerializeField] private bool isAccelerating;
-    [SerializeField] private bool isRight;
-    [SerializeField] private bool isLeft;
-
-    [SerializeField] private Vector3 forwardForceDirection;
-    [SerializeField] private Vector3 leftForceDirection;
-    [SerializeField] private Vector3 rightForceDirection;
-
-    [SerializeField] private float forwardForcePower;
-    [SerializeField] private float turnForcePower;
-
     [SerializeField] private Transform leftPointForce;
     [SerializeField] private Transform rightPointForce;
     [SerializeField] private Transform centerPointForce;
 
     [SerializeField] private Transform pointTransform;
 
-    [SerializeField] private float boatRotationY = 0f;
+    [SerializeField] private float rotationSpeed;
 
-    [SerializeField] private float rotationSpeed; 
-
+    private float boatRotationY = 0f;
     private Rigidbody rb;
 
     private void Awake()
@@ -40,32 +28,6 @@ public class Movement : MonoBehaviour
     private void Update()
     {
         HandleInputs();
-        if (Input.GetKey(KeyCode.Space))
-        {
-            isAccelerating = true;
-        }
-        else
-        {
-            isAccelerating = false;
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            isLeft = true;
-        }
-        else
-        {
-            isLeft = false;
-        }
-        
-        if (Input.GetKey(KeyCode.A))
-        {
-            isRight = true;
-        }
-        else
-        {
-            isRight = false;
-        }
     }
 
     private void HandleInputs()
