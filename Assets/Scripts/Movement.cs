@@ -10,6 +10,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private float acceleration;
     [SerializeField] private float currentSpeed;
     [SerializeField] private float maxSpeed;
+    [SerializeField] static private float backwardsForcePenalty = 20;
 
     [SerializeField] private Transform leftPointForce;
     [SerializeField] private Transform rightPointForce;
@@ -21,6 +22,8 @@ public class Movement : MonoBehaviour
 
     private float boatRotationY = 0f;
     private bool forward;
+    private bool accelerating;
+    private float steerDirection;
 
     private Quaternion OriginalRotation;
     private Rigidbody rb;
@@ -37,41 +40,55 @@ public class Movement : MonoBehaviour
 
     private void HandleInputs()
     {
-
         if (Input.GetKey(KeyCode.W))
         {
-            forward = true;
+            if (currentSpeed < maxSpeed)
+            {
+                currentSpeed += acceleration * Time.deltaTime;
+            }
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            forward = false;
+            if (currentSpeed > -maxSpeed)
+            {
+                currentSpeed -= acceleration * Time.deltaTime;
+            }
         }
-
+        else
+        {
+            if (currentSpeed < 0f)
+            {
+                currentSpeed += acceleration * Time.deltaTime;
+            } 
+            else if(currentSpeed > 0f)
+            {
+                currentSpeed -= acceleration * Time.deltaTime;
+            }
+        }
 
     }
     private void FixedUpdate()
     {
-        Vector3 forceDirection = transform.forward;
-        float steer = 0f;
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) && currentSpeed != 0)
         {
-            steer = 1f;
+            steerDirection = 1f;
         }
-        if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D) && currentSpeed != 0)
         {
-            steer = -1f;
+            steerDirection = -1f;
         }
-        Vector3 forceToAdd = pointTransform.forward * currentSpeed;
+        else
+        {
+            steerDirection = 0f;
+        }
         Vector3 forwardVector = Vector3.Scale(new Vector3(1f, 0f, 1f), transform.forward);
 
         //Rotation Force
-        rb.AddForceAtPosition(steer * transform.right * steerSpeed, pointTransform.position);
+        rb.AddForceAtPosition(steerDirection * transform.right * steerSpeed, pointTransform.position);
 
-        if (forward)
-            ApplyForceToReachVelocity(rb, forwardVector * maxSpeed, acceleration);
-        else if (!forward)
-            ApplyForceToReachVelocity(rb, forwardVector * -maxSpeed, acceleration);
+        //Forward Force
+        ApplyForceToReachVelocity(rb, forwardVector * maxSpeed, currentSpeed);
     }
 
     public static void ApplyForceToReachVelocity(Rigidbody rigidbody, Vector3 velocity, float force = 1, ForceMode mode = ForceMode.Force)
@@ -80,7 +97,11 @@ public class Movement : MonoBehaviour
             return;
 
         //force = 1 => need 1 s to reach velocity (if mass is 1) => force can be max 1 / Time.fixedDeltaTime
-        force = Mathf.Clamp(force, -rigidbody.mass / Time.fixedDeltaTime, rigidbody.mass / Time.fixedDeltaTime);
+        //force = Mathf.Clamp(force, -rigidbody.mass / Time.fixedDeltaTime, rigidbody.mass / Time.fixedDeltaTime);
+        if(force < 0f)
+        {
+            force /= backwardsForcePenalty; 
+        }
 
         if (rigidbody.velocity.magnitude == 0)
         {
@@ -88,7 +109,7 @@ public class Movement : MonoBehaviour
         }
         else
         {
-            var velocityProjectedToTarget = (velocity.normalized * Vector3.Dot(velocity, rigidbody.velocity) / velocity.magnitude);
+            Vector3 velocityProjectedToTarget = (velocity.normalized * Vector3.Dot(velocity, rigidbody.velocity) / velocity.magnitude);
             rigidbody.AddForce((velocity - velocityProjectedToTarget) * force, mode);
         }
     }
