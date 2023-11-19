@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -16,14 +17,18 @@ public class Movement : MonoBehaviour
 
     [SerializeField] private Transform pointTransform;
 
-    [SerializeField] private float rotationSpeed;
+    [SerializeField] private float steerSpeed;
 
     private float boatRotationY = 0f;
+    private bool forward;
+
+    private Quaternion OriginalRotation;
     private Rigidbody rb;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        OriginalRotation = pointTransform.localRotation;
     }
     private void Update()
     {
@@ -32,81 +37,59 @@ public class Movement : MonoBehaviour
 
     private void HandleInputs()
     {
-        
+
         if (Input.GetKey(KeyCode.W))
         {
-            if (currentSpeed < maxSpeed)
-            {
-                currentSpeed += 1f * acceleration * Time.deltaTime;
-            }
+            forward = true;
         }
-        else
+        else if (Input.GetKey(KeyCode.S))
         {
-            if (currentSpeed > 0f)
-            {
-                currentSpeed -= 1* acceleration * Time.deltaTime;
-            }
-            else
-            {
-                currentSpeed = 0f;
-            }
+            forward = false;
         }
+
+
+    }
+    private void FixedUpdate()
+    {
+        Vector3 forceDirection = transform.forward;
+        float steer = 0f;
 
         if (Input.GetKey(KeyCode.A))
         {
-            boatRotationY = pointTransform.localEulerAngles.y + rotationSpeed * Time.deltaTime;
-
-            if (boatRotationY > 5f && boatRotationY < 270f)
-            {
-                boatRotationY = 5f;
-            }
-
-            Vector3 newRotation = new Vector3(0f, boatRotationY, 0f);
-
-            pointTransform.localEulerAngles = newRotation;
+            steer = 1f;
         }
-        //else
-        //{
-        //    pointTransform.localEulerAngles = Vector3.zero;
-        //}
-
         if (Input.GetKey(KeyCode.D))
         {
-            boatRotationY = pointTransform.localEulerAngles.y - rotationSpeed * Time.deltaTime;
-
-            if (boatRotationY < 355f && boatRotationY > 90f)
-            {
-                boatRotationY = 355f;
-            }
-
-            Vector3 newRotation = new Vector3(0f, boatRotationY, 0f);
-
-            pointTransform.localEulerAngles = newRotation;
+            steer = -1f;
         }
-        //else
-        //{
-        //    pointTransform.localEulerAngles = Vector3.zero;
-        //}
-    } 
-    private void FixedUpdate()
-    {
         Vector3 forceToAdd = pointTransform.forward * currentSpeed;
+        Vector3 forwardVector = Vector3.Scale(new Vector3(1f, 0f, 1f), transform.forward);
 
-        rb.AddForceAtPosition(forceToAdd, pointTransform.position);
-        //if (isAccelerating)
-        //{
-        //    rb.AddForceAtPosition(transform.forward * forwardForcePower, centerPointForce.position, ForceMode.Force);
-        //} 
+        //Rotation Force
+        rb.AddForceAtPosition(steer * transform.right * steerSpeed, pointTransform.position);
 
-        //if (isLeft && isAccelerating)
-        //{
-        //    rb.AddForceAtPosition(-transform.right * turnForcePower, leftPointForce.position, ForceMode.Force);
-        //}
+        if (forward)
+            ApplyForceToReachVelocity(rb, forwardVector * maxSpeed, acceleration);
+        else if (!forward)
+            ApplyForceToReachVelocity(rb, forwardVector * -maxSpeed, acceleration);
+    }
 
-        //if (isRight && isAccelerating)
-        //{
-        //    rb.AddForceAtPosition(transform.right * turnForcePower, leftPointForce.position, ForceMode.Force);
-        //}
-        
+    public static void ApplyForceToReachVelocity(Rigidbody rigidbody, Vector3 velocity, float force = 1, ForceMode mode = ForceMode.Force)
+    {
+        if (force == 0 || velocity.magnitude == 0)
+            return;
+
+        //force = 1 => need 1 s to reach velocity (if mass is 1) => force can be max 1 / Time.fixedDeltaTime
+        force = Mathf.Clamp(force, -rigidbody.mass / Time.fixedDeltaTime, rigidbody.mass / Time.fixedDeltaTime);
+
+        if (rigidbody.velocity.magnitude == 0)
+        {
+            rigidbody.AddForce(velocity * force, mode);
+        }
+        else
+        {
+            var velocityProjectedToTarget = (velocity.normalized * Vector3.Dot(velocity, rigidbody.velocity) / velocity.magnitude);
+            rigidbody.AddForce((velocity - velocityProjectedToTarget) * force, mode);
+        }
     }
 }
