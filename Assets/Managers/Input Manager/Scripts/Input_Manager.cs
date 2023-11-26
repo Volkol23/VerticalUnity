@@ -18,6 +18,7 @@ public class Input_Manager : MonoBehaviour
     private bool accelerateValue = false;
     private bool brakeValue = false;
     private bool pauseValue = false;
+    private bool actionChangeValue = false;
     private void Awake()
     {
         //Check if it can be created this singleton
@@ -39,10 +40,12 @@ public class Input_Manager : MonoBehaviour
             inputActions.BoatController.Brake.canceled += BrakeValue;
             inputActions.BoatController.Steer.performed += SteerValue;
             inputActions.BoatController.Rotate.performed += RotateCameraValue;
+            inputActions.BoatController.ActionChange.performed += ActionChangeValue;
 
             inputActions.Player.Move.performed += LeftAxisValue;
             inputActions.Player.Rotate.performed += RotateCameraValue;
             inputActions.Player.Pause.performed += PauseDone;
+            inputActions.Player.ActionChange.performed += ActionChangeValue;
         }
     }
 
@@ -114,6 +117,11 @@ public class Input_Manager : MonoBehaviour
         pauseValue = !pauseValue;
     }
 
+    private void ActionChangeValue(InputAction.CallbackContext context)
+    {
+        actionChangeValue = !actionChangeValue;
+    }
+
     public bool GetAccelerateValue()
     {
         return accelerateValue;
@@ -142,5 +150,10 @@ public class Input_Manager : MonoBehaviour
     public bool GetPauseValue()
     {
         return pauseValue;
+    }
+
+    public bool GetActionChangeValue()
+    {
+        return actionChangeValue;
     }
 }

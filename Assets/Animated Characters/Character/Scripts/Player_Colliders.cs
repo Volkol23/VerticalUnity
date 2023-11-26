@@ -6,7 +6,7 @@ public class Player_Colliders : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("ChangePlayerBoat"))
+        if (Input_Manager._INPUT_MANAGER.GetActionChangeValue())
         {
             Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.BOAT);
         }

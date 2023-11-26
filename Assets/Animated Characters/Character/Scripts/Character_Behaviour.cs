@@ -10,6 +10,7 @@ public class Character_Behaviour : MonoBehaviour
     [SerializeField] private float acceleration;
     [SerializeField] private float deacceleration;
     [SerializeField] private float rotationSpeed;
+    [SerializeField] private float gravity;
 
     //Movement Variables
     private Vector3 finalVelocity = Vector3.zero;
@@ -88,6 +89,22 @@ public class Character_Behaviour : MonoBehaviour
         if (direction != transform.forward /*&& rotation > rotationThreshold*/)
         {
             transform.Rotate(Vector3.up * rotation * Time.deltaTime * rotationSpeed);
+        }
+    }
+
+    private void HandleGravity()
+    {
+        //Apply gravity
+        lastDirection.y = -1f;
+
+        //Gravity behaviour
+        if (characterController.isGrounded)
+        {
+            finalVelocity.y = lastDirection.y * gravity * Time.deltaTime;
+        }
+        else
+        {
+            finalVelocity.y += lastDirection.y * gravity * Time.deltaTime;
         }
     }
 }

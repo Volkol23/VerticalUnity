@@ -69,7 +69,16 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
                     ""id"": ""63ea2edd-c97a-4346-b608-be044d96e48d"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ActionChange"",
+                    ""type"": ""Button"",
+                    ""id"": ""c99b09d6-687c-47a0-8cbc-38114304409c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)"",
                     ""initialStateCheck"": false
                 }
             ],
@@ -203,6 +212,28 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""46f98626-81b2-4e7b-9750-44b74833f04d"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ActionChange"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""446fa22b-be3f-4c97-9211-b5815cfd7d8c"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ActionChange"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -374,7 +405,16 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
                     ""id"": ""fdb9a745-903b-4c3e-b343-648b98143b32"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ActionChange"",
+                    ""type"": ""Button"",
+                    ""id"": ""1e665a08-9bf3-497f-9974-c5ac25f69e84"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)"",
                     ""initialStateCheck"": false
                 }
             ],
@@ -488,6 +528,28 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""45fb86d8-3cd2-423f-9cf8-fe908705e7e5"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ActionChange"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e512d3d1-374b-49a6-bd25-cb45f91890f6"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ActionChange"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -501,6 +563,7 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
         m_BoatController_Steer = m_BoatController.FindAction("Steer", throwIfNotFound: true);
         m_BoatController_Rotate = m_BoatController.FindAction("Rotate", throwIfNotFound: true);
         m_BoatController_Pause = m_BoatController.FindAction("Pause", throwIfNotFound: true);
+        m_BoatController_ActionChange = m_BoatController.FindAction("ActionChange", throwIfNotFound: true);
         // MenuMovement
         m_MenuMovement = asset.FindActionMap("MenuMovement", throwIfNotFound: true);
         m_MenuMovement_Move = m_MenuMovement.FindAction("Move", throwIfNotFound: true);
@@ -509,6 +572,7 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Rotate = m_Player.FindAction("Rotate", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
+        m_Player_ActionChange = m_Player.FindAction("ActionChange", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -575,6 +639,7 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_BoatController_Steer;
     private readonly InputAction m_BoatController_Rotate;
     private readonly InputAction m_BoatController_Pause;
+    private readonly InputAction m_BoatController_ActionChange;
     public struct BoatControllerActions
     {
         private @BoatInputActions m_Wrapper;
@@ -584,6 +649,7 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
         public InputAction @Steer => m_Wrapper.m_BoatController_Steer;
         public InputAction @Rotate => m_Wrapper.m_BoatController_Rotate;
         public InputAction @Pause => m_Wrapper.m_BoatController_Pause;
+        public InputAction @ActionChange => m_Wrapper.m_BoatController_ActionChange;
         public InputActionMap Get() { return m_Wrapper.m_BoatController; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -608,6 +674,9 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @ActionChange.started += instance.OnActionChange;
+            @ActionChange.performed += instance.OnActionChange;
+            @ActionChange.canceled += instance.OnActionChange;
         }
 
         private void UnregisterCallbacks(IBoatControllerActions instance)
@@ -627,6 +696,9 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @ActionChange.started -= instance.OnActionChange;
+            @ActionChange.performed -= instance.OnActionChange;
+            @ActionChange.canceled -= instance.OnActionChange;
         }
 
         public void RemoveCallbacks(IBoatControllerActions instance)
@@ -697,6 +769,7 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Rotate;
     private readonly InputAction m_Player_Pause;
+    private readonly InputAction m_Player_ActionChange;
     public struct PlayerActions
     {
         private @BoatInputActions m_Wrapper;
@@ -704,6 +777,7 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Rotate => m_Wrapper.m_Player_Rotate;
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
+        public InputAction @ActionChange => m_Wrapper.m_Player_ActionChange;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -722,6 +796,9 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @ActionChange.started += instance.OnActionChange;
+            @ActionChange.performed += instance.OnActionChange;
+            @ActionChange.canceled += instance.OnActionChange;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -735,6 +812,9 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @ActionChange.started -= instance.OnActionChange;
+            @ActionChange.performed -= instance.OnActionChange;
+            @ActionChange.canceled -= instance.OnActionChange;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -759,6 +839,7 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
         void OnSteer(InputAction.CallbackContext context);
         void OnRotate(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnActionChange(InputAction.CallbackContext context);
     }
     public interface IMenuMovementActions
     {
@@ -769,5 +850,6 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnRotate(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnActionChange(InputAction.CallbackContext context);
     }
 }
