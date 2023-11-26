@@ -40,6 +40,7 @@ public class Character_Behaviour : MonoBehaviour
             HandleInputs();
             HandleRotation();
             HandleMovement();
+            HandleGravity();
         }
     }
 

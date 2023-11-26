@@ -27,6 +27,11 @@ public class Game_Manager : MonoBehaviour
     public void ChangeGeneral(GameGeneral gameGeneralState)
     {
         currentGeneral = gameGeneralState;
+        if(currentGeneral == GameGeneral.PLAYER)
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            player.transform.position = player.GetComponent<InteractiveObjects>().GetClosestDock().position;
+        }
     }
 
     public GameGeneral GetCurrentGeneral()

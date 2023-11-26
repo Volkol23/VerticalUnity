@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Boat
   - ChangePlayerBoat
+  - DockPosition
   layers:
   - Default
   - TransparentFX
