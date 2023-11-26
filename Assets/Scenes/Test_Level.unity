@@ -3120,11 +3120,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dock
       objectReference: {fileID: 0}
-    - target: {fileID: 1342978631879009386, guid: 996138d93723d7946984a2d693aa3f24,
-        type: 3}
-      propertyPath: m_TagString
-      value: DockPosition
-      objectReference: {fileID: 0}
     - target: {fileID: 2905007192071153612, guid: 996138d93723d7946984a2d693aa3f24,
         type: 3}
       propertyPath: m_RootOrder

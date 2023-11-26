@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ArachneBehaviour : MonoBehaviour
 {
+
+    [SerializeField]
     // Start is called before the first frame update
     void Start()
     {

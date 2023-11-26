@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 1092368566173912368}
   m_Layer: 0
   m_Name: TriggerBoatPlayer
-  m_TagString: ChangePlayerBoat
+  m_TagString: ChangeBoatPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 8803680429019760198}
   m_Layer: 0
   m_Name: DockPosition
-  m_TagString: Untagged
+  m_TagString: DockPosition
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

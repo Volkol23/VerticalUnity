@@ -78,7 +78,7 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
                     ""id"": ""c99b09d6-687c-47a0-8cbc-38114304409c"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": ""Press(behavior=2)"",
+                    ""interactions"": ""Press"",
                     ""initialStateCheck"": false
                 }
             ],
@@ -414,7 +414,7 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
                     ""id"": ""1e665a08-9bf3-497f-9974-c5ac25f69e84"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": ""Press(behavior=2)"",
+                    ""interactions"": ""Press"",
                     ""initialStateCheck"": false
                 }
             ],

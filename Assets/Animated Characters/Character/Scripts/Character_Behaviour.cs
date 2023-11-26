@@ -108,4 +108,9 @@ public class Character_Behaviour : MonoBehaviour
             finalVelocity.y += lastDirection.y * gravity * Time.deltaTime;
         }
     }
+
+    public void SetDockPosition(Vector3 position)
+    {
+        transform.position = position;
+    }
 }
