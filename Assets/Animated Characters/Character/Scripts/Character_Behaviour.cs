@@ -79,6 +79,9 @@ public class Character_Behaviour : MonoBehaviour
         finalVelocity.z = lastDirection.z * speed;
 
         //Move character controller
+
+        //Update character controller transform when it has a character controller
+        Physics.SyncTransforms();
         characterController.Move(finalVelocity * Time.deltaTime);
     }
 
