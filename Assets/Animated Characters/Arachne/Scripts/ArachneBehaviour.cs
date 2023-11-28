@@ -5,7 +5,7 @@ using UnityEngine;
 public class ArachneBehaviour : MonoBehaviour
 {
 
-    [SerializeField]
+    [SerializeField] private Vector3 direction;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +15,6 @@ public class ArachneBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        direction = transform.position;
     }
 }

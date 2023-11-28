@@ -96,4 +96,10 @@ public class Movement : MonoBehaviour
             rigidbody.AddForce((velocity - velocityProjectedToTarget) * force, mode);
         }
     }
+
+    public void SetDockPosition(Vector3 position)
+    {
+        rb.velocity = Vector3.zero;
+        rb.position = position;
+    }
 }
