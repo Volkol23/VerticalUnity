@@ -11,6 +11,8 @@ public class Input_Manager : MonoBehaviour
 
     private BoatInputActions inputActions;
 
+    private PlayerInput playerInput;
+
     private Vector2 steerValue;
     private Vector2 cameraValue;
     private Vector2 moveValue;
@@ -33,6 +35,7 @@ public class Input_Manager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
 
             inputActions = new BoatInputActions();
+            playerInput = new PlayerInput();
 
             inputActions.BoatController.Accelerate.started += AccelerateValue;
             inputActions.BoatController.Brake.started += BrakeValue;
@@ -57,10 +60,12 @@ public class Input_Manager : MonoBehaviour
             case GameGeneral.PLAYER:
                 ChangePlayerInputs();
                 actionChangeValue = inputActions.Player.ActionChange.triggered;
+                pauseValue = inputActions.Player.Pause.triggered;
                 break;
             case GameGeneral.BOAT:
                 ChangeBoatInputs();
                 actionChangeValue = inputActions.BoatController.ActionChange.triggered;
+                pauseValue = inputActions.BoatController.ActionChange.triggered;
                 break;
             case GameGeneral.MENU:
                 ChangeMenuInpts();
@@ -116,16 +121,18 @@ public class Input_Manager : MonoBehaviour
         moveValue = context.ReadValue<Vector2>();
     }
 
-    private void PauseDone(InputAction.CallbackContext context)
+
+    public void DisableInputs()
     {
-        pauseValue = !pauseValue;
+        playerInput.DeactivateInput();
     }
 
-    private void ActionChangeValue(InputAction.CallbackContext context)
+    public void EnableInputs()
     {
-        actionChangeValue = !actionChangeValue;
+        playerInput.ActivateInput();
     }
 
+    //Get Input Values
     public bool GetAccelerateValue()
     {
         return accelerateValue;

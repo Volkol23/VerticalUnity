@@ -62,16 +62,19 @@ public class Movement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        Vector3 forwardVector = Vector3.Scale(new Vector3(1f, 0f, 1f), transform.forward);
-
-        //Rotation Force
-        if(currentSpeed != 0)
+        if (Game_Manager._GAME_MANAGER.GetCurrentGeneral() == GameGeneral.BOAT)
         {
-            rb.AddForceAtPosition(steerDirection * transform.right * steerSpeed, pointTransform.position);
-        }
+            Vector3 forwardVector = Vector3.Scale(new Vector3(1f, 0f, 1f), transform.forward);
 
-        //Forward Force
-        ApplyForceToReachVelocity(rb, forwardVector * maxSpeed, currentSpeed);
+            //Rotation Force
+            if (currentSpeed != 0)
+            {
+                rb.AddForceAtPosition(steerDirection * transform.right * steerSpeed, pointTransform.position);
+            }
+
+            //Forward Force
+            ApplyForceToReachVelocity(rb, forwardVector * maxSpeed, currentSpeed);
+        }
     }
 
     public static void ApplyForceToReachVelocity(Rigidbody rigidbody, Vector3 velocity, float force = 1, ForceMode mode = ForceMode.Force)
@@ -97,9 +100,8 @@ public class Movement : MonoBehaviour
         }
     }
 
-    public void SetDockPosition(Vector3 position)
+    public void SetDockPosition()
     {
         rb.velocity = Vector3.zero;
-        rb.position = position;
     }
 }

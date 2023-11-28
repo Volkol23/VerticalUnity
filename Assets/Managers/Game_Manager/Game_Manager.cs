@@ -32,6 +32,11 @@ public class Game_Manager : MonoBehaviour
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             player.transform.position = player.GetComponent<InteractiveObjects>().GetClosestDock().position;
         }
+        if(currentGeneral == GameGeneral.BOAT)
+        {
+            GameObject boat = GameObject.FindGameObjectWithTag("Boat");
+            boat.GetComponent<Movement>().SetDockPosition();
+        }
     }
 
     public GameGeneral GetCurrentGeneral()
