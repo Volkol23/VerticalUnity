@@ -4,3 +4,11 @@ public enum GameGeneral
     BOAT,
     MENU
 }
+
+public enum MissionType
+{
+    ARACNHE,
+    MINOTAUR,
+    ICEWOLF,
+    NOMISSION
+}

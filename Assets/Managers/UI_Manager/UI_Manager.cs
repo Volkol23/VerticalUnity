@@ -19,7 +19,7 @@ public class UI_Manager : MonoBehaviour
     [SerializeField]
     private Color fadeOutColor;
 
-    private Image fade;
+    private Animator fade;
     private void Awake()
     {
         if(_UI_MANAGER != null && _UI_MANAGER != this)
@@ -31,7 +31,7 @@ public class UI_Manager : MonoBehaviour
             _UI_MANAGER = this;
             DontDestroyOnLoad(_UI_MANAGER);
 
-            fade = backgroundFade.GetComponent<Image>();
+            fade = backgroundFade.GetComponent<Animator>();
         }
     }
 
@@ -77,11 +77,11 @@ public class UI_Manager : MonoBehaviour
 
     public void FadeIn()
     {
-        fade.CrossFadeColor(fadeInColor, 1f, true, true);
+        fade.Play("FadeOut");
     }
 
     public void FadeOut()
     {
-        fade.CrossFadeColor(fadeOutColor, 1f, true, true);
+        fade.Play("FadeOut");
     }
 }

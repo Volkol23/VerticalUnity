@@ -23,8 +23,13 @@ public class Boat_Colliders : MonoBehaviour
                     GameObject player = GameObject.FindGameObjectWithTag("Player");
                     newPosition = player.GetComponent<InteractiveObjects>().GetClosestDock().position;
 
+                    UI_Manager._UI_MANAGER.ActivateAbilities();
                     player.GetComponent<Character_Behaviour>().SetDockPosition(newPosition);
                 }
+            }
+            if (other.gameObject.CompareTag("MissionTrigger"))
+            {
+                Mission_Manager._MISSION_MANAGER.StartMission();
             }
         }
     }
