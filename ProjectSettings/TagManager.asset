@@ -10,6 +10,7 @@ TagManager:
   - ChangeBoatPlayer
   - MissionTrigger
   - MissionObject
+  - MissionCharacter
   layers:
   - Default
   - TransparentFX
