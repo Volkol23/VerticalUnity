@@ -35,7 +35,7 @@ public class Input_Manager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
 
             inputActions = new BoatInputActions();
-            playerInput = new PlayerInput();
+            //playerInput = new PlayerInput();
 
             inputActions.BoatController.Accelerate.started += AccelerateValue;
             inputActions.BoatController.Brake.started += BrakeValue;

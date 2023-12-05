@@ -9,6 +9,8 @@ public class Game_Manager : MonoBehaviour
 
     private GameGeneral currentGeneral;
 
+    private MissionType missionLevel;
+
     private void Awake()
     {
         if(_GAME_MANAGER != null && _GAME_MANAGER != this)
@@ -22,6 +24,7 @@ public class Game_Manager : MonoBehaviour
         }
 
         currentGeneral = GameGeneral.PLAYER;
+        missionLevel = MissionType.ARACNHE;
     }
 
     public void ChangeGeneral(GameGeneral gameGeneralState)
@@ -43,4 +46,10 @@ public class Game_Manager : MonoBehaviour
     {
         return currentGeneral;
     }
+
+    public MissionType GetMissionLevel()
+    {
+        return missionLevel;
+    }
+    
 }

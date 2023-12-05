@@ -9,6 +9,7 @@ public class Mission : ScriptableObject
     [SerializeField] private MissionType missionType;
 
     [SerializeField] private string missionObjectiveText;
+    [SerializeField] private string missionObjectText;
     [SerializeField] private string missionStartText;
     [SerializeField] private string missionCompletedText;
 
@@ -19,6 +20,11 @@ public class Mission : ScriptableObject
     public string GetMissionObjectiveText() 
     { 
         return missionObjectiveText;
+    }
+
+    public string GetMissionObjectText()
+    {
+        return missionObjectText;
     }
     
     public MissionType GetMissionType()

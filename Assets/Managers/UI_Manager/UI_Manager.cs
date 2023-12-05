@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UI_Manager : MonoBehaviour
 {
@@ -11,15 +12,13 @@ public class UI_Manager : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject backgroundFade;
     [SerializeField] private GameObject abilitys;
+
     [SerializeField] private GameObject missionObjective;
+    [SerializeField] private TMP_Text missionOnbjectiveText;
+
     [SerializeField] private GameObject currentRiver;
 
-    [SerializeField]
-    private Color fadeInColor;
-    [SerializeField]
-    private Color fadeOutColor;
-
-    private Animator fade;
+    private Animator animatorFade;
     private void Awake()
     {
         if(_UI_MANAGER != null && _UI_MANAGER != this)
@@ -31,7 +30,7 @@ public class UI_Manager : MonoBehaviour
             _UI_MANAGER = this;
             DontDestroyOnLoad(_UI_MANAGER);
 
-            fade = backgroundFade.GetComponent<Animator>();
+            animatorFade = backgroundFade.GetComponent<Animator>();
         }
     }
 
@@ -45,12 +44,13 @@ public class UI_Manager : MonoBehaviour
         abilitys.SetActive(true);
     }
 
-    public void ActivateMissionObjective()
+    public void ActivateMissionObjective(string objectiveText)
     {
         missionObjective.SetActive(true);
+        missionOnbjectiveText.text = objectiveText;
     }
 
-    public void ActivateCurrentRiver ()
+    public void ActivateCurrentRiver()
     {
         currentRiver.SetActive(true);
     }
@@ -77,11 +77,11 @@ public class UI_Manager : MonoBehaviour
 
     public void FadeIn()
     {
-        fade.Play("FadeOut");
+        animatorFade.Play("FadeOut");
     }
 
     public void FadeOut()
     {
-        fade.Play("FadeOut");
+        animatorFade.Play("FadeOut");
     }
 }

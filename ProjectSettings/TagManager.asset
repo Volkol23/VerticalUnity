@@ -9,6 +9,7 @@ TagManager:
   - DockPosition
   - ChangeBoatPlayer
   - MissionTrigger
+  - MissionObject
   layers:
   - Default
   - TransparentFX

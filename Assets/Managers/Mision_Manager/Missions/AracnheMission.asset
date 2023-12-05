@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 316b466fbf7c9be4daccfeeaff03776e, type: 3}
   m_Name: AracnheMission
   m_EditorClassIdentifier: 
-  missionName: 
+  missionName: Get Aracnhes Boots
   missionType: 0
-  missionObjectiveText: 
-  missionStartText: 
-  missionCompletedText: 
+  missionObjectiveText: Find and bring her shoes
+  missionObjectText: Return her shoes to Aracnhe
+  missionStartText: Hi con yo find my shoes
+  missionCompletedText: Thank you
