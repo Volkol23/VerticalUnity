@@ -5339,6 +5339,31 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 545804963038765663, guid: 16c379a140eaec84d9dc7cbfad928152,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.7991821
+      objectReference: {fileID: 0}
+    - target: {fileID: 545804963038765663, guid: 16c379a140eaec84d9dc7cbfad928152,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.29382992
+      objectReference: {fileID: 0}
+    - target: {fileID: 545804963038765663, guid: 16c379a140eaec84d9dc7cbfad928152,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.0015319824
+      objectReference: {fileID: 0}
+    - target: {fileID: 545804963038765663, guid: 16c379a140eaec84d9dc7cbfad928152,
+        type: 3}
+      propertyPath: m_Center.y
+      value: -0.051523875
+      objectReference: {fileID: 0}
+    - target: {fileID: 545804963038765663, guid: 16c379a140eaec84d9dc7cbfad928152,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 634005319908123262, guid: 16c379a140eaec84d9dc7cbfad928152,
         type: 3}
       propertyPath: m_Layer
@@ -5517,7 +5542,7 @@ PrefabInstance:
     - target: {fileID: 6329149696495742026, guid: 16c379a140eaec84d9dc7cbfad928152,
         type: 3}
       propertyPath: steerSpeed
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6329149696495742026, guid: 16c379a140eaec84d9dc7cbfad928152,
         type: 3}
