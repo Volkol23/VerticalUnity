@@ -54,10 +54,10 @@ public class Camera_Behaviour : MonoBehaviour
         Vector3 finalPosition = Vector3.Lerp(transform.position, target.transform.position - transform.forward * targetDistance, cameraLerp * Time.deltaTime);
 
         //Check if there are objects in between
-        //if (Physics.Linecast(target.transform.position, finalPosition, out hitInfo))
-        //{
-        //    finalPosition = hitInfo.point;
-        //}
+        if (Physics.Linecast(target.transform.position, finalPosition, out hitInfo))
+        {
+            finalPosition = hitInfo.point;
+        }
 
         transform.position = finalPosition;
     }
