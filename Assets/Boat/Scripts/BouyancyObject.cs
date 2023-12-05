@@ -16,7 +16,7 @@ public class BouyancyObject : MonoBehaviour
     private bool underwater;
     private int bouyancyObjectsUnderWater;
 
-    //Components of the gamneObject
+    //Components of the gameObject
     private Rigidbody rb;
 
     private void Awake()

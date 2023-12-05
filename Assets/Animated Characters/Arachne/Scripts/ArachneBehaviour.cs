@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class ArachneBehaviour : MonoBehaviour
 {
+    private Animator animator;
 
-    [SerializeField] private Vector3 direction;
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void Interaction()
     {
-        direction = transform.position;
+        //animator
     }
 }

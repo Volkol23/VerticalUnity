@@ -110,6 +110,8 @@ public class Character_Behaviour : MonoBehaviour
         {
             finalVelocity.y += lastDirection.y * gravity * Time.deltaTime;
         }
+
+        //characterController.la
     }
 
     public void SetDockPosition(Vector3 position)
