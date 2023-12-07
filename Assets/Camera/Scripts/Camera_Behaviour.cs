@@ -45,7 +45,7 @@ public class Camera_Behaviour : MonoBehaviour
         rotationX += Input_Manager._INPUT_MANAGER.GetCameraRotationValue().y * sensivity;
         rotationY += Input_Manager._INPUT_MANAGER.GetCameraRotationValue().x * sensivity;
 
-        //Contorl min and max angle of the camera
+        //Control min and max angle of the camera
         rotationX = Mathf.Clamp(rotationX, minRotation, maxRotation);
 
         transform.eulerAngles = new Vector3(rotationX, rotationY, 0);
@@ -82,6 +82,7 @@ public class Camera_Behaviour : MonoBehaviour
         maxRotation = 50f;
 
         SetTarget();
+
     }
     private void SetTarget()
     {

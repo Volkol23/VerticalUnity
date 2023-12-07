@@ -75,7 +75,7 @@ public class Input_Manager : MonoBehaviour
 
     private void ChangeMenuInpts()
     {
-        inputActions.MenuMovement.Enable();
+        inputActions.UI.Enable();
 
         inputActions.Player.Disable();
         inputActions.BoatController.Disable();
@@ -85,7 +85,7 @@ public class Input_Manager : MonoBehaviour
     {
         inputActions.Player.Enable();
 
-        inputActions.MenuMovement.Disable();
+        inputActions.UI.Disable();
         inputActions.BoatController.Disable();
     }
 
@@ -94,7 +94,7 @@ public class Input_Manager : MonoBehaviour
         inputActions.BoatController.Enable();
 
         inputActions.Player.Disable();
-        inputActions.MenuMovement.Disable();
+        inputActions.UI.Disable();
     }
     private void AccelerateValue(InputAction.CallbackContext context)
     {

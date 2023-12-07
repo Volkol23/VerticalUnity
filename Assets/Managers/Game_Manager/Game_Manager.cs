@@ -23,7 +23,7 @@ public class Game_Manager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
 
-        currentGeneral = GameGeneral.PLAYER;
+        currentGeneral = GameGeneral.MENU;
         missionLevel = MissionType.ARACNHE;
     }
 
