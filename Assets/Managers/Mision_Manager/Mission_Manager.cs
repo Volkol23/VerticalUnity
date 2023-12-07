@@ -11,6 +11,8 @@ public class Mission_Manager : MonoBehaviour
     [SerializeField] private Mission[] missions;
     [SerializeField] private Mission currentMission;
 
+    private int objectsCounter;
+
     private void Awake()
     {
         if(_MISSION_MANAGER != null && _MISSION_MANAGER != this)
@@ -22,18 +24,26 @@ public class Mission_Manager : MonoBehaviour
             _MISSION_MANAGER = this;
             DontDestroyOnLoad(gameObject);
             missionType = MissionType.NOMISSION;
+            objectsCounter = 0;
         }
     }
 
     private void Update()
     {
-
+        if(missionType != MissionType.NOMISSION)
+        {
+            if (objectsCounter == currentMission.GetObjectsNumber())
+            {
+                currentMission.CompleteObjective();
+            }
+        }
     }
 
     public void StartMission()
     {
         missionType = Game_Manager._GAME_MANAGER.GetMissionLevel();
-        SetupMission();       
+        SetupMission();
+        UI_Manager._UI_MANAGER.ActivateMissionObjective(currentMission.GetMissionStartText());      
     }
 
     public void EndMission()
@@ -41,6 +51,7 @@ public class Mission_Manager : MonoBehaviour
         UI_Manager._UI_MANAGER.ActivateMissionObjective(currentMission.GetMissionCompletedText());
         missionType = MissionType.NOMISSION;
         currentMission = null;
+        objectsCounter = 0;
     }
 
     private void SetupMission()
@@ -52,11 +63,16 @@ public class Mission_Manager : MonoBehaviour
                 currentMission = mission;
             }
         }
+    }
+
+    public void InitMission()
+    {
         UI_Manager._UI_MANAGER.ActivateMissionObjective(currentMission.GetMissionObjectiveText());
     }
 
-    public void GetMissionObject()
+    public void GetMissionObject(int id)
     {
-        UI_Manager._UI_MANAGER.ActivateMissionObjective(currentMission.GetMissionObjectText());
+        UI_Manager._UI_MANAGER.ActivateMissionObjective(currentMission.GetMissionObjectText(id));
+        objectsCounter++;
     }
 }

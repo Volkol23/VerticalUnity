@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 150029020360732621}
   - component: {fileID: 9210943912124322622}
   m_Layer: 0
-  m_Name: RiverPLaneLevel1
+  m_Name: RiverPlaneLevel1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

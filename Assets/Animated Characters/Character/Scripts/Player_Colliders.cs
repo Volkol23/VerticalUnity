@@ -25,7 +25,16 @@ public class Player_Colliders : MonoBehaviour
             {
                 if (Input_Manager._INPUT_MANAGER.GetActionChangeValue())
                 {
-                    Mission_Manager._MISSION_MANAGER.GetMissionObject();
+                    int idObject = other.GetComponent<MissionObjectBehaviour>().GetObjectId();
+                    Mission_Manager._MISSION_MANAGER.GetMissionObject(idObject);
+                    other.GetComponent<MissionObjectBehaviour>().ObjectGet();
+                }
+            }
+            if (other.gameObject.CompareTag("MissionCharacter"))
+            {
+                if (Input_Manager._INPUT_MANAGER.GetActionChangeValue())
+                {
+                    Mission_Manager._MISSION_MANAGER.InitMission();
                 }
             }
         }
