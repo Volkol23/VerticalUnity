@@ -32,7 +32,6 @@ public class OptionsBehaviour : MonoBehaviour
     private void SetSFXVolume(float sliderValue)
     {
         Sound_Manager._SOUND_MANAGER.SetSFXVolume(sliderValue);
-        //AudioManager.PlaySFXSound(AudioManager.TypeOfSound.sfx, AudioManager.SFX.clickConfirm);
         PlayerPrefs.SetFloat("SFXVolume", sliderValue);
     }
 

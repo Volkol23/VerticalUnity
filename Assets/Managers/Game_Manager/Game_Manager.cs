@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Game_Manager : MonoBehaviour
 {
@@ -25,6 +26,21 @@ public class Game_Manager : MonoBehaviour
 
         currentGeneral = GameGeneral.MENU;
         missionLevel = MissionType.ARACNHE;
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if(scene.buildIndex == 0)
+        {
+            UI_Manager._UI_MANAGER.FadeIn();
+        }
+        if(scene.buildIndex == 1)
+        {
+            ChangeGeneral(GameGeneral.PLAYER);
+            UI_Manager._UI_MANAGER.FadeIn();
+        }
     }
 
     public void ChangeGeneral(GameGeneral gameGeneralState)
@@ -52,4 +68,8 @@ public class Game_Manager : MonoBehaviour
         return missionLevel;
     }
     
+    public void GoToScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+    }
 }
