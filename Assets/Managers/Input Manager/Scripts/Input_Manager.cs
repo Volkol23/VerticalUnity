@@ -43,6 +43,7 @@ public class Input_Manager : MonoBehaviour
             inputActions.BoatController.Brake.canceled += BrakeValue;
             inputActions.BoatController.Steer.performed += SteerValue;
             inputActions.BoatController.Rotate.performed += RotateCameraValue;
+            //inputActions.BoatController.ActionChange.performed += 
 
             inputActions.Player.Move.performed += LeftAxisValue;
             inputActions.Player.Rotate.performed += RotateCameraValue;
@@ -59,13 +60,13 @@ public class Input_Manager : MonoBehaviour
         {
             case GameGeneral.PLAYER:
                 ChangePlayerInputs();
-                actionChangeValue = inputActions.Player.ActionChange.triggered;
-                pauseValue = inputActions.Player.Pause.triggered;
+                actionChangeValue = inputActions.Player.ActionChange.IsPressed();
+                pauseValue = inputActions.Player.Pause.IsPressed();
                 break;
             case GameGeneral.BOAT:
                 ChangeBoatInputs();
-                actionChangeValue = inputActions.BoatController.ActionChange.triggered;
-                pauseValue = inputActions.BoatController.ActionChange.triggered;
+                actionChangeValue = inputActions.BoatController.ActionChange.IsPressed();
+                pauseValue = inputActions.BoatController.Pause.IsPressed();
                 break;
             case GameGeneral.MENU:
                 ChangeMenuInpts();
@@ -121,7 +122,7 @@ public class Input_Manager : MonoBehaviour
         moveValue = context.ReadValue<Vector2>();
     }
 
-
+    
     public void DisableInputs()
     {
         playerInput.DeactivateInput();

@@ -10,6 +10,8 @@ public class UI_Manager : MonoBehaviour
 {
     public static UI_Manager _UI_MANAGER;
 
+    [SerializeField] private static Canvas canvas;
+
     [Header("MenuVariables")]
     [SerializeField] private Button playButton;
     [SerializeField] private Button optionsButton;
@@ -21,8 +23,9 @@ public class UI_Manager : MonoBehaviour
 
     [SerializeField] private GameObject options;
     [SerializeField] private GameObject credits;
-    [SerializeField] private GameObject menu;
+    [SerializeField] private GameObject menuButtons;
     [SerializeField] private GameObject back;
+    [SerializeField] private GameObject menu;
 
     [Header("PauseVariables")]
     [SerializeField] private Button resumeButton;
@@ -38,20 +41,23 @@ public class UI_Manager : MonoBehaviour
     [SerializeField] private GameObject currentRiver;
 
     private Animator animatorFade;
+    private GameGeneral gameGeneralPause;
 
     [Header("Fade")]
     [SerializeField] private GameObject backgroundFade;
 
+    private bool pauseMenuActive = false;
+
     private void Awake()
     {
-        if(_UI_MANAGER != null && _UI_MANAGER != this)
+        if (_UI_MANAGER != null && _UI_MANAGER != this)
         {
             Destroy(_UI_MANAGER);
         }
         else
         {
             _UI_MANAGER = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(_UI_MANAGER);
 
             playButton.onClick.AddListener(GoToPlay);
             creditsButton.onClick.AddListener(GoToCredits);
@@ -59,21 +65,32 @@ public class UI_Manager : MonoBehaviour
             exitButton.onClick.AddListener(GoToExit);
             backButton.onClick.AddListener(GoBack);
 
+            backMenuButton.onClick.AddListener(GoToMainMenu);
+            resumeButton.onClick.AddListener(Resume);
+
             animatorFade = backgroundFade.GetComponent<Animator>();
         }
     }
 
+    private void Update()
+    {
+        if (Input_Manager._INPUT_MANAGER.GetPauseValue())
+        {
+            Pause();
+        }
+    }
     private void GoToPlay()
     {
-        Game_Manager._GAME_MANAGER.GoToScene("Test_Level");
         FadeOut();
+        Game_Manager._GAME_MANAGER.GoToScene("Test_Level");
+        menu.SetActive(false);
     }
 
     private void GoToOptions()
     {
         options.SetActive(true);
         back.SetActive(true);
-        menu.SetActive(false);
+        menuButtons.SetActive(false);
         backButton.Select();
     }
 
@@ -81,7 +98,7 @@ public class UI_Manager : MonoBehaviour
     {
         credits.SetActive(true);
         back.SetActive(true);
-        menu.SetActive(false);
+        menuButtons.SetActive(false);
         backButton.Select();
     }
 
@@ -95,10 +112,43 @@ public class UI_Manager : MonoBehaviour
         options.SetActive(false);
         credits.SetActive(false);
         back.SetActive(false);
-        menu.SetActive(true);
+        menuButtons.SetActive(true);
         playButton.Select();
     }
 
+    private void GoToMainMenu()
+    {
+        Game_Manager._GAME_MANAGER.GoToScene("MainMenu");
+        menu.SetActive(true);
+        if (pauseMenu)
+        {
+            pauseMenu.SetActive(false);
+        }
+        Debug.Log("MainMenu");
+    }
+
+    private void Resume()
+    {
+        if (pauseMenu)
+        {
+            pauseMenu.SetActive(false);
+        }
+        Game_Manager._GAME_MANAGER.ChangeGeneral(gameGeneralPause);
+        Debug.Log("Resume");
+        Time.timeScale = 1;
+    }
+
+    private void Pause()
+    {
+        if (pauseMenu)
+        {
+            pauseMenu.SetActive(true);
+        }
+        Time.timeScale = 0;
+        gameGeneralPause = Game_Manager._GAME_MANAGER.GetCurrentGeneral();
+        Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.MENU);
+        resumeButton.Select();
+    }
     public void FadeIn()
     {
         animatorFade.Play("FadeIn");
