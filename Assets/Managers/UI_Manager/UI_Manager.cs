@@ -81,7 +81,6 @@ public class UI_Manager : MonoBehaviour
     }
     private void GoToPlay()
     {
-        FadeOut();
         Game_Manager._GAME_MANAGER.GoToScene("Test_Level");
         menu.SetActive(false);
     }
@@ -119,7 +118,7 @@ public class UI_Manager : MonoBehaviour
     private void GoToMainMenu()
     {
         Game_Manager._GAME_MANAGER.GoToScene("MainMenu");
-        menu.SetActive(true);
+        //menu.SetActive(true);
         if (pauseMenu)
         {
             pauseMenu.SetActive(false);
@@ -151,12 +150,12 @@ public class UI_Manager : MonoBehaviour
     }
     public void FadeIn()
     {
-        animatorFade.Play("FadeIn");
+        animatorFade.SetTrigger("Start");
     }
 
     public void FadeOut()
     {
-        animatorFade.Play("FadeOut");
+        animatorFade.SetTrigger("End");
     }
 
     public void ActivatePause()

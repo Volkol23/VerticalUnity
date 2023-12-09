@@ -43,7 +43,6 @@ public class Input_Manager : MonoBehaviour
             inputActions.BoatController.Brake.canceled += BrakeValue;
             inputActions.BoatController.Steer.performed += SteerValue;
             inputActions.BoatController.Rotate.performed += RotateCameraValue;
-            //inputActions.BoatController.ActionChange.performed += 
 
             inputActions.Player.Move.performed += LeftAxisValue;
             inputActions.Player.Rotate.performed += RotateCameraValue;

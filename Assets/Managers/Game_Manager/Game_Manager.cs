@@ -32,8 +32,6 @@ public class Game_Manager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        UI_Manager._UI_MANAGER.FadeIn();
-
         if(scene.buildIndex == 1 || scene.buildIndex == 2 || scene.buildIndex == 3)
         {
             ChangeGeneral(GameGeneral.PLAYER);  
@@ -72,7 +70,9 @@ public class Game_Manager : MonoBehaviour
 
     IEnumerator LoadSceneCorutine(string sceneName)
     {
+        UI_Manager._UI_MANAGER.FadeOut();
         yield return new WaitForSeconds(2f);
         SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
+        UI_Manager._UI_MANAGER.FadeIn();
     }
 }
