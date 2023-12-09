@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2905007192071153612
 Transform:
@@ -33,7 +33,7 @@ Transform:
   - {fileID: 311051753580787630}
   - {fileID: 8803680429019760198}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1231854148543632881
 GameObject:
@@ -50,7 +50,7 @@ GameObject:
   m_TagString: ChangeBoatPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &882756175470480442
 Transform:
@@ -102,7 +102,7 @@ GameObject:
   m_TagString: DockPosition
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8803680429019760198
 Transform:
@@ -134,7 +134,7 @@ GameObject:
   m_TagString: ChangePlayerBoat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &311051753580787630
 Transform:
@@ -183,6 +183,18 @@ PrefabInstance:
     - target: {fileID: 100000, guid: c8dbbd17831aecb419cf9f688e85e672, type: 3}
       propertyPath: m_Name
       value: dock_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c8dbbd17831aecb419cf9f688e85e672, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 175428, guid: c8dbbd17831aecb419cf9f688e85e672, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 177796, guid: c8dbbd17831aecb419cf9f688e85e672, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c8dbbd17831aecb419cf9f688e85e672, type: 3}
       propertyPath: m_RootOrder

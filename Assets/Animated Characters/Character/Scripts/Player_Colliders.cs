@@ -37,6 +37,10 @@ public class Player_Colliders : MonoBehaviour
                     Mission_Manager._MISSION_MANAGER.InitMission();
                 }
             }
+            if (other.gameObject.CompareTag("UnderworldGate"))
+            {
+                Debug.Log("LevelFinished");
+            }
         }
     }
 }
