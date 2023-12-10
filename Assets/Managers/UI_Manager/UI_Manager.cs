@@ -90,7 +90,7 @@ public class UI_Manager : MonoBehaviour
     private void GoToPlay()
     {
         //Game_Manager._GAME_MANAGER.GoToScene("Test_Level");
-        Game_Manager._GAME_MANAGER.GoToScene("Test_Level_1");
+        Game_Manager._GAME_MANAGER.GoToScene("IntroScene");
         menu.SetActive(false);
     }
 
@@ -210,7 +210,7 @@ public class UI_Manager : MonoBehaviour
 
     public void UpdateDialogueText(string dialogue)
     {
-        dialogueText.text = "HADES: " + dialogue;
+        dialogueText.text = dialogue;
     }
     public void DeactivateDialogueBox()
     {
