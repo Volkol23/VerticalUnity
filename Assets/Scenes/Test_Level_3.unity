@@ -233,11 +233,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400386, guid: 97978387d041db2429e6dabd7b1c4f8f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 253
+      value: 170.3
       objectReference: {fileID: 0}
     - target: {fileID: 400386, guid: 97978387d041db2429e6dabd7b1c4f8f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 83
+      value: 61.2
       objectReference: {fileID: 0}
     - target: {fileID: 400386, guid: 97978387d041db2429e6dabd7b1c4f8f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -298,7 +298,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400386, guid: 97978387d041db2429e6dabd7b1c4f8f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 83
+      value: 53.7
       objectReference: {fileID: 0}
     - target: {fileID: 400386, guid: 97978387d041db2429e6dabd7b1c4f8f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -514,13 +514,13 @@ MonoBehaviour:
         z: 3.0536046
       Rotation:
         value:
-          x: 0.0000000015448879
+          x: 7.660459e-16
           y: 0.99999523
-          z: 0.00000049969526
+          z: -2.3683527e-18
           w: -0.003091644
     - Position:
         x: -0.18881226
-        y: 0.000030517578
+        y: 0
         z: -30.535461
       TangentIn:
         x: -0
@@ -532,9 +532,9 @@ MonoBehaviour:
         z: 11.139114
       Rotation:
         value:
-          x: -0.000000016087629
+          x: -1.6387038e-15
           y: 0.97241646
-          z: 0.00000006706864
+          z: -3.930728e-16
           w: 0.2332517
     - Position:
         x: 32.66974
@@ -550,13 +550,13 @@ MonoBehaviour:
         z: 14.227067
       Rotation:
         value:
-          x: 0.00000026878212
+          x: 0.0000000015941307
           y: 0.8689869
-          z: -0.00000046830473
+          z: 9.077604e-10
           w: 0.49483517
     - Position:
         x: 72.03961
-        y: -0.000061035156
+        y: 0
         z: -73.0639
       TangentIn:
         x: -0
@@ -568,9 +568,9 @@ MonoBehaviour:
         z: 13.102332
       Rotation:
         value:
-          x: -0.000000017710063
+          x: 5.2313247e-16
           y: 0.90000284
-          z: 0.000000036567315
+          z: 2.5336037e-16
           w: 0.43588397
     - Position:
         x: 96.74866
@@ -586,9 +586,9 @@ MonoBehaviour:
         z: 8.349407
       Rotation:
         value:
-          x: -0.00000007414751
+          x: -0.000000061507485
           y: 0.9996546
-          z: 0.0000004791633
+          z: -0.0000000016170707
           w: 0.026281547
     - Position:
         x: 81.08865
@@ -604,13 +604,13 @@ MonoBehaviour:
         z: 12.922911
       Rotation:
         value:
-          x: 0.000000059976266
+          x: 0.0000000031873852
           y: 0.94693935
-          z: 0.0000001662286
+          z: -0.0000000010818689
           w: -0.32141212
     - Position:
         x: 52.118896
-        y: 0.000030517578
+        y: 0
         z: -159.83337
       TangentIn:
         x: -0
@@ -622,9 +622,9 @@ MonoBehaviour:
         z: 10.939701
       Rotation:
         value:
-          x: -0.000000002849587
+          x: 1.6775752e-15
           y: 0.99628943
-          z: -0.000000032986524
+          z: -1.4491977e-16
           w: -0.08606589
     - Position:
         x: 66.253845
@@ -640,13 +640,13 @@ MonoBehaviour:
         z: 14.0981045
       Rotation:
         value:
-          x: 0.000000007960719
+          x: -6.621739e-15
           y: 0.9699667
-          z: -0.000000031745188
+          z: -1.6605283e-15
           w: 0.24323778
     - Position:
         x: 91.1629
-        y: 0.000030517578
+        y: 0
         z: -231.23566
       TangentIn:
         x: -0
@@ -658,9 +658,9 @@ MonoBehaviour:
         z: 11.467327
       Rotation:
         value:
-          x: 0.000000024354557
+          x: 7.14912e-15
           y: 0.9275617
-          z: -0.00000006045532
+          z: 2.8800376e-15
           w: 0.37367016
     - Position:
         x: 117.22742
@@ -676,9 +676,9 @@ MonoBehaviour:
         z: 11.278238
       Rotation:
         value:
-          x: 0.000000103467194
+          x: -1.7143618e-10
           y: 0.8983727
-          z: -0.00000021205773
+          z: -8.3818855e-11
           w: 0.43923387
     - Position:
         x: 143.75974
@@ -730,13 +730,13 @@ MonoBehaviour:
         z: 14.274893
       Rotation:
         value:
-          x: -0.000000048179043
+          x: -0.0000000012259831
           y: 0.96349007
-          z: -0.00000016862202
+          z: 3.4068853e-10
           w: -0.26774433
     - Position:
         x: 115.61786
-        y: -0.000030517578
+        y: 0
         z: -387.62097
       TangentIn:
         x: -0
@@ -748,9 +748,9 @@ MonoBehaviour:
         z: 17.803305
       Rotation:
         value:
-          x: -0.000000013557021
+          x: -1.8670419e-15
           y: 0.93019783
-          z: -0.000000034356113
+          z: 7.3674e-16
           w: -0.3670587
     - Position:
         x: 77.26672
@@ -766,13 +766,13 @@ MonoBehaviour:
         z: 19.083801
       Rotation:
         value:
-          x: 0.000000057483675
+          x: -0.0000000026715363
           y: 0.97508025
-          z: 0.0000002650005
+          z: 6.078338e-10
           w: -0.22185238
     - Position:
         x: 67.89664
-        y: 0.000030517578
+        y: 0
         z: -489.6985
       TangentIn:
         x: -0
@@ -784,16 +784,16 @@ MonoBehaviour:
         z: 6.081626
       Rotation:
         value:
-          x: 0.000000018221145
+          x: -0.0000000011651384
           y: 0.9970104
-          z: 0.00000025024005
+          z: 9.029673e-11
           w: -0.07726703
     m_MetaData:
     - Mode: 0
       Tension: 0.5
       m_DistanceToInterpolation:
-      - Distance: 0
-        T: 0
+      - Distance: -1
+        T: -1
       - Distance: 0.37160933
         T: 0.03448276
       - Distance: 0.85142374
@@ -855,8 +855,8 @@ MonoBehaviour:
     - Mode: 0
       Tension: 0.5
       m_DistanceToInterpolation:
-      - Distance: 0
-        T: 0
+      - Distance: -1
+        T: -1
       - Distance: 1.1603127
         T: 0.03448276
       - Distance: 2.3396962
@@ -918,8 +918,8 @@ MonoBehaviour:
     - Mode: 0
       Tension: 0.5
       m_DistanceToInterpolation:
-      - Distance: 0
-        T: 0
+      - Distance: -1
+        T: -1
       - Distance: 1.4766034
         T: 0.03448276
       - Distance: 2.9630594
@@ -981,8 +981,8 @@ MonoBehaviour:
     - Mode: 0
       Tension: 0.5
       m_DistanceToInterpolation:
-      - Distance: 0
-        T: 0
+      - Distance: -1
+        T: -1
       - Distance: 1.3747714
         T: 0.03448276
       - Distance: 2.7853985
@@ -1044,8 +1044,8 @@ MonoBehaviour:
     - Mode: 0
       Tension: 0.5
       m_DistanceToInterpolation:
-      - Distance: 0
-        T: 0
+      - Distance: -1
+        T: -1
       - Distance: 0.85936224
         T: 0.03448276
       - Distance: 1.7145536
@@ -1107,8 +1107,8 @@ MonoBehaviour:
     - Mode: 0
       Tension: 0.5
       m_DistanceToInterpolation:
-      - Distance: 0
-        T: 0
+      - Distance: -1
+        T: -1
       - Distance: 1.3611214
         T: 0.03448276
       - Distance: 2.7698941
@@ -1170,8 +1170,8 @@ MonoBehaviour:
     - Mode: 0
       Tension: 0.5
       m_DistanceToInterpolation:
-      - Distance: 0
-        T: 0
+      - Distance: -1
+        T: -1
       - Distance: 1.131003
         T: 0.03448276
       - Distance: 2.2649693
@@ -1233,8 +1233,8 @@ MonoBehaviour:
     - Mode: 0
       Tension: 0.5
       m_DistanceToInterpolation:
-      - Distance: 0
-        T: 0
+      - Distance: -1
+        T: -1
       - Distance: 1.4690918
         T: 0.03448276
       - Distance: 2.9583907
@@ -1296,8 +1296,8 @@ MonoBehaviour:
     - Mode: 0
       Tension: 0.5
       m_DistanceToInterpolation:
-      - Distance: 0
-        T: 0
+      - Distance: -1
+        T: -1
       - Distance: 1.1797428
         T: 0.03448276
       - Distance: 2.3474178
@@ -1359,8 +1359,8 @@ MonoBehaviour:
     - Mode: 0
       Tension: 0.5
       m_DistanceToInterpolation:
-      - Distance: 0
-        T: 0
+      - Distance: -1
+        T: -1
       - Distance: 1.1682593
         T: 0.03448276
       - Distance: 2.3396232
@@ -1422,8 +1422,8 @@ MonoBehaviour:
     - Mode: 0
       Tension: 0.5
       m_DistanceToInterpolation:
-      - Distance: 0
-        T: 0
+      - Distance: -1
+        T: -1
       - Distance: 1.4432963
         T: 0.03448276
       - Distance: 2.9223652
@@ -1485,8 +1485,8 @@ MonoBehaviour:
     - Mode: 0
       Tension: 0.5
       m_DistanceToInterpolation:
-      - Distance: 0
-        T: 0
+      - Distance: -1
+        T: -1
       - Distance: 1.4000257
         T: 0.03448276
       - Distance: 2.8063836
@@ -1548,8 +1548,8 @@ MonoBehaviour:
     - Mode: 0
       Tension: 0.5
       m_DistanceToInterpolation:
-      - Distance: 0
-        T: 0
+      - Distance: -1
+        T: -1
       - Distance: 1.4753171
         T: 0.03448276
       - Distance: 2.94918
@@ -1611,8 +1611,8 @@ MonoBehaviour:
     - Mode: 0
       Tension: 0.5
       m_DistanceToInterpolation:
-      - Distance: 0
-        T: 0
+      - Distance: -1
+        T: -1
       - Distance: 1.8544912
         T: 0.03448276
       - Distance: 3.7337418
@@ -1674,8 +1674,8 @@ MonoBehaviour:
     - Mode: 0
       Tension: 0.5
       m_DistanceToInterpolation:
-      - Distance: 0
-        T: 0
+      - Distance: -1
+        T: -1
       - Distance: 2.024028
         T: 0.03448276
       - Distance: 4.1446915
