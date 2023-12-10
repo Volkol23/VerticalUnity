@@ -40,6 +40,12 @@ public class UI_Manager : MonoBehaviour
 
     [SerializeField] private GameObject currentRiver;
 
+    [Header("DialogueUI")]
+    [SerializeField] private GameObject dialogueBox;
+    [SerializeField] private TMP_Text dialogueText;
+
+    [SerializeField] private Button nextDialogueButton;
+
     private Animator animatorFade;
     private GameGeneral gameGeneralPause;
 
@@ -68,6 +74,8 @@ public class UI_Manager : MonoBehaviour
             backMenuButton.onClick.AddListener(GoToMainMenu);
             resumeButton.onClick.AddListener(Resume);
 
+            nextDialogueButton.onClick.AddListener(NextDialogue);
+
             animatorFade = backgroundFade.GetComponent<Animator>();
         }
     }
@@ -81,7 +89,8 @@ public class UI_Manager : MonoBehaviour
     }
     private void GoToPlay()
     {
-        Game_Manager._GAME_MANAGER.GoToScene("Test_Level");
+        //Game_Manager._GAME_MANAGER.GoToScene("Test_Level");
+        Game_Manager._GAME_MANAGER.GoToScene("Test_Level_1");
         menu.SetActive(false);
     }
 
@@ -148,6 +157,10 @@ public class UI_Manager : MonoBehaviour
         Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.MENU);
         resumeButton.Select();
     }
+    private void NextDialogue()
+    {
+
+    }
     public void FadeIn()
     {
         animatorFade.SetTrigger("Start");
@@ -189,6 +202,20 @@ public class UI_Manager : MonoBehaviour
         abilitys.SetActive(false);
     }
 
+    public void ActivateDialogueBox()
+    {
+        dialogueBox.SetActive(true);
+        nextDialogueButton.Select();
+    }
+
+    public void UpdateDialogueText(string dialogue)
+    {
+        dialogueText.text = "HADES: " + dialogue;
+    }
+    public void DeactivateDialogueBox()
+    {
+        dialogueBox.SetActive(false);
+    }
     public void DeactivateMissionObjective()
     {
         missionObjective.SetActive(false);

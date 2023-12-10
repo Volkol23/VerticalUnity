@@ -25,16 +25,35 @@ public class Game_Manager : MonoBehaviour
         }
 
         currentGeneral = GameGeneral.MENU;
-        missionLevel = MissionType.ARACNHE;
 
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if(scene.buildIndex == 1 || scene.buildIndex == 2 || scene.buildIndex == 3)
+        // 0 - MainMenu // 1 - Level 1 Arachne // 2 - Level 2 Minotaur // 3 - Level 3 Ice // 4 - Intro Hades
+        switch (scene.buildIndex)
         {
-            ChangeGeneral(GameGeneral.PLAYER);  
+            case 0:
+                ChangeGeneral(GameGeneral.MENU);
+                missionLevel = MissionType.NOMISSION;
+                break;
+            case 1:
+                ChangeGeneral(GameGeneral.PLAYER);
+                missionLevel = MissionType.ARACNHE;
+                break;
+            case 2:
+                ChangeGeneral(GameGeneral.PLAYER);
+                missionLevel = MissionType.MINOTAUR;
+                break;
+            case 3:
+                ChangeGeneral(GameGeneral.PLAYER);
+                missionLevel = MissionType.ICEWOLF;
+                break;
+            case 4:
+                ChangeGeneral(GameGeneral.MENU);
+                missionLevel = MissionType.HADES;
+                break;
         }
     }
 

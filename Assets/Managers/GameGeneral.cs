@@ -10,5 +10,6 @@ public enum MissionType
     ARACNHE,
     MINOTAUR,
     ICEWOLF,
+    HADES,
     NOMISSION
 }
