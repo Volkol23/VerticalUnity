@@ -89,8 +89,8 @@ public class UI_Manager : MonoBehaviour
     }
     private void GoToPlay()
     {
-        //Game_Manager._GAME_MANAGER.GoToScene("Test_Level");
         Game_Manager._GAME_MANAGER.GoToScene("IntroScene");
+        //Game_Manager._GAME_MANAGER.GoToScene("IntroScene");
         menu.SetActive(false);
     }
 

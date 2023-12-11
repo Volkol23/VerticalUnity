@@ -13,7 +13,7 @@ public class Hades_Behaviour : MonoBehaviour
 
     private float currentTimer;
     [SerializeField]
-    private int indexDialogue;
+    private int indexDialogue = 0;
     private bool setupDialogue = true;
 
     private void Awake()
@@ -33,8 +33,11 @@ public class Hades_Behaviour : MonoBehaviour
             currentTimer += Time.deltaTime;
             if (currentTimer > maxTimerCooldown)
             {
+                currentTimer = 0;
                 UI_Manager._UI_MANAGER.FadeOut();
-                StartCoroutine(DialogueFadeOut());
+                //StartCoroutine(DialogueFadeOut());
+                UI_Manager._UI_MANAGER.UpdateDialogueText(introDialogues[indexDialogue]);
+                indexDialogue++;
                 UI_Manager._UI_MANAGER.FadeIn();
                 if (indexDialogue == introDialogues.Length)
                 {
@@ -50,8 +53,7 @@ public class Hades_Behaviour : MonoBehaviour
 
     IEnumerator DialogueFadeOut()
     {
-        currentTimer = 0;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.3f);
         UI_Manager._UI_MANAGER.UpdateDialogueText(introDialogues[indexDialogue]);
         indexDialogue++;
     } 
