@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2414519729168292206}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: -0.531}
+  m_LocalPosition: {x: 0, y: -0.077, z: -0.854}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4897,7 +4897,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3818492772976779287}
   m_LocalRotation: {x: -0.0000000018626449, y: 0.6167194, z: -0.00000003073364, w: 0.7871831}
-  m_LocalPosition: {x: -0.116, y: 0.205, z: -0.537}
+  m_LocalPosition: {x: -0.116, y: 0.086, z: -0.537}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5027,7 +5027,7 @@ Transform:
   m_GameObject: {fileID: 6450784072982177868}
   m_LocalRotation: {x: 0, y: -0.7156501, z: 0, w: 0.698459}
   m_LocalPosition: {x: 806.4, y: 7.8, z: -863.7}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 14, y: 14, z: 14}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4110201376336655681}
@@ -5039,7 +5039,7 @@ Transform:
   - {fileID: 4939655854939540206}
   - {fileID: 7121945375571075376}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -91.393, z: 0}
 --- !u!65 &545804963038765663
 BoxCollider:
@@ -5056,7 +5056,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -5111,7 +5111,7 @@ MonoBehaviour:
   surfaceDrag: 0
   surfaceAngularDrag: 0.05
   floatingForce: 15
-  waterDepth: 6
+  waterDepth: 12
 --- !u!114 &6329149696495742026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5128,7 +5128,7 @@ MonoBehaviour:
   currentSpeed: 0
   maxSpeed: 30
   pointTransform: {fileID: 1594208892654307088}
-  steerSpeed: 10
+  steerSpeed: 0.2
 --- !u!114 &7424113213165512229
 MonoBehaviour:
   m_ObjectHideFlags: 0

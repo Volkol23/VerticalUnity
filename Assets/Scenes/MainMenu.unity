@@ -2897,7 +2897,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'HADES: '
+  m_text: "Ahora, sigue tu camino y avanza hacia el pr\xF3ximo r\xEDo. He tejido
+    un portal para que puedas continuar tu traves\xEDa. Que las telara\xF1as de la
+    fortuna gu\xEDen tus pasos. \xA1Adelante, intr\xE9pida hija de Caronte!\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1bb6b1eb27e21d041a10f3c95c3139f2, type: 2}
   m_sharedMaterial: {fileID: -9049908242077872406, guid: 1bb6b1eb27e21d041a10f3c95c3139f2,
@@ -2925,8 +2927,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2961,7 +2963,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 29.158264, y: 26.248299, z: 29.137207, w: 29.149555}
+  m_margin: {x: 14.886993, y: 12.06691, z: 17.878967, w: 20.69802}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3741,7 +3743,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1245666456
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3762,7 +3764,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 50}
-  m_SizeDelta: {x: 600, y: 150}
+  m_SizeDelta: {x: 600.54, y: 150}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1245666457
 MonoBehaviour:
@@ -5647,7 +5649,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1880463312
 RectTransform:
   m_ObjectHideFlags: 0

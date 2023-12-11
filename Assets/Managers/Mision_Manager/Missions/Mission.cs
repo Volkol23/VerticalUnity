@@ -11,11 +11,10 @@ public class Mission : ScriptableObject
 
     [SerializeField] private MissionObject[] objects;
     [SerializeField] private string missionObjectText;
+    [SerializeField] private string[] dialogueIntro;
+    [SerializeField] private string[] dialogueEnd;
 
-
-    [SerializeField] private string missionStartText;
-    [SerializeField] private string missionCompletedText;
-
+    //Aracnhe 5 Start 
     private bool objectiveCompleted = false;
 
     private bool missionCompleted = false;
@@ -41,19 +40,24 @@ public class Mission : ScriptableObject
     {
         return missionType;
     }
-    public string GetMissionStartText()
+
+    public string[] GetIntroDialogue()
     {
-        return missionStartText;
+        return dialogueIntro;
     }
 
-    public string GetMissionCompletedText ()
+    public string[] GetEndDialogue()
     {
-        return missionCompletedText;
+        return dialogueEnd;
     }
-
     public int GetObjectsNumber()
     {
         return objects.Length;
+    }
+
+    public bool GetCompleteMission()
+    {
+        return missionCompleted;
     }
     public void CompleteMission()
     {

@@ -89,7 +89,7 @@ public class UI_Manager : MonoBehaviour
     }
     private void GoToPlay()
     {
-        Game_Manager._GAME_MANAGER.GoToScene("IntroScene");
+        Game_Manager._GAME_MANAGER.GoToScene("Test_Level_1");
         //Game_Manager._GAME_MANAGER.GoToScene("IntroScene");
         menu.SetActive(false);
     }
@@ -159,8 +159,9 @@ public class UI_Manager : MonoBehaviour
     }
     private void NextDialogue()
     {
-
+        Mission_Manager._MISSION_MANAGER.NextDialogue();
     }
+
     public void FadeIn()
     {
         animatorFade.SetTrigger("Start");

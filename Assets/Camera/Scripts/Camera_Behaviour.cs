@@ -64,7 +64,7 @@ public class Camera_Behaviour : MonoBehaviour
 
     private void SetupBoat()
     {
-        targetDistance = 20f;
+        targetDistance = 25f;
         cameraLerp = 3f;
         sensivity = 0.2f;
         minRotation = 0;
@@ -75,7 +75,7 @@ public class Camera_Behaviour : MonoBehaviour
 
     private void SetupPlayer()
     {
-        targetDistance = 10f;
+        targetDistance = 20f;
         cameraLerp = 12f;
         sensivity = 0.2f;
         minRotation = -40;

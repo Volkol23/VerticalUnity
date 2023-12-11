@@ -12,9 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 316b466fbf7c9be4daccfeeaff03776e, type: 3}
   m_Name: AracnheMission
   m_EditorClassIdentifier: 
-  missionName: Get Aracnhes Boots
+  missionName: Zapatos de Aracnhe
   missionType: 0
-  missionObjectiveText: Find and bring her shoes
-  missionObjectText: Return her shoes to Aracnhe
-  missionStartText: Hi con yo find my shoes
-  missionCompletedText: Thank you
+  missionObjectiveText: Localiza y recupera sus zapatos
+  objects:
+  - {fileID: 11400000, guid: 6d7351942a33de243aa27161d4db64f6, type: 2}
+  missionObjectText: "Habla con ella al final del r\xEDo"
+  dialogueIntro:
+  - "\xA1Saludos, hija de Caronte! Veo que el destino nos entrelaza hoy. Mi arte
+    est\xE1 en peligro, y necesito tu habilidad para recuperar algo valioso."
+  - Mis zapatos, hilados con hebras de sombra, se han extraviado en este reino. Sin
+    ellos, mi capacidad para tejer se ve comprometida.
+  - "\xBFPodr\xEDas buscar mis zapatos mientras yo aguardo al final de este r\xEDo?"
+  - "\xA1Y una \xFAltima cosa! En estos r\xEDos, hay remolinos de almas inquietas
+    que desean escapar."
+  - "Pueden aferrarse a tu barca y llevarte de vuelta al punto de inicio. Debes tener
+    cuidado: mantente alerta y sort\xE9alos con astucia. "
+  dialogueEnd:
+  - "Gracias, Thanara. Estos zapatos no solo son hebras de sombra, sino tambi\xE9n
+    el eco de los pasos que he dado con criaturas que ya no est\xE1n."
+  - "Como te habr\xE1s dado cuenta, la p\xE9rdida es una sombra que camina a nuestro
+    lado."
+  - "Pero en cada p\xE9rdida, tambi\xE9n hay hilos de amor y recuerdos que nunca
+    se desvanecen."
+  - "Ahora, sigue tu camino y avanza hacia el pr\xF3ximo r\xEDo. He tejido un portal
+    para que puedas continuar tu traves\xEDa."
+  - "Que las telara\xF1as de la fortuna gu\xEDen tus pasos. \xA1Adelante, intr\xE9pida
+    hija de Caronte!"

@@ -108,7 +108,7 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
-    - _Depth: 3.97
+    - _Depth: 8.3
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -131,7 +131,7 @@ Material:
     - _RimScale: 3.19
     - _RimSpeed: 0.3
     - _RimStrenght: 2.33
-    - _RimStrength: 2.19
+    - _RimStrength: 9.11
     - _Smoothness: 1.36
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -143,11 +143,11 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DepthColor: {r: 0.03720184, g: 0.06393152, b: 0.41509432, a: 0.6862745}
+    - _DepthColor: {r: 0.0257209, g: 0.04701202, b: 0.3207547, a: 0.6862745}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _NormalDirection: {r: 0, g: 0.17, b: 0, a: 0}
     - _RefractionDirection: {r: 0, g: 0.17, b: 0, a: 0}
     - _RimColor: {r: 1, g: 1, b: 1, a: 0.80784315}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _SurfaceColor: {r: 0.028346404, g: 0.24940883, b: 0.8584906, a: 0.5019608}
+    - _SurfaceColor: {r: 0.1764706, g: 0.31761318, b: 0.90588236, a: 0.5019608}
   m_BuildTextureStacks: []

@@ -118,4 +118,9 @@ public class Character_Behaviour : MonoBehaviour
     {
         transform.position = position;
     }
+
+    public float GetSpeed()
+    {
+        return speed;
+    }
 }

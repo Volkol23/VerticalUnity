@@ -11,7 +11,11 @@ public class Mission_Manager : MonoBehaviour
     [SerializeField] private Mission[] missions;
     [SerializeField] private Mission currentMission;
 
+    private bool inDialogue = false;
+
     private int objectsCounter;
+
+    private int indexDialogue;
 
     private void Awake()
     {
@@ -25,6 +29,7 @@ public class Mission_Manager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             missionType = MissionType.NOMISSION;
             objectsCounter = 0;
+            indexDialogue = 0;
         }
     }
 
@@ -37,18 +42,31 @@ public class Mission_Manager : MonoBehaviour
                 currentMission.CompleteObjective();
             }
         }
+        if (inDialogue)
+        {
+            UI_Manager._UI_MANAGER.UpdateDialogueText(currentMission.GetIntroDialogue()[indexDialogue]);
+        }
+        if(indexDialogue > currentMission.GetIntroDialogue().Length && !currentMission.GetCompleteMission())
+        {
+            UI_Manager._UI_MANAGER.DeactivateDialogueBox();
+            indexDialogue = 0;
+        }
+        else if (indexDialogue > currentMission.GetEndDialogue().Length)
+        {
+            UI_Manager._UI_MANAGER.DeactivateDialogueBox();
+            indexDialogue = 0;
+            currentMission.CompleteMission();
+        }
     }
 
     public void StartMission()
     {
         missionType = Game_Manager._GAME_MANAGER.GetMissionLevel();
-        SetupMission();
-        UI_Manager._UI_MANAGER.ActivateMissionObjective(currentMission.GetMissionStartText());      
+        SetupMission();   
     }
 
     public void EndMission()
     {
-        UI_Manager._UI_MANAGER.ActivateMissionObjective(currentMission.GetMissionCompletedText());
         missionType = MissionType.NOMISSION;
         currentMission = null;
         objectsCounter = 0;
@@ -67,12 +85,17 @@ public class Mission_Manager : MonoBehaviour
 
     public void InitMission()
     {
-        UI_Manager._UI_MANAGER.ActivateMissionObjective(currentMission.GetMissionObjectiveText());
+        UI_Manager._UI_MANAGER.ActivateDialogueBox();
     }
 
     public void GetMissionObject(int id)
     {
         UI_Manager._UI_MANAGER.ActivateMissionObjective(currentMission.GetMissionObjectText(id));
         objectsCounter++;
+    }
+
+    public void NextDialogue()
+    {
+        indexDialogue++;
     }
 }
