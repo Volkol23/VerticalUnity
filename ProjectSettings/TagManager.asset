@@ -12,6 +12,8 @@ TagManager:
   - MissionObject
   - MissionCharacter
   - UnderworldGate
+  - CameraTarget
+  - Spot
   layers:
   - Default
   - TransparentFX

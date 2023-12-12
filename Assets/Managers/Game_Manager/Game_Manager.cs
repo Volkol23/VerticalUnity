@@ -32,29 +32,40 @@ public class Game_Manager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // 0 - MainMenu // 1 - Level 1 Arachne // 2 - Level 2 Minotaur // 3 - Level 3 Ice // 4 - Intro Hades
+        // 0 - MainMenu // 1 - Main Story // 2 - Intro Hades // 3 - Level 1 Arachne // 4 - Level 2 Minotaur // 5 - Level 3 Ice 
         switch (scene.buildIndex)
         {
             case 0:
                 ChangeGeneral(GameGeneral.MENU);
                 missionLevel = MissionType.NOMISSION;
+                Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.mainMenu);
                 break;
             case 1:
                 Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.mainStory);
                 break;
             case 2:
-                ChangeGeneral(GameGeneral.PLAYER);
-                missionLevel = MissionType.MINOTAUR;
+                ChangeGeneral(GameGeneral.MENU);
+                missionLevel = MissionType.HADES;
                 Mission_Manager._MISSION_MANAGER.StartMission();
+                Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.introScene);
                 break;
             case 3:
                 ChangeGeneral(GameGeneral.PLAYER);
-                missionLevel = MissionType.ICEWOLF;
+                missionLevel = MissionType.ARACNHE;
                 Mission_Manager._MISSION_MANAGER.StartMission();
+                Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.level1);
                 break;
             case 4:
-                ChangeGeneral(GameGeneral.MENU);
-                missionLevel = MissionType.HADES;
+                ChangeGeneral(GameGeneral.PLAYER);
+                missionLevel = MissionType.MINOTAUR;
+                Mission_Manager._MISSION_MANAGER.StartMission();
+                Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.level2);
+                break;
+            case 5:
+                ChangeGeneral(GameGeneral.PLAYER);
+                missionLevel = MissionType.ICEWOLF;
+                Mission_Manager._MISSION_MANAGER.StartMission();
+                Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.mainStory);
                 break;
         }
     }

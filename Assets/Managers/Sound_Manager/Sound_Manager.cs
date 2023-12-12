@@ -30,7 +30,8 @@ public class Sound_Manager : MonoBehaviour
         introScene,
         level1,
         level2,
-        level3
+        level3,
+        level3Chase
     }
 
     public enum SFX

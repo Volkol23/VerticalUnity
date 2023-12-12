@@ -58,7 +58,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3213856496870888473}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.297, y: -0.026, z: -0.764}
+  m_LocalPosition: {x: 0.09, y: -0.026, z: -0.764}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4897,7 +4897,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3818492772976779287}
   m_LocalRotation: {x: -0.0000000018626449, y: 0.6167194, z: -0.00000003073364, w: 0.7871831}
-  m_LocalPosition: {x: -0.116, y: 0.086, z: -0.537}
+  m_LocalPosition: {x: -0.116, y: -0.221, z: -0.537}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5039,7 +5039,7 @@ Transform:
   - {fileID: 4939655854939540206}
   - {fileID: 7121945375571075376}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -91.393, z: 0}
 --- !u!65 &545804963038765663
 BoxCollider:
@@ -5060,8 +5060,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.4340926, z: 1.8975098}
-  m_Center: {x: 0, y: -0.15553108, z: -0.00021972657}
+  m_Size: {x: 0.73909706, y: 0.43409267, z: 1.8194658}
+  m_Center: {x: 0.004468611, y: -0.15553111, z: 0.06618057}
 --- !u!54 &537628359084274306
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5124,11 +5124,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c96b55ee9a2ef49429eda176622dc194, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceleration: 8
+  acceleration: 12
   currentSpeed: 0
   maxSpeed: 30
   pointTransform: {fileID: 1594208892654307088}
-  steerSpeed: 0.2
+  steerSpeed: 10
 --- !u!114 &7424113213165512229
 MonoBehaviour:
   m_ObjectHideFlags: 0

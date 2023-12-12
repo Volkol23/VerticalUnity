@@ -35,32 +35,46 @@ public class Mission_Manager : MonoBehaviour
 
     private void Update()
     {
-        if(missionType != MissionType.NOMISSION)
+        if(missionType != MissionType.NOMISSION && missionType != MissionType.HADES)
         {
             if (objectsCounter == currentMission.GetObjectsNumber())
             {
                 currentMission.CompleteObjective();
             }
         }
-        if(indexDialogue == currentMission.GetIntroDialogue().Length && !currentMission.GetCompleteMission())
+
+        if(currentMission != null)
         {
-            UI_Manager._UI_MANAGER.DeactivateDialogueBox();
-            indexDialogue = 0;
-            inDialogue = false;
-            Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.PLAYER);
+            if (indexDialogue == currentMission.GetIntroDialogue().Length && !currentMission.GetCompleteMission())
+            {
+                UI_Manager._UI_MANAGER.DeactivateDialogueBox();
+                indexDialogue = 0;
+                inDialogue = false;
+                Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.PLAYER);
+                if (missionType == MissionType.HADES)
+                {
+                    currentMission.CompleteMission();
+                    Game_Manager._GAME_MANAGER.GoToScene("Test_Level_1");
+                }
+            }
+            else if (indexDialogue == currentMission.GetEndDialogue().Length)
+            {
+                UI_Manager._UI_MANAGER.DeactivateDialogueBox();
+                indexDialogue = 0;
+                currentMission.CompleteMission();
+                if (missionType == MissionType.HADES)
+                {
+                    Game_Manager._GAME_MANAGER.GoToScene("Test_Level_1");
+                }
+                inDialogue = false;
+                Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.PLAYER);
+            }
+            if (inDialogue)
+            {
+                UI_Manager._UI_MANAGER.UpdateDialogueText(currentMission.GetIntroDialogue()[indexDialogue]);
+            }
         }
-        else if (indexDialogue == currentMission.GetEndDialogue().Length)
-        {
-            UI_Manager._UI_MANAGER.DeactivateDialogueBox();
-            indexDialogue = 0;
-            currentMission.CompleteMission();
-            inDialogue = false;
-            Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.PLAYER);
-        }
-        if (inDialogue)
-        {
-            UI_Manager._UI_MANAGER.UpdateDialogueText(currentMission.GetIntroDialogue()[indexDialogue]);
-        }
+        
     }
 
     public void StartMission()
@@ -108,5 +122,10 @@ public class Mission_Manager : MonoBehaviour
     public bool GetInDialogue()
     {
         return inDialogue;
+    }
+
+    public Mission GetCurrentMission()
+    {
+        return currentMission;
     }
 }

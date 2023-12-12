@@ -5,15 +5,18 @@ using UnityEngine;
 public class ArachneBehaviour : MonoBehaviour
 {
     private Animator animator;
-
+    [SerializeField] private Transform spot;
     private void Awake()
     {
         animator = GetComponent<Animator>();
     }
 
 
-    private void Interaction()
+    private void Update()
     {
-        //animator
+        if (Mission_Manager._MISSION_MANAGER.GetCurrentMission().GetMissionObjective())
+        {
+            transform.position = spot.position;
+        }
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_Colliders : MonoBehaviour
 {
@@ -48,7 +49,10 @@ public class Player_Colliders : MonoBehaviour
             }
             if (other.gameObject.CompareTag("UnderworldGate"))
             {
-                Debug.Log("LevelFinished");
+                if (Input_Manager._INPUT_MANAGER.GetActionChangeValue())
+                {
+                    //Game_Manager._GAME_MANAGER.GoToScene()
+                }
             }
         }
     }

@@ -20,6 +20,8 @@ public class Camera_Behaviour : MonoBehaviour
 
     private RaycastHit hitInfo;
 
+    private GameObject DialogueCameraView;
+
     private void Awake()
     {
         SetTarget();
@@ -40,27 +42,34 @@ public class Camera_Behaviour : MonoBehaviour
     }
     private void LateUpdate()
     {
-        //TODO: Eje invertido de camera mirar los inputs
-        //Handle Inputs 
-        rotationX += Input_Manager._INPUT_MANAGER.GetCameraRotationValue().y * sensivity;
-        rotationY += Input_Manager._INPUT_MANAGER.GetCameraRotationValue().x * sensivity;
-
-        //Control min and max angle of the camera
-        rotationX = Mathf.Clamp(rotationX, minRotation, maxRotation);
-
-        transform.eulerAngles = new Vector3(rotationX, rotationY, 0);
-
-        //Apply smooth movement to the Camera
-        Vector3 finalPosition = Vector3.Lerp(transform.position, target.transform.position - transform.forward * targetDistance, cameraLerp * Time.deltaTime);
-
-        //Check if there are objects in between
-        if (Physics.Linecast(target.transform.position, finalPosition, out hitInfo))
+        if (Mission_Manager._MISSION_MANAGER.GetInDialogue())
         {
-            //if(hitInfo.)
-            finalPosition = hitInfo.point;
-        }
 
-        transform.position = finalPosition;
+        }
+        else
+        {
+            //Handle Inputs 
+            rotationX += Input_Manager._INPUT_MANAGER.GetCameraRotationValue().y * sensivity;
+            rotationY += Input_Manager._INPUT_MANAGER.GetCameraRotationValue().x * sensivity;
+
+            //Control min and max angle of the camera
+            rotationX = Mathf.Clamp(rotationX, minRotation, maxRotation);
+
+            transform.eulerAngles = new Vector3(rotationX, rotationY, 0);
+
+            //Apply smooth movement to the Camera
+            Vector3 finalPosition = Vector3.Lerp(transform.position, target.transform.position - transform.forward * targetDistance, cameraLerp * Time.deltaTime);
+
+            //Check if there are objects in between
+            if (Physics.Linecast(target.transform.position, finalPosition, out hitInfo))
+            {
+                //if(hitInfo.)
+                finalPosition = hitInfo.point;
+            }
+
+            transform.position = finalPosition;
+        }
+        
     }
 
     private void SetupBoat()
@@ -89,7 +98,7 @@ public class Camera_Behaviour : MonoBehaviour
     {
         if(gameGeneral == GameGeneral.PLAYER)
         {
-            target = GameObject.FindGameObjectWithTag("Player");
+            target = GameObject.FindGameObjectWithTag("CameraTarget");
         }
         if(gameGeneral == GameGeneral.BOAT)
         {

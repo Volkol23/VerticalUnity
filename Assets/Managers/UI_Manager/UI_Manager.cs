@@ -33,11 +33,10 @@ public class UI_Manager : MonoBehaviour
 
     [Header("GameUI")]
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject gameUI;
     [SerializeField] private GameObject abilitys;
-
     [SerializeField] private GameObject missionObjective;
     [SerializeField] private TMP_Text missionOnbjectiveText;
-
     [SerializeField] private GameObject currentRiver;
 
     [Header("DialogueUI")]
@@ -51,8 +50,6 @@ public class UI_Manager : MonoBehaviour
 
     [Header("Fade")]
     [SerializeField] private GameObject backgroundFade;
-
-    private bool pauseMenuActive = false;
 
     private void Awake()
     {
@@ -89,8 +86,7 @@ public class UI_Manager : MonoBehaviour
     }
     private void GoToPlay()
     {
-        Game_Manager._GAME_MANAGER.GoToScene("Test_Level_1");
-        //Game_Manager._GAME_MANAGER.GoToScene("IntroScene");
+        Game_Manager._GAME_MANAGER.GoToScene("MainStory");
         menu.SetActive(false);
     }
 
@@ -172,6 +168,15 @@ public class UI_Manager : MonoBehaviour
         animatorFade.SetTrigger("End");
     }
 
+    public void ActivateGameUI()
+    {
+        gameUI.SetActive(true);
+    }
+
+    public void DeactivateGameUI()
+    {
+        gameUI.SetActive(false);
+    }
     public void ActivatePause()
     {
         pauseMenu.SetActive(true);

@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 316b466fbf7c9be4daccfeeaff03776e, type: 3}
+  m_Name: HadesMission
+  m_EditorClassIdentifier: 
+  missionName: Hades Text
+  missionType: 3
+  missionObjectiveText: 
+  objects: []
+  missionObjectText: 
+  dialogueIntro:
+  - "Oh, querida Thanara, bienvenida a los dominios del Inframundo. Lamento sinceramente
+    la p\xE9rdida de tu padre, Caronte."
+  - "Su partida ha sumido a estos reinos en un caos inusitado. Pero, en medio de
+    la oscuridad, surge una nueva gu\xEDa, una esperanza en la forma de su valiente
+    hija."
+  - "\xA1Ah, qu\xE9 alegr\xEDa es verte asumir este papel! Pero antes de que te embarques
+    en esta traves\xEDa, perm\xEDteme explicarte los entresijos del inframundo."
+  - "Navegar\xE1s por diferentes r\xEDos, cada uno con su propio misterio y desaf\xEDos.
+    Criaturas mitol\xF3gicas aguardan en las orillas, necesitadas de tu ayuda desde
+    que tu padre ya no est\xE1 para mantener el orden."
+  - "Prep\xE1rate para interactuar con ellas, ya que su colaboraci\xF3n ser\xE1 esencial
+    para superar los obst\xE1culos que puedas encontrar en el camino."
+  - "Te advierto, el sendero no estar\xE1 exento de desaf\xEDos. Algunos r\xEDos
+    pueden albergar objetos malditos que te devolver\xE1n al punto de inicio."
+  - "Pero no te preocupes, he dispuesto muelles a lo largo del camino. Si ves uno,
+    b\xE1jate y guarda tu ubicaci\xF3n para evitar contratiempos."
+  - "Y sobre la navegaci\xF3n, querida Thanara, recuerda esta simple premisa: gira
+    la ca\xF1a del tim\xF3n hacia la derecha para virar a la izquierda, y viceversa."
+  - "As\xED mantendr\xE1s el control en los giros y asegurar\xE1s un viaje m\xE1s
+    fluido por estos reinos."
+  - "Ahora, con las riendas de la barca en tus manos, ad\xE9ntrate en la oscuridad
+    y restablece el orden perdido. Las almas aguardan tu gu\xEDa, y conf\xEDo en
+    que ser\xE1s una conductora ejemplar en este viaje inolvidable."
+  - "\xA1Que los vientos inmortales te sean propicios, Thanara!"
+  dialogueEnd:
+  - "Oh, querida Thanara, bienvenida a los dominios del Inframundo. Lamento sinceramente
+    la p\xE9rdida de tu padre, Caronte."
+  - "Su partida ha sumido a estos reinos en un caos inusitado. Pero, en medio de
+    la oscuridad, surge una nueva gu\xEDa, una esperanza en la forma de su valiente
+    hija."
+  - "\xA1Ah, qu\xE9 alegr\xEDa es verte asumir este papel! Pero antes de que te embarques
+    en esta traves\xEDa, perm\xEDteme explicarte los entresijos del inframundo."
+  - "Navegar\xE1s por diferentes r\xEDos, cada uno con su propio misterio y desaf\xEDos.
+    Criaturas mitol\xF3gicas aguardan en las orillas, necesitadas de tu ayuda desde
+    que tu padre ya no est\xE1 para mantener el orden."
+  - "Prep\xE1rate para interactuar con ellas, ya que su colaboraci\xF3n ser\xE1 esencial
+    para superar los obst\xE1culos que puedas encontrar en el camino."
+  - "Te advierto, el sendero no estar\xE1 exento de desaf\xEDos. Algunos r\xEDos
+    pueden albergar objetos malditos que te devolver\xE1n al punto de inicio."
+  - "Pero no te preocupes, he dispuesto muelles a lo largo del camino. Si ves uno,
+    b\xE1jate y guarda tu ubicaci\xF3n para evitar contratiempos."
+  - "Y sobre la navegaci\xF3n, querida Thanara, recuerda esta simple premisa: gira
+    la ca\xF1a del tim\xF3n hacia la derecha para virar a la izquierda, y viceversa."
+  - "As\xED mantendr\xE1s el control en los giros y asegurar\xE1s un viaje m\xE1s
+    fluido por estos reinos."
+  - "Ahora, con las riendas de la barca en tus manos, ad\xE9ntrate en la oscuridad
+    y restablece el orden perdido. Las almas aguardan tu gu\xEDa, y conf\xEDo en
+    que ser\xE1s una conductora ejemplar en este viaje inolvidable."
+  - "\xA1Que los vientos inmortales te sean propicios, Thanara!"

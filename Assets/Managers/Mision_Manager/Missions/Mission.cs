@@ -59,6 +59,12 @@ public class Mission : ScriptableObject
     {
         return missionCompleted;
     }
+
+    public bool GetMissionObjective()
+    {
+        return objectiveCompleted;
+    }
+
     public void CompleteMission()
     {
         missionCompleted = true;

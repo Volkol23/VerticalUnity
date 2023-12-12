@@ -42,6 +42,10 @@ public class Character_Behaviour : MonoBehaviour
             HandleMovement();
             HandleGravity();
         }
+        else
+        {
+            speed = 0;
+        }
     }
 
     private void HandleInputs()

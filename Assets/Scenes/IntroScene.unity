@@ -123,112 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &571497088
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 571497092}
-  - component: {fileID: 571497091}
-  - component: {fileID: 571497090}
-  - component: {fileID: 571497089}
-  m_Layer: 0
-  m_Name: PlaneObstacle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!64 &571497089
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 571497088}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &571497090
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 571497088}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: bff4fb111ed8e71418d89966bc6d03e2, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &571497091
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 571497088}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &571497092
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 571497088}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 37.7, z: 26.1}
-  m_LocalScale: {x: 16, y: 7, z: 7}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &584461920
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,12 +501,12 @@ PrefabInstance:
         type: 3}
       propertyPath: hadesObject
       value: 
-      objectReference: {fileID: 571497088}
+      objectReference: {fileID: 0}
     - target: {fileID: 5988280076394869478, guid: b3d3bc0961da7ce4ebb17278d796e56c,
         type: 3}
       propertyPath: obstacleObject
       value: 
-      objectReference: {fileID: 571497088}
+      objectReference: {fileID: 0}
     - target: {fileID: 5988280076394869478, guid: b3d3bc0961da7ce4ebb17278d796e56c,
         type: 3}
       propertyPath: maxTimerCooldown
@@ -621,22 +515,79 @@ PrefabInstance:
     - target: {fileID: 5988280076394869478, guid: b3d3bc0961da7ce4ebb17278d796e56c,
         type: 3}
       propertyPath: introDialogues.Array.size
-      value: 3
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5988280076394869478, guid: b3d3bc0961da7ce4ebb17278d796e56c,
         type: 3}
       propertyPath: introDialogues.Array.data[0]
-      value: numero 0
+      value: "Oh, querida Thanara, bienvenida a los dominios del Inframundo. Lamento
+        sinceramente la p\xE9rdida de tu padre, Caronte."
       objectReference: {fileID: 0}
     - target: {fileID: 5988280076394869478, guid: b3d3bc0961da7ce4ebb17278d796e56c,
         type: 3}
       propertyPath: introDialogues.Array.data[1]
-      value: numero 1
+      value: "Su partida ha sumido a estos reinos en un caos inusitado. Pero, en
+        medio de la oscuridad, surge una nueva gu\xEDa, una esperanza en la forma
+        de su valiente hija."
       objectReference: {fileID: 0}
     - target: {fileID: 5988280076394869478, guid: b3d3bc0961da7ce4ebb17278d796e56c,
         type: 3}
       propertyPath: introDialogues.Array.data[2]
-      value: numero 2
+      value: "\xA1Ah, qu\xE9 alegr\xEDa es verte asumir este papel! Pero antes de
+        que te embarques en esta traves\xEDa, perm\xEDteme explicarte los entresijos
+        del inframundo."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5988280076394869478, guid: b3d3bc0961da7ce4ebb17278d796e56c,
+        type: 3}
+      propertyPath: introDialogues.Array.data[3]
+      value: "Navegar\xE1s por diferentes r\xEDos, cada uno con su propio misterio
+        y desaf\xEDos. Criaturas mitol\xF3gicas aguardan en las orillas, necesitadas
+        de tu ayuda desde que tu padre ya no est\xE1 para mantener el orden."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5988280076394869478, guid: b3d3bc0961da7ce4ebb17278d796e56c,
+        type: 3}
+      propertyPath: introDialogues.Array.data[4]
+      value: "Prep\xE1rate para interactuar con ellas, ya que su colaboraci\xF3n
+        ser\xE1 esencial para superar los obst\xE1culos que puedas encontrar en el
+        camino."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5988280076394869478, guid: b3d3bc0961da7ce4ebb17278d796e56c,
+        type: 3}
+      propertyPath: introDialogues.Array.data[5]
+      value: "Te advierto, el sendero no estar\xE1 exento de desaf\xEDos. Algunos
+        r\xEDos pueden albergar objetos malditos que te devolver\xE1n al punto de
+        inicio."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5988280076394869478, guid: b3d3bc0961da7ce4ebb17278d796e56c,
+        type: 3}
+      propertyPath: introDialogues.Array.data[6]
+      value: "Pero no te preocupes, he dispuesto muelles a lo largo del camino. Si
+        ves uno, b\xE1jate y guarda tu ubicaci\xF3n para evitar contratiempos."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5988280076394869478, guid: b3d3bc0961da7ce4ebb17278d796e56c,
+        type: 3}
+      propertyPath: introDialogues.Array.data[7]
+      value: "Y sobre la navegaci\xF3n, querida Thanara, recuerda esta simple premisa:
+        gira la ca\xF1a del tim\xF3n hacia la derecha para virar a la izquierda,
+        y viceversa."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5988280076394869478, guid: b3d3bc0961da7ce4ebb17278d796e56c,
+        type: 3}
+      propertyPath: introDialogues.Array.data[8]
+      value: "As\xED mantendr\xE1s el control en los giros y asegurar\xE1s un viaje
+        m\xE1s fluido por estos reinos."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5988280076394869478, guid: b3d3bc0961da7ce4ebb17278d796e56c,
+        type: 3}
+      propertyPath: introDialogues.Array.data[9]
+      value: "Ahora, con las riendas de la barca en tus manos, ad\xE9ntrate en la
+        oscuridad y restablece el orden perdido. Las almas aguardan tu gu\xEDa, y
+        conf\xEDo en que ser\xE1s una conductora ejemplar en este viaje inolvidable."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5988280076394869478, guid: b3d3bc0961da7ce4ebb17278d796e56c,
+        type: 3}
+      propertyPath: introDialogues.Array.data[10]
+      value: "\xA1Que los vientos inmortales te sean propicios, Thanara!"
       objectReference: {fileID: 0}
     - target: {fileID: 7698781187336861238, guid: b3d3bc0961da7ce4ebb17278d796e56c,
         type: 3}
