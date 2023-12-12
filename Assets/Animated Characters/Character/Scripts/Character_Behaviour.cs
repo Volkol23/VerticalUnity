@@ -118,9 +118,10 @@ public class Character_Behaviour : MonoBehaviour
         //characterController.la
     }
 
-    public void SetDockPosition(Vector3 position)
+    public void SetDockPosition(Transform dockTransform)
     {
-        transform.position = position;
+        transform.position = dockTransform.position;
+        transform.rotation = dockTransform.rotation;
     }
 
     public float GetSpeed()

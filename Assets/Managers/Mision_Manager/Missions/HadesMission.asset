@@ -18,13 +18,13 @@ MonoBehaviour:
   objects: []
   missionObjectText: 
   dialogueIntro:
-  - "Oh, querida Thanara, bienvenida a los dominios del Inframundo. Lamento sinceramente
-    la p\xE9rdida de tu padre, Caronte."
+  - "Hades: Oh, querida Thanara, bienvenida a los dominios del Inframundo. Lamento
+    sinceramente la p\xE9rdida de tu padre, Caronte."
   - "Su partida ha sumido a estos reinos en un caos inusitado. Pero, en medio de
     la oscuridad, surge una nueva gu\xEDa, una esperanza en la forma de su valiente
     hija."
   - "\xA1Ah, qu\xE9 alegr\xEDa es verte asumir este papel! Pero antes de que te embarques
-    en esta traves\xEDa, perm\xEDteme explicarte los entresijos del inframundo."
+    en esta traves\xEDa, perm\xEDteme explicarte los entresijos del Inframundo."
   - "Navegar\xE1s por diferentes r\xEDos, cada uno con su propio misterio y desaf\xEDos.
     Criaturas mitol\xF3gicas aguardan en las orillas, necesitadas de tu ayuda desde
     que tu padre ya no est\xE1 para mantener el orden."
@@ -34,7 +34,7 @@ MonoBehaviour:
     pueden albergar objetos malditos que te devolver\xE1n al punto de inicio."
   - "Pero no te preocupes, he dispuesto muelles a lo largo del camino. Si ves uno,
     b\xE1jate y guarda tu ubicaci\xF3n para evitar contratiempos."
-  - "Y sobre la navegaci\xF3n, querida Thanara, recuerda esta simple premisa: gira
+  - "Y  sobre la navegaci\xF3n, querida Thanara, recuerda esta simple premisa: gira
     la ca\xF1a del tim\xF3n hacia la derecha para virar a la izquierda, y viceversa."
   - "As\xED mantendr\xE1s el control en los giros y asegurar\xE1s un viaje m\xE1s
     fluido por estos reinos."
@@ -43,8 +43,8 @@ MonoBehaviour:
     que ser\xE1s una conductora ejemplar en este viaje inolvidable."
   - "\xA1Que los vientos inmortales te sean propicios, Thanara!"
   dialogueEnd:
-  - "Oh, querida Thanara, bienvenida a los dominios del Inframundo. Lamento sinceramente
-    la p\xE9rdida de tu padre, Caronte."
+  - "Hades: Oh, querida Thanara, bienvenida a los dominios del Inframundo. Lamento
+    sinceramente la p\xE9rdida de tu padre, Caronte."
   - "Su partida ha sumido a estos reinos en un caos inusitado. Pero, en medio de
     la oscuridad, surge una nueva gu\xEDa, una esperanza en la forma de su valiente
     hija."

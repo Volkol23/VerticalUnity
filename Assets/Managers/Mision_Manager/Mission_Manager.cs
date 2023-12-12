@@ -50,11 +50,15 @@ public class Mission_Manager : MonoBehaviour
                 UI_Manager._UI_MANAGER.DeactivateDialogueBox();
                 indexDialogue = 0;
                 inDialogue = false;
-                Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.PLAYER);
                 if (missionType == MissionType.HADES)
                 {
                     currentMission.CompleteMission();
+                    Debug.Log("HadesCompleta");
                     Game_Manager._GAME_MANAGER.GoToScene((int)SceneIndex.LEVEL1);
+                }
+                else
+                {
+                    Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.PLAYER);
                 }
             }
             else if (indexDialogue == currentMission.GetEndDialogue().Length)
@@ -64,6 +68,7 @@ public class Mission_Manager : MonoBehaviour
                 currentMission.CompleteMission();
                 if (missionType == MissionType.HADES)
                 {
+                    Debug.Log("Hades Complete");
                     Game_Manager._GAME_MANAGER.GoToScene((int)SceneIndex.LEVEL1);
                 }
                 inDialogue = false;

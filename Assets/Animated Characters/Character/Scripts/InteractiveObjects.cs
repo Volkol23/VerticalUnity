@@ -26,19 +26,22 @@ public class InteractiveObjects : MonoBehaviour
 
     private void GetDockPosition()
     {
-        GameObject[] docks = GameObject.FindGameObjectsWithTag("DockPosition");
+        GameObject[] docks = GameObject.FindGameObjectsWithTag("Dock");
 
         float proximity = 100000000f;
         foreach(GameObject dock in docks)
         {
             float buffer = Vector3.Distance(dock.transform.position, transform.position);
-            if(buffer < proximity)
+            dock.GetComponent<Dock_SavePoint>().EraseSavePoint();
+            if (buffer < proximity)
             {
                 proximity = buffer;
                 closestDock = dock;
             }
         }
         dockTransform = closestDock.transform;
+        closestDock.GetComponent<Dock_SavePoint>().SetSavePoint();
+        Game_Manager._GAME_MANAGER.SaveDock();
     }
 
     public Transform GetClosestDock()

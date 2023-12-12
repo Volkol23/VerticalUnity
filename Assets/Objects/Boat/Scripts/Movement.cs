@@ -100,8 +100,10 @@ public class Movement : MonoBehaviour
         }
     }
 
-    public void SetDockPosition()
+    public void SetDockPosition(Transform dockTransform)
     {
         rb.velocity = Vector3.zero;
+        transform.position = dockTransform.position;
+        transform.rotation = dockTransform.rotation;
     }
 }

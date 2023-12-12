@@ -98,7 +98,7 @@ public class Camera_Behaviour : MonoBehaviour
     {
         if(gameGeneral == GameGeneral.PLAYER)
         {
-            target = GameObject.FindGameObjectWithTag("CameraTarget");
+            target = GameObject.FindGameObjectWithTag("Player");
         }
         if(gameGeneral == GameGeneral.BOAT)
         {
