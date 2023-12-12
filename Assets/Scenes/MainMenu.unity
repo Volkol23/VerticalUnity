@@ -838,7 +838,7 @@ MonoBehaviour:
   m_text: 'Preview Text '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d5f36e2251cb6c54896c44841fa9072e, type: 2}
-  m_sharedMaterial: {fileID: -9049908242077872406, guid: 1bb6b1eb27e21d041a10f3c95c3139f2,
+  m_sharedMaterial: {fileID: 6165527271499905394, guid: d5f36e2251cb6c54896c44841fa9072e,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -863,7 +863,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 46.25
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1483,7 +1483,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &578875000
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4756,7 +4756,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1495418145
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4872,7 +4872,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1536316665
 RectTransform:
   m_ObjectHideFlags: 0

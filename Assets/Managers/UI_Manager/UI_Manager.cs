@@ -51,6 +51,8 @@ public class UI_Manager : MonoBehaviour
     [Header("Fade")]
     [SerializeField] private GameObject backgroundFade;
 
+    private bool pauseActive;
+
     private void Awake()
     {
         if (_UI_MANAGER != null && _UI_MANAGER != this)
@@ -79,10 +81,7 @@ public class UI_Manager : MonoBehaviour
 
     private void Update()
     {
-        if (Input_Manager._INPUT_MANAGER.GetPauseValue())
-        {
-            Pause();
-        }
+
     }
     private void GoToPlay()
     {
@@ -122,36 +121,36 @@ public class UI_Manager : MonoBehaviour
 
     private void GoToMainMenu()
     {
-        Game_Manager._GAME_MANAGER.GoToScene((int)SceneIndex.MAINMENU);
-        //menu.SetActive(true);
-        if (pauseMenu)
-        {
-            pauseMenu.SetActive(false);
-        }
+        pauseMenu.SetActive(false);
         Debug.Log("MainMenu");
+        menu.SetActive(true);
+        Game_Manager._GAME_MANAGER.GoToScene((int)SceneIndex.MAINMENU);
     }
 
     private void Resume()
     {
-        if (pauseMenu)
-        {
-            pauseMenu.SetActive(false);
-        }
         Game_Manager._GAME_MANAGER.ChangeGeneral(gameGeneralPause);
-        Debug.Log("Resume");
+        pauseMenu.SetActive(false);
         Time.timeScale = 1;
+        pauseActive = false;
+
+        Debug.Log("Resume");
     }
 
-    private void Pause()
+    public void Pause()
     {
-        if (pauseMenu)
-        {
-            pauseMenu.SetActive(true);
-        }
+        pauseMenu.SetActive(true);
         Time.timeScale = 0;
+        pauseActive = true;
+
         gameGeneralPause = Game_Manager._GAME_MANAGER.GetCurrentGeneral();
         Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.MENU);
         resumeButton.Select();
+    }
+
+    public bool GetPauseActive()
+    {
+        return pauseActive;
     }
     private void NextDialogue()
     {

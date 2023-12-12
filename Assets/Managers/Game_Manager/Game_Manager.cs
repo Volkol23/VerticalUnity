@@ -88,16 +88,6 @@ public class Game_Manager : MonoBehaviour
     public void ChangeGeneral(GameGeneral gameGeneralState)
     {
         currentGeneral = gameGeneralState;
-        if(currentGeneral == GameGeneral.PLAYER)
-        {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            //player.GetComponent<Character_Behaviour>().SetDockPosition(playerPosition);
-        }
-        if(currentGeneral == GameGeneral.BOAT)
-        {
-            GameObject boat = GameObject.FindGameObjectWithTag("Boat");
-            //boat.GetComponent<Movement>().SetDockPosition(boatPostion);
-        }
     }
 
     public GameGeneral GetCurrentGeneral()
@@ -112,6 +102,7 @@ public class Game_Manager : MonoBehaviour
     
     public void GoToScene(int sceneIndex)
     {
+        Debug.Log("sceneIndex" + sceneIndex);
         StartCoroutine(LoadSceneCorutine(sceneIndex));
     }
 

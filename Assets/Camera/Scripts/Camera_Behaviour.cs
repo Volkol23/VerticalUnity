@@ -22,9 +22,12 @@ public class Camera_Behaviour : MonoBehaviour
 
     private GameObject DialogueCameraView;
 
+    int layerMask;
     private void Awake()
     {
         SetTarget();
+
+        layerMask = 1 << 8;
     }
 
     private void Update()
@@ -61,6 +64,12 @@ public class Camera_Behaviour : MonoBehaviour
             Vector3 finalPosition = Vector3.Lerp(transform.position, target.transform.position - transform.forward * targetDistance, cameraLerp * Time.deltaTime);
 
             //Check if there are objects in between
+            Ray ray = new Ray();
+            if(Physics.Raycast(transform.position, target.transform.position - transform.position, out hitInfo, 50f, layerMask))
+            {
+                
+            }
+
             if (Physics.Linecast(target.transform.position, finalPosition, out hitInfo))
             {
                 //if(hitInfo.)
@@ -76,7 +85,7 @@ public class Camera_Behaviour : MonoBehaviour
     {
         targetDistance = 25f;
         cameraLerp = 3f;
-        sensivity = 0.2f;
+        sensivity = 0.1f;
         minRotation = 0;
         maxRotation = 60f;
 

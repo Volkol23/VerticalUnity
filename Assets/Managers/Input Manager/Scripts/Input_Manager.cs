@@ -22,6 +22,8 @@ public class Input_Manager : MonoBehaviour
     private bool pauseValue = false;
     private bool actionChangeValue = false;
     private bool resetValue = false;
+
+    private bool isInPause;
     private void Awake()
     {
         //Check if it can be created this singleton
@@ -36,7 +38,6 @@ public class Input_Manager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
 
             inputActions = new BoatInputActions();
-            //playerInput = new PlayerInput();
 
             inputActions.BoatController.Accelerate.started += AccelerateValue;
             inputActions.BoatController.Brake.started += BrakeValue;
@@ -48,7 +49,10 @@ public class Input_Manager : MonoBehaviour
             inputActions.Player.Move.performed += LeftAxisValue;
             inputActions.Player.Rotate.performed += RotateCameraValue;
 
-            //Pause Action inputs
+            inputActions.Player.Pause.performed += PauseValue;
+            inputActions.BoatController.Pause.performed += PauseValue;
+
+
         }
     }
 
@@ -61,13 +65,13 @@ public class Input_Manager : MonoBehaviour
             case GameGeneral.PLAYER:
                 ChangePlayerInputs();
                 actionChangeValue = inputActions.Player.ActionChange.IsPressed();
-                pauseValue = inputActions.Player.Pause.IsPressed();
+                //pauseValue = inputActions.Player.Pause.IsPressed();
                 resetValue  = inputActions.Player.Reset.IsPressed();
                 break;
             case GameGeneral.BOAT:
                 ChangeBoatInputs();
                 actionChangeValue = inputActions.BoatController.ActionChange.IsPressed();
-                pauseValue = inputActions.BoatController.Pause.IsPressed();
+                //pauseValue = inputActions.BoatController.Pause.IsPressed();
                 resetValue = inputActions.BoatController.Reset.IsPressed();
                 break;
             case GameGeneral.MENU:
@@ -124,6 +128,11 @@ public class Input_Manager : MonoBehaviour
         moveValue = context.ReadValue<Vector2>();
     }
 
+    private void PauseValue(InputAction.CallbackContext context)
+    {
+        //pauseValue = !pauseValue;
+        UI_Manager._UI_MANAGER.Pause();
+    }
     
     public void DisableInputs()
     {
