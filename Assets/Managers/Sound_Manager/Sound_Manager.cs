@@ -25,15 +25,12 @@ public class Sound_Manager : MonoBehaviour
     public enum Music
     {
         defaultTest,
-        Lab,
-        universityAuditorium,
-        martaHouse,
-        hospital,
-        labMicroscope,
-        university,
-        hallMap,
-        menu,
-        finalGame
+        mainStory,
+        mainMenu,
+        introScene,
+        level1,
+        level2,
+        level3
     }
 
     public enum SFX
@@ -138,7 +135,7 @@ public class Sound_Manager : MonoBehaviour
     }
 
     //Buscadores del audio correspondiente
-    private  AudioClip GetMusicClip(Music music)
+    private AudioClip GetMusicClip(Music music)
     {
         foreach (SoundMusicClip musicClip in musicClips)
         {

@@ -40,9 +40,7 @@ public class Game_Manager : MonoBehaviour
                 missionLevel = MissionType.NOMISSION;
                 break;
             case 1:
-                ChangeGeneral(GameGeneral.PLAYER);
-                missionLevel = MissionType.ARACNHE;
-                Mission_Manager._MISSION_MANAGER.StartMission();
+                Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.mainStory);
                 break;
             case 2:
                 ChangeGeneral(GameGeneral.PLAYER);
