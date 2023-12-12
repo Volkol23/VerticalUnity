@@ -27,7 +27,7 @@ public class Camera_Behaviour : MonoBehaviour
     {
         SetTarget();
 
-        layerMask = 1 << 8;
+        layerMask = 7;
     }
 
     private void Update()
@@ -45,7 +45,7 @@ public class Camera_Behaviour : MonoBehaviour
     }
     private void LateUpdate()
     {
-        if (Mission_Manager._MISSION_MANAGER.GetInDialogue())
+        if (Mission_Manager._MISSION_MANAGER.GetInDialogue() || UI_Manager._UI_MANAGER.GetPauseActive())
         {
 
         }
@@ -64,13 +64,7 @@ public class Camera_Behaviour : MonoBehaviour
             Vector3 finalPosition = Vector3.Lerp(transform.position, target.transform.position - transform.forward * targetDistance, cameraLerp * Time.deltaTime);
 
             //Check if there are objects in between
-            Ray ray = new Ray();
-            if(Physics.Raycast(transform.position, target.transform.position - transform.position, out hitInfo, 50f, layerMask))
-            {
-                
-            }
-
-            if (Physics.Linecast(target.transform.position, finalPosition, out hitInfo))
+            if (Physics.Linecast(target.transform.position, finalPosition, out hitInfo, layerMask))
             {
                 //if(hitInfo.)
                 finalPosition = hitInfo.point;

@@ -43,15 +43,21 @@ public class Game_Manager : MonoBehaviour
                 ChangeGeneral(GameGeneral.MENU);
                 missionLevel = MissionType.NOMISSION;
                 Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.mainMenu);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 break;
             case 1:
                 Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.mainStory);
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
                 break;
             case 2:
                 ChangeGeneral(GameGeneral.MENU);
                 missionLevel = MissionType.HADES;
                 Mission_Manager._MISSION_MANAGER.StartMission();
                 Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.introScene);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 break;
             case 3:
                 ChangeGeneral(GameGeneral.PLAYER);
@@ -59,6 +65,8 @@ public class Game_Manager : MonoBehaviour
                 Mission_Manager._MISSION_MANAGER.StartMission();
                 Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.level1);
                 UI_Manager._UI_MANAGER.ActivateGameUI();
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
                 SaveDock();
                 break;
             case 4:
@@ -67,6 +75,8 @@ public class Game_Manager : MonoBehaviour
                 Mission_Manager._MISSION_MANAGER.StartMission();
                 Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.level2);
                 SaveDock();
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
                 break;
             case 5:
                 ChangeGeneral(GameGeneral.PLAYER);
@@ -74,6 +84,8 @@ public class Game_Manager : MonoBehaviour
                 Mission_Manager._MISSION_MANAGER.StartMission();
                 Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.mainStory);
                 SaveDock();
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
                 break;
         }
     }

@@ -122,7 +122,6 @@ public class UI_Manager : MonoBehaviour
     private void GoToMainMenu()
     {
         pauseMenu.SetActive(false);
-        Debug.Log("MainMenu");
         menu.SetActive(true);
         Game_Manager._GAME_MANAGER.GoToScene((int)SceneIndex.MAINMENU);
     }
@@ -134,7 +133,8 @@ public class UI_Manager : MonoBehaviour
         Time.timeScale = 1;
         pauseActive = false;
 
-        Debug.Log("Resume");
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void Pause()
@@ -146,6 +146,9 @@ public class UI_Manager : MonoBehaviour
         gameGeneralPause = Game_Manager._GAME_MANAGER.GetCurrentGeneral();
         Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.MENU);
         resumeButton.Select();
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public bool GetPauseActive()

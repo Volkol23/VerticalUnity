@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfTypeDate xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeDate>
+    <guid>4f1442a9092d43240a15aa5f624a6b83</guid>
+    <fileName>Assets/Plugins/UnitySweeper/Editor/AssetCollector.cs</fileName>
+    <timeStamp>2023-12-12T19:39:44.497428+01:00</timeStamp>
+    <typeFullName>
+      <string>UnitySweeper.AssetCollector</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp-Editor-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>57ed931cae69a174092ada3733eacd1c</guid>
+    <fileName>Assets/Plugins/UnitySweeper/Editor/AssetReferenceCollection.cs</fileName>
+    <timeStamp>2023-12-12T19:39:44.8067929+01:00</timeStamp>
+    <typeFullName>
+      <string>UnitySweeper.AssetReferenceCollection</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp-Editor-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>ccf481c54de30e24abb811a232940e04</guid>
+    <fileName>Assets/Plugins/UnitySweeper/Editor/ClassReferenceCollection.cs</fileName>
+    <timeStamp>2023-12-12T19:39:44.951578+01:00</timeStamp>
+    <typeFullName>
+      <string>UnitySweeper.ClassReferenceCollection</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp-Editor-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>160fcc3c2f06da1459a1e4256eb0f445</guid>
+    <fileName>Assets/Plugins/UnitySweeper/Editor/CollectionData.cs</fileName>
+    <timeStamp>2023-12-12T19:39:45.0972036+01:00</timeStamp>
+    <typeFullName>
+      <string>UnitySweeper.CollectionData</string>
+      <string>UnitySweeper.TypeDate</string>
+      <string>UnitySweeper.IReferenceCollection</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp-Editor-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>1b59d626e15d5854789262a0d91c09fa</guid>
+    <fileName>Assets/Plugins/UnitySweeper/Editor/FindUnusedAssetsWindow.cs</fileName>
+    <timeStamp>2023-12-12T19:39:45.147445+01:00</timeStamp>
+    <typeFullName>
+      <string>UnitySweeper.FindUnusedAssetsWindow</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp-Editor-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>00891b08468ce0944b320e1e3dbe434f</guid>
+    <fileName>Assets/Plugins/UnitySweeper/Editor/ShaderReferenceCollection.cs</fileName>
+    <timeStamp>2023-12-12T19:39:45.2983578+01:00</timeStamp>
+    <typeFullName>
+      <string>UnitySweeper.ShaderReferenceCollection</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp-Editor-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>20daf232ae7a07741ae17867c153b7c8</guid>
+    <fileName>Assets/Managers/GameGeneral.cs</fileName>
+    <timeStamp>2023-12-12T16:51:16.5648184+01:00</timeStamp>
+    <typeFullName>
+      <string>GameGeneral</string>
+      <string>MissionType</string>
+      <string>SceneIndex</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>75c32e2a8659dfb48a291878b9f8d5af</guid>
+    <fileName>Assets/Animated Characters/Hades/Hades_Behaviour.cs</fileName>
+    <timeStamp>2023-12-12T16:50:40.5839256+01:00</timeStamp>
+    <typeFullName>
+      <string>Hades_Behaviour</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>bb338fc0d2e306148a1cde7b33883f1e</guid>
+    <fileName>Assets/Camera/Scripts/Camera_Behaviour.cs</fileName>
+    <timeStamp>2023-12-12T19:07:23.977074+01:00</timeStamp>
+    <typeFullName>
+      <string>Camera_Behaviour</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>25029c385b0cdc74fad578f8219bdc5c</guid>
+    <fileName>Assets/Managers/Game_Manager/Game_Manager.cs</fileName>
+    <timeStamp>2023-12-12T19:04:01.9246706+01:00</timeStamp>
+    <typeFullName>
+      <string>Game_Manager</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>f67018585e91466488312cc4be43790f</guid>
+    <fileName>Assets/Managers/Mision_Manager/Mission_Manager.cs</fileName>
+    <timeStamp>2023-12-12T16:51:16.5815755+01:00</timeStamp>
+    <typeFullName>
+      <string>Mission_Manager</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>83a55aae9176c4b4f839f7bb7be34748</guid>
+    <fileName>Assets/Managers/Sound_Manager/AudioAssets.cs</fileName>
+    <timeStamp>2023-12-12T16:51:16.5815755+01:00</timeStamp>
+    <typeFullName>
+      <string>SoundClip</string>
+      <string>SoundMusicClip</string>
+      <string>SoundSFXClip</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>ade70d4f45910ef4ca6604ff14f28eea</guid>
+    <fileName>Assets/Managers/Sound_Manager/Sound_Manager.cs</fileName>
+    <timeStamp>2023-12-12T16:51:16.5815755+01:00</timeStamp>
+    <typeFullName>
+      <string>Sound_Manager</string>
+      <string>Sound_Manager+Music</string>
+      <string>Sound_Manager+SFX</string>
+      <string>Sound_Manager+TypeOfSound</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>7716eae952c232240a2035ab75cb36b3</guid>
+    <fileName>Assets/Managers/UI_Manager/OptionsBehaviour.cs</fileName>
+    <timeStamp>2023-12-12T16:51:16.5815755+01:00</timeStamp>
+    <typeFullName>
+      <string>OptionsBehaviour</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>e8a94a49ae10c6c488e5a2b4780923fa</guid>
+    <fileName>Assets/Managers/UI_Manager/UI_Manager.cs</fileName>
+    <timeStamp>2023-12-12T18:49:25.5667613+01:00</timeStamp>
+    <typeFullName>
+      <string>UI_Manager</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>fdf217e8eecd1c943afb52f003b82024</guid>
+    <fileName>Assets/Objects/UnderworldDoor/Door_Behaviour.cs</fileName>
+    <timeStamp>2023-12-12T16:51:19.2312464+01:00</timeStamp>
+    <typeFullName>
+      <string>Door_Behaviour</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>61cd87431bad06e468cddff68c34eda6</guid>
+    <fileName>Assets/Particle Dissolve Shader by Moonflower Carnivore/Scripts/HUDFPS.cs</fileName>
+    <timeStamp>2023-12-12T16:51:19.7737964+01:00</timeStamp>
+    <typeFullName>
+      <string>HUDFPS</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>c1da8494c5c8b964aa2058b2057aebe9</guid>
+    <fileName>Assets/Particle Dissolve Shader by Moonflower Carnivore/Scripts/PDS_GameController.cs</fileName>
+    <timeStamp>2023-12-12T16:51:19.7737964+01:00</timeStamp>
+    <typeFullName>
+      <string>PDS_GameController</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>fb70e113edfba6b43a97a49fd912b70b</guid>
+    <fileName>Assets/Particle Dissolve Shader by Moonflower Carnivore/Scripts/ScrollingUVs_PDS.cs</fileName>
+    <timeStamp>2023-12-12T16:51:19.7813962+01:00</timeStamp>
+    <typeFullName>
+      <string>ScrollingUVs_PDS</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>bb549116749324c4f9c85b7ccc799629</guid>
+    <fileName>Assets/Sketchfab For Unity/Scripts/Resizer.cs</fileName>
+    <timeStamp>2023-12-05T16:07:51.998711+01:00</timeStamp>
+    <typeFullName>
+      <string>TextureScale</string>
+      <string>TextureScale+ThreadData</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>a3e00e884f9107a44813027cf44fd811</guid>
+    <fileName>Assets/Sketchfab For Unity/Scripts/SketchfabApi.cs</fileName>
+    <timeStamp>2023-12-05T16:07:51.9992507+01:00</timeStamp>
+    <typeFullName>
+      <string>Sketchfab.Utils</string>
+      <string>Sketchfab.SketchfabAPI</string>
+      <string>Sketchfab.SketchfabRequest</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>e8532580f66d30f4ea14deadf66a6ef2</guid>
+    <fileName>Assets/Sketchfab For Unity/Scripts/SketchfabExporter.cs</fileName>
+    <timeStamp>2023-12-05T16:07:51.9992507+01:00</timeStamp>
+    <typeFullName>
+      <string>Sketchfab.SketchfabExporter</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>c746b0094f8b14040b9eda8f3d84bb28</guid>
+    <fileName>Assets/Sketchfab For Unity/Scripts/SketchfabImporter.cs</fileName>
+    <timeStamp>2023-12-05T16:07:51.9992507+01:00</timeStamp>
+    <typeFullName>
+      <string>Sketchfab.SketchfabImporter</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>9b284054d7da1d34ebc682ead5f6458c</guid>
+    <fileName>Assets/Sketchfab For Unity/Scripts/SketchfabImporterWindow.cs</fileName>
+    <timeStamp>2023-12-05T16:07:51.9992507+01:00</timeStamp>
+    <typeFullName>
+      <string>Sketchfab.SketchfabImporterWindow</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>cca29433d29f6464abb26b1aa3183b29</guid>
+    <fileName>Assets/Sketchfab For Unity/Scripts/SketchfabLogger.cs</fileName>
+    <timeStamp>2023-12-05T16:07:51.9992507+01:00</timeStamp>
+    <typeFullName>
+      <string>Sketchfab.SketchfabProfile</string>
+      <string>Sketchfab.SketchfabLogger</string>
+      <string>Sketchfab.SketchfabLogger+LOGIN_STEP</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>e7772f65ab4914e419e1c2efa7539d8b</guid>
+    <fileName>Assets/Sketchfab For Unity/Scripts/SketchfabPlugin.cs</fileName>
+    <timeStamp>2023-12-05T16:07:51.9992507+01:00</timeStamp>
+    <typeFullName>
+      <string>Sketchfab.SketchfabPlugin</string>
+      <string>Sketchfab.SketchfabPlugin+Urls</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>fce6930ddc02ac341bac49750cd6e240</guid>
+    <fileName>Assets/Sketchfab For Unity/Scripts/SketchfabUI.cs</fileName>
+    <timeStamp>2023-12-05T16:07:51.9992507+01:00</timeStamp>
+    <typeFullName>
+      <string>Sketchfab.SketchfabUI</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>2aeedb818c736f2439c8b05841ea83ac</guid>
+    <fileName>Assets/Animated Characters/Arachne/Scripts/ArachneBehaviour.cs</fileName>
+    <timeStamp>2023-12-12T16:50:40.4504792+01:00</timeStamp>
+    <typeFullName>
+      <string>ArachneBehaviour</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>8181c62304a79fd49b855302c97d84e5</guid>
+    <fileName>Assets/Animated Characters/Character/Scripts/Character_Animator_Behaviour.cs</fileName>
+    <timeStamp>2023-12-12T16:50:40.5671077+01:00</timeStamp>
+    <typeFullName>
+      <string>Character_Animator_Behaviour</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>429cd347c43f7cc41aa18ff60a13b2fe</guid>
+    <fileName>Assets/Animated Characters/Character/Scripts/Character_Behaviour.cs</fileName>
+    <timeStamp>2023-12-12T16:50:40.5671077+01:00</timeStamp>
+    <typeFullName>
+      <string>Character_Behaviour</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>9fa9eff0b45126542b33356e1a5bd634</guid>
+    <fileName>Assets/Animated Characters/Character/Scripts/InteractiveObjects.cs</fileName>
+    <timeStamp>2023-12-12T16:50:40.5671077+01:00</timeStamp>
+    <typeFullName>
+      <string>InteractiveObjects</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>bb998b3b6c7b23e4082d849f628da5e5</guid>
+    <fileName>Assets/Animated Characters/Character/Scripts/Player_Colliders.cs</fileName>
+    <timeStamp>2023-12-12T16:50:40.5671077+01:00</timeStamp>
+    <typeFullName>
+      <string>Player_Colliders</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>fd4354a25b12e884180da3aaffaf1c98</guid>
+    <fileName>Assets/Animated Characters/minotaur1/Scripts/Minotaur_Behaviour.cs</fileName>
+    <timeStamp>2023-12-12T16:50:41.1673297+01:00</timeStamp>
+    <typeFullName>
+      <string>Minotaur_Behaviour</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>0a2f62cbb6db6d241a9187c4b4f3cc85</guid>
+    <fileName>Assets/Managers/Input Manager/Scripts/Boat Input Actions.cs</fileName>
+    <timeStamp>2023-12-12T17:51:22.3150929+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>4ecef91862c67234386e8e48d5613b12</guid>
+    <fileName>Assets/Managers/Input Manager/Scripts/Input_Manager.cs</fileName>
+    <timeStamp>2023-12-12T18:03:46.0388092+01:00</timeStamp>
+    <typeFullName>
+      <string>Input_Manager</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>316b466fbf7c9be4daccfeeaff03776e</guid>
+    <fileName>Assets/Managers/Mision_Manager/Missions/Mission.cs</fileName>
+    <timeStamp>2023-12-12T16:51:16.5815755+01:00</timeStamp>
+    <typeFullName>
+      <string>Mission</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>88d68440e612271458be9ea55858e5f4</guid>
+    <fileName>Assets/Objects/Boat/Scripts/Boat_Colliders.cs</fileName>
+    <timeStamp>2023-12-12T16:51:16.8815186+01:00</timeStamp>
+    <typeFullName>
+      <string>Boat_Colliders</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>30ca0493b35a9c948afe686a70f13280</guid>
+    <fileName>Assets/Objects/Boat/Scripts/Boat_Interactive.cs</fileName>
+    <timeStamp>2023-12-12T16:51:16.8910265+01:00</timeStamp>
+    <typeFullName>
+      <string>Boat_Interactive</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>bb98c8685428de94a80d00e14d25c0da</guid>
+    <fileName>Assets/Objects/Boat/Scripts/BouyancyObject.cs</fileName>
+    <timeStamp>2023-12-12T16:51:16.8982884+01:00</timeStamp>
+    <typeFullName>
+      <string>BouyancyObject</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>c96b55ee9a2ef49429eda176622dc194</guid>
+    <fileName>Assets/Objects/Boat/Scripts/Movement.cs</fileName>
+    <timeStamp>2023-12-12T16:51:16.8982884+01:00</timeStamp>
+    <typeFullName>
+      <string>Movement</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>337d3d09394001449ab213ef161c0207</guid>
+    <fileName>Assets/Objects/Boat/Scripts/Particle_Boat_Behaviour.cs</fileName>
+    <timeStamp>2023-12-12T16:51:16.8982884+01:00</timeStamp>
+    <typeFullName>
+      <string>Particle_Boat_Behaviour</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>443e5235b4681e243b2b7534a208bb4c</guid>
+    <fileName>Assets/Objects/DecarationObjects/HandMonster/HandAnimation.cs</fileName>
+    <timeStamp>2023-12-12T16:51:18.2405492+01:00</timeStamp>
+    <typeFullName>
+      <string>HandAnimation</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>192d1875a6e58394dbe290fb94aea38b</guid>
+    <fileName>Assets/Objects/Dock/Scripts/Dock_SavePoint.cs</fileName>
+    <timeStamp>2023-12-12T16:51:19.2240681+01:00</timeStamp>
+    <typeFullName>
+      <string>Dock_SavePoint</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>41b76fa04b1c0b84b9c6d8aef5398f1c</guid>
+    <fileName>Assets/Objects/MIssionObjects/Script/MissionObject.cs</fileName>
+    <timeStamp>2023-12-12T16:51:19.2305761+01:00</timeStamp>
+    <typeFullName>
+      <string>MissionObject</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>5353da9113de97d4381dae967b74f5b6</guid>
+    <fileName>Assets/Objects/MIssionObjects/Script/MissionObjectBehaviour.cs</fileName>
+    <timeStamp>2023-12-12T16:51:19.2312464+01:00</timeStamp>
+    <typeFullName>
+      <string>MissionObjectBehaviour</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>d7eb441d9fb002a488dc11c2a74983f5</guid>
+    <fileName>Assets/Sketchfab For Unity/Scripts/AssetBrowser/SketchfabBrowserManager.cs</fileName>
+    <timeStamp>2023-12-05T16:07:51.9854007+01:00</timeStamp>
+    <typeFullName>
+      <string>Sketchfab.SORT_BY</string>
+      <string>Sketchfab.SEARCH_ENDPOINT</string>
+      <string>Sketchfab.SketchfabModel</string>
+      <string>Sketchfab.SketchfabBrowserManager</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>58d9700938d11814c9905a03f7251519</guid>
+    <fileName>Assets/Sketchfab For Unity/Scripts/AssetBrowser/SketchfabBrowserWindow.cs</fileName>
+    <timeStamp>2023-12-05T16:07:51.9979041+01:00</timeStamp>
+    <typeFullName>
+      <string>Sketchfab.SketchfabBrowser</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>0937ab964c9d395469abadebf26865d7</guid>
+    <fileName>Assets/Sketchfab For Unity/Scripts/AssetBrowser/SketchfabModelWindow.cs</fileName>
+    <timeStamp>2023-12-05T16:07:51.9980103+01:00</timeStamp>
+    <typeFullName>
+      <string>Sketchfab.SketchfabModelWindow</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>06fc691cf7cf1b742be569fb04a3791b</guid>
+    <fileName>Assets/UI/MainStoryTimeline/Scripts/NextScene.cs</fileName>
+    <timeStamp>2023-12-12T16:51:25.0235824+01:00</timeStamp>
+    <typeFullName>
+      <string>NextScene</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>77c62d2a40e848d44b542da522451282</guid>
+    <fileName>Assets/AssetStorePackages/8K Skybox Pack Free/Example Scenes/Script/RotateCamera.cs</fileName>
+    <timeStamp>2023-12-12T16:50:41.6929993+01:00</timeStamp>
+    <typeFullName>
+      <string>RotateCamera</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>e8a636f62116c0a40bbfefdf876d4608</guid>
+    <fileName>Assets/AssetStorePackages/Reversed Interactive/The Portal Collection/Scripts/SimpleCameraControllerPortals.cs</fileName>
+    <timeStamp>2023-12-12T16:50:52.784551+01:00</timeStamp>
+    <typeFullName>
+      <string>UnityTemplateProjects.SimpleCameraControllerPortals</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>fcf7219bab7fe46a1ad266029b2fee19</guid>
+    <fileName>Assets/AssetStorePackages/URP Info/TutorialInfo/Scripts/Readme.cs</fileName>
+    <timeStamp>2023-12-12T16:51:14.0150029+01:00</timeStamp>
+    <typeFullName>
+      <string>Readme</string>
+      <string>Readme+Section</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>4cbecb8c86dba8947ad87bf85f43a63b</guid>
+    <fileName>Assets/Particle Dissolve Shader by Moonflower Carnivore/Shaders/unity5/Editor/CustomMaterialEditor.cs</fileName>
+    <timeStamp>2023-12-12T16:51:19.8237496+01:00</timeStamp>
+    <typeFullName>
+      <string>CustomMaterialEditor</string>
+      <string>CustomMaterialEditor+FeatureToggle</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp-Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>8c0d9f1d675747d4396596206a5a6630</guid>
+    <fileName>Assets/Particle Dissolve Shader by Moonflower Carnivore/Shaders/unity5/Editor/Shader_softrim_dissolve.cs</fileName>
+    <timeStamp>2023-12-12T16:51:19.8313846+01:00</timeStamp>
+    <typeFullName>
+      <string>Shader_softrim_dissolve</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp-Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>b3cedb949dfc6b44aa88e1e82ba6471d</guid>
+    <fileName>Assets/AssetStorePackages/Old Sea Port/EffectExamples/Shared/Scripts/DecalDestroyer.cs</fileName>
+    <timeStamp>2023-12-12T16:50:50.5256449+01:00</timeStamp>
+    <typeFullName>
+      <string>DecalDestroyer</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>01d79beb4399f964ea234855d877ee52</guid>
+    <fileName>Assets/AssetStorePackages/Old Sea Port/EffectExamples/Shared/Scripts/ExtinguishableFire.cs</fileName>
+    <timeStamp>2023-12-12T16:50:50.5256449+01:00</timeStamp>
+    <typeFullName>
+      <string>ExtinguishableFire</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>c63d71560c10e473ebc409185edd2c8c</guid>
+    <fileName>Assets/AssetStorePackages/Old Sea Port/EffectExamples/Shared/Scripts/GunAim.cs</fileName>
+    <timeStamp>2023-12-12T16:50:50.5256449+01:00</timeStamp>
+    <typeFullName>
+      <string>GunAim</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>422d8644426474cfd8b793ce3c107314</guid>
+    <fileName>Assets/AssetStorePackages/Old Sea Port/EffectExamples/Shared/Scripts/GunShoot.cs</fileName>
+    <timeStamp>2023-12-12T16:50:50.5256449+01:00</timeStamp>
+    <typeFullName>
+      <string>GunShoot</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>4c111b630ead2a349b4c4cbf7a810085</guid>
+    <fileName>Assets/AssetStorePackages/Old Sea Port/EffectExamples/Shared/Scripts/ParticleCollision.cs</fileName>
+    <timeStamp>2023-12-12T16:50:50.5256449+01:00</timeStamp>
+    <typeFullName>
+      <string>ParticleCollision</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>1708b2ad8d149415d8ceffa3a0ae252f</guid>
+    <fileName>Assets/AssetStorePackages/Old Sea Port/EffectExamples/Shared/Scripts/ParticleExamples.cs</fileName>
+    <timeStamp>2023-12-12T16:50:50.5256449+01:00</timeStamp>
+    <typeFullName>
+      <string>ParticleExamples</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>3b87f472a8687453eac1a8091330b6d5</guid>
+    <fileName>Assets/AssetStorePackages/Old Sea Port/EffectExamples/Shared/Scripts/ParticleMenu.cs</fileName>
+    <timeStamp>2023-12-12T16:50:50.5256449+01:00</timeStamp>
+    <typeFullName>
+      <string>ParticleMenu</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+  <TypeDate>
+    <guid>476cc7d7cd9874016adc216baab94a0a</guid>
+    <fileName>Assets/AssetStorePackages/URP Info/TutorialInfo/Scripts/Editor/ReadmeEditor.cs</fileName>
+    <timeStamp>2023-12-12T16:51:14.014727+01:00</timeStamp>
+    <typeFullName>
+      <string>ReadmeEditor</string>
+    </typeFullName>
+    <assembly>Assembly-CSharp-Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+  </TypeDate>
+</ArrayOfTypeDate>
