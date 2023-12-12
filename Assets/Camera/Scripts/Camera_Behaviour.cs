@@ -56,6 +56,7 @@ public class Camera_Behaviour : MonoBehaviour
         //Check if there are objects in between
         if (Physics.Linecast(target.transform.position, finalPosition, out hitInfo))
         {
+            //if(hitInfo.)
             finalPosition = hitInfo.point;
         }
 

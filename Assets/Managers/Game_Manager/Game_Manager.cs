@@ -8,6 +8,7 @@ public class Game_Manager : MonoBehaviour
 
     public static Game_Manager _GAME_MANAGER;
 
+    [SerializeField]
     private GameGeneral currentGeneral;
 
     private MissionType missionLevel;
@@ -41,14 +42,17 @@ public class Game_Manager : MonoBehaviour
             case 1:
                 ChangeGeneral(GameGeneral.PLAYER);
                 missionLevel = MissionType.ARACNHE;
+                Mission_Manager._MISSION_MANAGER.StartMission();
                 break;
             case 2:
                 ChangeGeneral(GameGeneral.PLAYER);
                 missionLevel = MissionType.MINOTAUR;
+                Mission_Manager._MISSION_MANAGER.StartMission();
                 break;
             case 3:
                 ChangeGeneral(GameGeneral.PLAYER);
                 missionLevel = MissionType.ICEWOLF;
+                Mission_Manager._MISSION_MANAGER.StartMission();
                 break;
             case 4:
                 ChangeGeneral(GameGeneral.MENU);
@@ -63,7 +67,7 @@ public class Game_Manager : MonoBehaviour
         if(currentGeneral == GameGeneral.PLAYER)
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
-            player.transform.position = player.GetComponent<InteractiveObjects>().GetClosestDock().position;
+            //player.transform.position = player.GetComponent<InteractiveObjects>().GetClosestDock().position;
         }
         if(currentGeneral == GameGeneral.BOAT)
         {

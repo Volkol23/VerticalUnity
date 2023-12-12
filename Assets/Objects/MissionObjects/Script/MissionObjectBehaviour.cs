@@ -14,5 +14,6 @@ public class MissionObjectBehaviour : MonoBehaviour
     public void ObjectGet()
     {
         gameObject.SetActive(false);
+        Mission_Manager._MISSION_MANAGER.GetMissionObject(GetObjectId());
     }
 }

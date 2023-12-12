@@ -42,20 +42,24 @@ public class Mission_Manager : MonoBehaviour
                 currentMission.CompleteObjective();
             }
         }
-        if (inDialogue)
-        {
-            UI_Manager._UI_MANAGER.UpdateDialogueText(currentMission.GetIntroDialogue()[indexDialogue]);
-        }
-        if(indexDialogue > currentMission.GetIntroDialogue().Length && !currentMission.GetCompleteMission())
+        if(indexDialogue == currentMission.GetIntroDialogue().Length && !currentMission.GetCompleteMission())
         {
             UI_Manager._UI_MANAGER.DeactivateDialogueBox();
             indexDialogue = 0;
+            inDialogue = false;
+            Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.PLAYER);
         }
-        else if (indexDialogue > currentMission.GetEndDialogue().Length)
+        else if (indexDialogue == currentMission.GetEndDialogue().Length)
         {
             UI_Manager._UI_MANAGER.DeactivateDialogueBox();
             indexDialogue = 0;
             currentMission.CompleteMission();
+            inDialogue = false;
+            Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.PLAYER);
+        }
+        if (inDialogue)
+        {
+            UI_Manager._UI_MANAGER.UpdateDialogueText(currentMission.GetIntroDialogue()[indexDialogue]);
         }
     }
 
@@ -86,6 +90,8 @@ public class Mission_Manager : MonoBehaviour
     public void InitMission()
     {
         UI_Manager._UI_MANAGER.ActivateDialogueBox();
+        inDialogue = true;
+        Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.MENU);
     }
 
     public void GetMissionObject(int id)
@@ -97,5 +103,10 @@ public class Mission_Manager : MonoBehaviour
     public void NextDialogue()
     {
         indexDialogue++;
+    }
+
+    public bool GetInDialogue()
+    {
+        return inDialogue;
     }
 }
