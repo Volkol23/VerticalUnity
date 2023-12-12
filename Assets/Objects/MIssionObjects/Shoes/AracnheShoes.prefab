@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7838797840081803101}
   - component: {fileID: 1262044960948885350}
+  - component: {fileID: 7734291457020332549}
   m_Layer: 0
   m_Name: AracnheShoes
   m_TagString: MissionObject
@@ -31,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 8869968417014189933}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1262044960948885350
 BoxCollider:
@@ -54,6 +55,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.54434323, y: 0.82708526, z: 0.62711924}
   m_Center: {x: -0.9094371, y: 0.41528004, z: -0.3306004}
+--- !u!114 &7734291457020332549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4769993990685098260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5353da9113de97d4381dae967b74f5b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemMission: {fileID: 11400000, guid: 6d7351942a33de243aa27161d4db64f6, type: 2}
 --- !u!1001 &4007034873601894667
 PrefabInstance:
   m_ObjectHideFlags: 0

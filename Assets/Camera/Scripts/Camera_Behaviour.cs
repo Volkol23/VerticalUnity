@@ -77,7 +77,7 @@ public class Camera_Behaviour : MonoBehaviour
 
     private void SetupBoat()
     {
-        targetDistance = 25f;
+        targetDistance = 30f;
         cameraLerp = 3f;
         sensivity = 0.1f;
         minRotation = 0;
@@ -88,7 +88,7 @@ public class Camera_Behaviour : MonoBehaviour
 
     private void SetupPlayer()
     {
-        targetDistance = 20f;
+        targetDistance = 25f;
         cameraLerp = 12f;
         sensivity = 0.2f;
         minRotation = -40;
@@ -101,7 +101,7 @@ public class Camera_Behaviour : MonoBehaviour
     {
         if(gameGeneral == GameGeneral.PLAYER)
         {
-            target = GameObject.FindGameObjectWithTag("Player");
+            target = GameObject.FindGameObjectWithTag("CameraTarget");
         }
         if(gameGeneral == GameGeneral.BOAT)
         {

@@ -2931,11 +2931,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4939655854939540206, guid: 16c379a140eaec84d9dc7cbfad928152,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.001
-      objectReference: {fileID: 0}
     - target: {fileID: 6450784072982177868, guid: 16c379a140eaec84d9dc7cbfad928152,
         type: 3}
       propertyPath: m_Name
@@ -16775,18 +16770,6 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4000010409153280, guid: 3228a22491941734bb83ad691d17fcb9, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 7.24592
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000010409153280, guid: 3228a22491941734bb83ad691d17fcb9, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 6.6350894
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000010409153280, guid: 3228a22491941734bb83ad691d17fcb9, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 7.24592
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000010409153280, guid: 3228a22491941734bb83ad691d17fcb9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 620.2
       objectReference: {fileID: 0}
@@ -16825,21 +16808,6 @@ PrefabInstance:
     - target: {fileID: 4000010409153280, guid: 3228a22491941734bb83ad691d17fcb9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 199000010346745340, guid: 3228a22491941734bb83ad691d17fcb9,
-        type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 199000010792666018, guid: 3228a22491941734bb83ad691d17fcb9,
-        type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 199000013425100488, guid: 3228a22491941734bb83ad691d17fcb9,
-        type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18537,6 +18505,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4534059967124144284, guid: 0dcfdbaddcdd6214bb8ffc8746fdfc88,
+        type: 3}
+      propertyPath: spot
+      value: 
+      objectReference: {fileID: 2010381005}
     - target: {fileID: 6325436369825856652, guid: 0dcfdbaddcdd6214bb8ffc8746fdfc88,
         type: 3}
       propertyPath: m_RootOrder
@@ -18596,11 +18569,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Aracnhe
-      objectReference: {fileID: 0}
-    - target: {fileID: 8352138920654834811, guid: 0dcfdbaddcdd6214bb8ffc8746fdfc88,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18678,28 +18646,5 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4769993990685098260, guid: 0be324dd65e85d441bc0f57120ac5341,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6650491052819969954}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0be324dd65e85d441bc0f57120ac5341, type: 3}
---- !u!1 &6650491052819969953 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4769993990685098260, guid: 0be324dd65e85d441bc0f57120ac5341,
-    type: 3}
-  m_PrefabInstance: {fileID: 6650491052819969952}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6650491052819969954
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6650491052819969953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5353da9113de97d4381dae967b74f5b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemMission: {fileID: 11400000, guid: 6d7351942a33de243aa27161d4db64f6, type: 2}
