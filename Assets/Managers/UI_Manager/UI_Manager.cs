@@ -86,7 +86,7 @@ public class UI_Manager : MonoBehaviour
     }
     private void GoToPlay()
     {
-        Game_Manager._GAME_MANAGER.GoToScene("MainStory");
+        Game_Manager._GAME_MANAGER.GoToScene((int)SceneIndex.MAINSTORY);
         menu.SetActive(false);
     }
 
@@ -122,7 +122,7 @@ public class UI_Manager : MonoBehaviour
 
     private void GoToMainMenu()
     {
-        Game_Manager._GAME_MANAGER.GoToScene("MainMenu");
+        Game_Manager._GAME_MANAGER.GoToScene((int)SceneIndex.MAINMENU);
         //menu.SetActive(true);
         if (pauseMenu)
         {

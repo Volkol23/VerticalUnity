@@ -13,3 +13,13 @@ public enum MissionType
     HADES,
     NOMISSION
 }
+
+public enum SceneIndex
+{
+    MAINMENU,
+    MAINSTORY,
+    INTROSCENE,
+    LEVEL1,
+    LEVEL2,
+    LEVEL3
+}

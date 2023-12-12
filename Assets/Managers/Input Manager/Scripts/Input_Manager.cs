@@ -21,6 +21,7 @@ public class Input_Manager : MonoBehaviour
     private bool brakeValue = false;
     private bool pauseValue = false;
     private bool actionChangeValue = false;
+    private bool resetValue = false;
     private void Awake()
     {
         //Check if it can be created this singleton
@@ -61,11 +62,13 @@ public class Input_Manager : MonoBehaviour
                 ChangePlayerInputs();
                 actionChangeValue = inputActions.Player.ActionChange.IsPressed();
                 pauseValue = inputActions.Player.Pause.IsPressed();
+                resetValue  = inputActions.Player.Reset.IsPressed();
                 break;
             case GameGeneral.BOAT:
                 ChangeBoatInputs();
                 actionChangeValue = inputActions.BoatController.ActionChange.IsPressed();
                 pauseValue = inputActions.BoatController.Pause.IsPressed();
+                resetValue = inputActions.BoatController.Reset.IsPressed();
                 break;
             case GameGeneral.MENU:
                 ChangeMenuInpts();
@@ -166,5 +169,10 @@ public class Input_Manager : MonoBehaviour
     public bool GetActionChangeValue()
     {
         return actionChangeValue;
+    }
+
+    public bool GetResetValue()
+    {
+        return resetValue;
     }
 }

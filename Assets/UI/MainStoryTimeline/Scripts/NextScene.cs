@@ -6,6 +6,6 @@ public class NextScene : MonoBehaviour
 {
     private void OnEnable()
     {
-        Game_Manager._GAME_MANAGER.GoToScene("IntroScene");
+        Game_Manager._GAME_MANAGER.GoToScene((int)SceneIndex.INTROSCENE);
     }
 }

@@ -51,7 +51,12 @@ public class Player_Colliders : MonoBehaviour
             {
                 if (Input_Manager._INPUT_MANAGER.GetActionChangeValue())
                 {
-                    //Game_Manager._GAME_MANAGER.GoToScene()
+                    if(SceneManager.GetActiveScene().buildIndex == 3)
+                    {
+                        Game_Manager._GAME_MANAGER.GoToScene((int)SceneIndex.MAINMENU);
+                    }
+
+                    Game_Manager._GAME_MANAGER.GoToScene(SceneManager.GetActiveScene().buildIndex + 1);
                 }
             }
         }

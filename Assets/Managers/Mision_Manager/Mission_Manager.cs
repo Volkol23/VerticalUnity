@@ -54,7 +54,7 @@ public class Mission_Manager : MonoBehaviour
                 if (missionType == MissionType.HADES)
                 {
                     currentMission.CompleteMission();
-                    Game_Manager._GAME_MANAGER.GoToScene("Test_Level_1");
+                    Game_Manager._GAME_MANAGER.GoToScene((int)SceneIndex.LEVEL1);
                 }
             }
             else if (indexDialogue == currentMission.GetEndDialogue().Length)
@@ -64,7 +64,7 @@ public class Mission_Manager : MonoBehaviour
                 currentMission.CompleteMission();
                 if (missionType == MissionType.HADES)
                 {
-                    Game_Manager._GAME_MANAGER.GoToScene("Test_Level_1");
+                    Game_Manager._GAME_MANAGER.GoToScene((int)SceneIndex.LEVEL1);
                 }
                 inDialogue = false;
                 Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.PLAYER);

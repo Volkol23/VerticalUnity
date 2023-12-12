@@ -37,6 +37,15 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
+                    ""name"": ""Reset"",
+                    ""type"": ""Button"",
+                    ""id"": ""d1a48748-28f9-422f-8e64-8f51cff796e0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Brake"",
                     ""type"": ""Value"",
                     ""id"": ""17b12b76-6d5c-4a9a-97f3-7943ecf50cca"",
@@ -236,6 +245,28 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""ActionChange"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6a1fe2d2-489e-46b0-af24-a879e0dcd6c6"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reset"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""173e1440-e230-4028-afd0-750b3f5a1e8b"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reset"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -277,6 +308,15 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Reset"",
+                    ""type"": ""Button"",
+                    ""id"": ""4154d062-7f87-4d90-8a99-ff1c9034c814"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)"",
                     ""initialStateCheck"": false
                 }
             ],
@@ -410,6 +450,28 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""ActionChange"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1f571b79-0951-4b45-b624-3fc09cee6640"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reset"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4c3badfc-7843-4a5a-8492-116c3b0b9ac9"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reset"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -937,6 +999,7 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
         // BoatController
         m_BoatController = asset.FindActionMap("BoatController", throwIfNotFound: true);
         m_BoatController_Accelerate = m_BoatController.FindAction("Accelerate", throwIfNotFound: true);
+        m_BoatController_Reset = m_BoatController.FindAction("Reset", throwIfNotFound: true);
         m_BoatController_Brake = m_BoatController.FindAction("Brake", throwIfNotFound: true);
         m_BoatController_Steer = m_BoatController.FindAction("Steer", throwIfNotFound: true);
         m_BoatController_Rotate = m_BoatController.FindAction("Rotate", throwIfNotFound: true);
@@ -948,6 +1011,7 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
         m_Player_Rotate = m_Player.FindAction("Rotate", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
         m_Player_ActionChange = m_Player.FindAction("ActionChange", throwIfNotFound: true);
+        m_Player_Reset = m_Player.FindAction("Reset", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1022,6 +1086,7 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_BoatController;
     private List<IBoatControllerActions> m_BoatControllerActionsCallbackInterfaces = new List<IBoatControllerActions>();
     private readonly InputAction m_BoatController_Accelerate;
+    private readonly InputAction m_BoatController_Reset;
     private readonly InputAction m_BoatController_Brake;
     private readonly InputAction m_BoatController_Steer;
     private readonly InputAction m_BoatController_Rotate;
@@ -1032,6 +1097,7 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
         private @BoatInputActions m_Wrapper;
         public BoatControllerActions(@BoatInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Accelerate => m_Wrapper.m_BoatController_Accelerate;
+        public InputAction @Reset => m_Wrapper.m_BoatController_Reset;
         public InputAction @Brake => m_Wrapper.m_BoatController_Brake;
         public InputAction @Steer => m_Wrapper.m_BoatController_Steer;
         public InputAction @Rotate => m_Wrapper.m_BoatController_Rotate;
@@ -1049,6 +1115,9 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
             @Accelerate.started += instance.OnAccelerate;
             @Accelerate.performed += instance.OnAccelerate;
             @Accelerate.canceled += instance.OnAccelerate;
+            @Reset.started += instance.OnReset;
+            @Reset.performed += instance.OnReset;
+            @Reset.canceled += instance.OnReset;
             @Brake.started += instance.OnBrake;
             @Brake.performed += instance.OnBrake;
             @Brake.canceled += instance.OnBrake;
@@ -1071,6 +1140,9 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
             @Accelerate.started -= instance.OnAccelerate;
             @Accelerate.performed -= instance.OnAccelerate;
             @Accelerate.canceled -= instance.OnAccelerate;
+            @Reset.started -= instance.OnReset;
+            @Reset.performed -= instance.OnReset;
+            @Reset.canceled -= instance.OnReset;
             @Brake.started -= instance.OnBrake;
             @Brake.performed -= instance.OnBrake;
             @Brake.canceled -= instance.OnBrake;
@@ -1111,6 +1183,7 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Rotate;
     private readonly InputAction m_Player_Pause;
     private readonly InputAction m_Player_ActionChange;
+    private readonly InputAction m_Player_Reset;
     public struct PlayerActions
     {
         private @BoatInputActions m_Wrapper;
@@ -1119,6 +1192,7 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
         public InputAction @Rotate => m_Wrapper.m_Player_Rotate;
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputAction @ActionChange => m_Wrapper.m_Player_ActionChange;
+        public InputAction @Reset => m_Wrapper.m_Player_Reset;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1140,6 +1214,9 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
             @ActionChange.started += instance.OnActionChange;
             @ActionChange.performed += instance.OnActionChange;
             @ActionChange.canceled += instance.OnActionChange;
+            @Reset.started += instance.OnReset;
+            @Reset.performed += instance.OnReset;
+            @Reset.canceled += instance.OnReset;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -1156,6 +1233,9 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
             @ActionChange.started -= instance.OnActionChange;
             @ActionChange.performed -= instance.OnActionChange;
             @ActionChange.canceled -= instance.OnActionChange;
+            @Reset.started -= instance.OnReset;
+            @Reset.performed -= instance.OnReset;
+            @Reset.canceled -= instance.OnReset;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1294,6 +1374,7 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
     public interface IBoatControllerActions
     {
         void OnAccelerate(InputAction.CallbackContext context);
+        void OnReset(InputAction.CallbackContext context);
         void OnBrake(InputAction.CallbackContext context);
         void OnSteer(InputAction.CallbackContext context);
         void OnRotate(InputAction.CallbackContext context);
@@ -1306,6 +1387,7 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
         void OnRotate(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnActionChange(InputAction.CallbackContext context);
+        void OnReset(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

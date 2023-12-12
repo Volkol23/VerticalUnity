@@ -13,6 +13,9 @@ public class Game_Manager : MonoBehaviour
 
     private MissionType missionLevel;
 
+    [SerializeField]
+    private GameObject lastDock;
+
     private void Awake()
     {
         if(_GAME_MANAGER != null && _GAME_MANAGER != this)
@@ -54,6 +57,7 @@ public class Game_Manager : MonoBehaviour
                 missionLevel = MissionType.ARACNHE;
                 Mission_Manager._MISSION_MANAGER.StartMission();
                 Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.level1);
+                UI_Manager._UI_MANAGER.ActivateGameUI();
                 break;
             case 4:
                 ChangeGeneral(GameGeneral.PLAYER);
@@ -70,6 +74,18 @@ public class Game_Manager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Input_Manager._INPUT_MANAGER.GetResetValue())
+        {
+            if (currentGeneral == GameGeneral.BOAT)
+            {
+                GameObject boat = GameObject.FindGameObjectWithTag("Boat");
+            }
+
+        }
+
+    }
     public void ChangeGeneral(GameGeneral gameGeneralState)
     {
         currentGeneral = gameGeneralState;
@@ -95,16 +111,21 @@ public class Game_Manager : MonoBehaviour
         return missionLevel;
     }
     
-    public void GoToScene(string sceneName)
+    public void GoToScene(int sceneIndex)
     {
-        StartCoroutine(LoadSceneCorutine(sceneName));
+        StartCoroutine(LoadSceneCorutine(sceneIndex));
     }
 
-    IEnumerator LoadSceneCorutine(string sceneName)
+    IEnumerator LoadSceneCorutine(int  sceneIndex)
     {
         UI_Manager._UI_MANAGER.FadeOut();
-        yield return new WaitForSeconds(2f);
-        SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadSceneAsync(sceneIndex, LoadSceneMode.Single);
         UI_Manager._UI_MANAGER.FadeIn();
+    }
+    
+    public void ResetBoat()
+    {
+
     }
 }
