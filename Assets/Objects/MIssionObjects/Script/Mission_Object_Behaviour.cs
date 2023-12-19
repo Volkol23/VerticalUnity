@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MissionObjectBehaviour : MonoBehaviour
+public class Mission_Object_Behaviour : MonoBehaviour
 {
-    [SerializeField] private MissionObject itemMission;
+    [SerializeField] private Mission_Object itemMission;
     
     public int GetObjectId()
     {

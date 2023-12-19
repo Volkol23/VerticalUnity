@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArachneBehaviour : MonoBehaviour
+public class Arachne_Behaviour : MonoBehaviour
 {
     private Animator animator;
+
     [SerializeField] private Transform spot;
     private void Awake()
     {

@@ -9,7 +9,7 @@ public class Mission : ScriptableObject
     [SerializeField] private MissionType missionType;
     [SerializeField] private string missionObjectiveText;
 
-    [SerializeField] private MissionObject[] objects;
+    [SerializeField] private Mission_Object[] objects;
     [SerializeField] private string missionObjectText;
     [SerializeField] private string[] dialogueIntro;
     [SerializeField] private string[] dialogueEnd;
@@ -26,7 +26,7 @@ public class Mission : ScriptableObject
 
     public string GetMissionObjectText(int id)
     {
-        foreach (MissionObject item in objects)
+        foreach (Mission_Object item in objects)
         {
             if(item.GetId() == id)
             {

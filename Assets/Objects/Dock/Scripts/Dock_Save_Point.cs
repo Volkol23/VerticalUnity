@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dock_SavePoint : MonoBehaviour
+public class Dock_Save_Point : MonoBehaviour
 {
     [SerializeField]
     private bool savePoint = false;

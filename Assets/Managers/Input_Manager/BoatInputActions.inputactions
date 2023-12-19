@@ -1,5 +1,5 @@
 {
-    "name": "Boat Input Actions",
+    "name": "Boat_Input_Actions",
     "maps": [
         {
             "name": "BoatController",

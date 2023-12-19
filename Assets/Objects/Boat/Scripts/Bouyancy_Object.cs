@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BouyancyObject : MonoBehaviour
+public class Bouyancy_Object : MonoBehaviour
 {
     [SerializeField] private Transform[] bouyancyPoints;
 

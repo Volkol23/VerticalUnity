@@ -21,7 +21,7 @@ public class Boat_Colliders : MonoBehaviour
                     Transform newPosition;
                     Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.PLAYER);
                     GameObject player = GameObject.FindGameObjectWithTag("Player");
-                    newPosition = player.GetComponent<InteractiveObjects>().GetClosestDock();
+                    newPosition = player.GetComponent<Interactive_Objects>().GetClosestDock();
 
                     UI_Manager._UI_MANAGER.ActivateAbilities();
                     player.GetComponent<Character_Behaviour>().SetDockPosition(newPosition);

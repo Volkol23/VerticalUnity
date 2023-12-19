@@ -33,9 +33,9 @@ public class Player_Colliders : MonoBehaviour
             {
                 if (Input_Manager._INPUT_MANAGER.GetActionChangeValue())
                 {
-                    int idObject = other.GetComponent<MissionObjectBehaviour>().GetObjectId();
+                    int idObject = other.GetComponent<Mission_Object_Behaviour>().GetObjectId();
                     Mission_Manager._MISSION_MANAGER.GetMissionObject(idObject);
-                    other.GetComponent<MissionObjectBehaviour>().ObjectGet();
+                    other.GetComponent<Mission_Object_Behaviour>().ObjectGet();
                     characterAnimator.PickUpAnimation();
                 }
             }

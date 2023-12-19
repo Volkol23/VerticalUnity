@@ -139,10 +139,10 @@ public class Game_Manager : MonoBehaviour
     {
         GameObject[] docks = GameObject.FindGameObjectsWithTag("Dock");
 
-        Dock_SavePoint savePoint;
+        Dock_Save_Point savePoint;
         foreach (GameObject dock in docks)
         {
-            savePoint = dock.GetComponent<Dock_SavePoint>();
+            savePoint = dock.GetComponent<Dock_Save_Point>();
             if (savePoint.GetSavePoint())
             {
                 playerPosition = savePoint.GetDockPositon();

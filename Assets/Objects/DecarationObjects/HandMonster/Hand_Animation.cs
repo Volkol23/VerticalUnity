@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HandAnimation : MonoBehaviour
+public class Hand_Animation : MonoBehaviour
 {
     [SerializeField]
     private float rotationSpeed;

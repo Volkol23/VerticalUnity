@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractiveObjects : MonoBehaviour
+public class Interactive_Objects : MonoBehaviour
 {
     [SerializeField] private Transform seatTransform;
 
@@ -32,7 +32,7 @@ public class InteractiveObjects : MonoBehaviour
         foreach(GameObject dock in docks)
         {
             float buffer = Vector3.Distance(dock.transform.position, transform.position);
-            dock.GetComponent<Dock_SavePoint>().EraseSavePoint();
+            dock.GetComponent<Dock_Save_Point>().EraseSavePoint();
             if (buffer < proximity)
             {
                 proximity = buffer;
@@ -40,7 +40,7 @@ public class InteractiveObjects : MonoBehaviour
             }
         }
         dockTransform = closestDock.transform;
-        closestDock.GetComponent<Dock_SavePoint>().SetSavePoint();
+        closestDock.GetComponent<Dock_Save_Point>().SetSavePoint();
         Game_Manager._GAME_MANAGER.SaveDock();
     }
 

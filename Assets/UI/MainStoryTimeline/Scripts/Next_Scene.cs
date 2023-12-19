@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NextScene : MonoBehaviour
+public class Next_Scene : MonoBehaviour
 {
     private void OnEnable()
     {

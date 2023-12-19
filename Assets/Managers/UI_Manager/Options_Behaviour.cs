@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class OptionsBehaviour : MonoBehaviour
+public class Options_Behaviour : MonoBehaviour
 {
     [SerializeField] private Slider sliderMaster;
     [SerializeField] private Slider sliderMusic;
