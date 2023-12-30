@@ -12,7 +12,6 @@ public class Door_Behaviour : MonoBehaviour
         trigger = GetComponent<Collider>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Mission_Manager._MISSION_MANAGER.GetCurrentMission().GetCompleteMission())

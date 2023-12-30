@@ -5012,7 +5012,7 @@ GameObject:
   - component: {fileID: 6329149696495742026}
   - component: {fileID: 7424113213165512229}
   m_Layer: 0
-  m_Name: BoatTest
+  m_Name: Boat
   m_TagString: Boat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
