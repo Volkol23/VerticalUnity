@@ -36,7 +36,7 @@ public class Game_Manager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // 0 - MainMenu // 1 - Main Story // 2 - Intro Hades // 3 - Level 1 Arachne // 4 - Level 2 Minotaur // 5 - Level 3 Ice 
+        // 0 - MainMenu // 1 - Main Story // 2 - Intro Hades // 3 - Level 1 Arachne // 4 - Level 2 Minotaur // 5 - Level 3 Ice // 6 - Mechanic Scene
         switch (scene.buildIndex)
         {
             case 0:
@@ -86,6 +86,16 @@ public class Game_Manager : MonoBehaviour
                 SaveDock();
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
+                break;
+            case 6: // Test Mechanic Scene
+                ChangeGeneral(GameGeneral.PLAYER);
+                missionLevel = MissionType.ARACNHE;
+                Mission_Manager._MISSION_MANAGER.StartMission();
+                Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.level1);
+                UI_Manager._UI_MANAGER.ActivateGameUI();
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                SaveDock();
                 break;
         }
     }
