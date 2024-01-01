@@ -18,6 +18,9 @@ public class Movement : MonoBehaviour
 
     private Rigidbody rb;
 
+    Vector3 normal;
+    RaycastHit hit;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -25,11 +28,21 @@ public class Movement : MonoBehaviour
     }
     private void Update()
     {
+        
         if(Game_Manager._GAME_MANAGER.GetCurrentGeneral() == GameGeneral.BOAT)
         {
             HandleInputs();
         }
-    }
+        if(Physics.Raycast(transform.position + new Vector3(0f,0f,-15f), transform.forward, out hit, 100f))
+        {
+            normal = hit.normal;
+            Debug.DrawRay(hit.point, hit.normal * 30f, Color.yellow);
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, transform.forward * 1000, Color.white);
+        }
+    } 
 
     private void HandleInputs()
     {
@@ -105,5 +118,12 @@ public class Movement : MonoBehaviour
         rb.velocity = Vector3.zero;
         transform.position = dockTransform.position;
         transform.rotation = dockTransform.rotation;
+    }
+
+    private void OnDrawGizmos()
+    {
+        //Gizmos.DrawRay(transform.position, transform.forward * 20);
+        //Gizmos.DrawRay(hit.point, normal * 30);
+        Gizmos.DrawSphere(hit.point, 5f);
     }
 }
