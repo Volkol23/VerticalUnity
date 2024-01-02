@@ -37,6 +37,7 @@ public class Movement : MonoBehaviour
         {
             normal = hit.normal;
             Debug.DrawRay(hit.point, hit.normal * 30f, Color.yellow);
+            Debug.DrawRay(transform.position, transform.forward * 1000, Color.white);
         }
         else
         {
