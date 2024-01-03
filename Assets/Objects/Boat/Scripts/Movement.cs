@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngineInternal;
 
 public class Movement : MonoBehaviour
 {
@@ -10,7 +11,12 @@ public class Movement : MonoBehaviour
     [SerializeField] private float maxSpeed;
     [SerializeField] static private float backwardsForcePenalty;
 
-    [SerializeField] private Transform pointTransform;
+    [SerializeField] private Transform steerPointTransform;
+    [SerializeField] private Transform smoothPointTransform;
+    [SerializeField] private float rayDistanceCheck;
+    [SerializeField] private float offsetForward;
+    [SerializeField] private float offsetRight;
+    [SerializeField] private float offsetLeft;
 
     [SerializeField] private float steerSpeed;
 
@@ -18,8 +24,12 @@ public class Movement : MonoBehaviour
 
     private Rigidbody rb;
 
-    Vector3 normal;
-    RaycastHit hit;
+    Vector3 rayPositionForward;
+    Vector3 rayPositionRight;
+    Vector3 rayPositionLeft;
+    RaycastHit hitForward;
+    RaycastHit hitRight;
+    RaycastHit hitLeft;
 
     private void Awake()
     {
@@ -28,20 +38,49 @@ public class Movement : MonoBehaviour
     }
     private void Update()
     {
-        
-        if(Game_Manager._GAME_MANAGER.GetCurrentGeneral() == GameGeneral.BOAT)
+        rayPositionForward = transform.position + transform.forward * offsetForward;
+        rayPositionRight = transform.position + transform.right * offsetRight;
+        rayPositionLeft = transform.position + transform.right * offsetLeft;
+        if (Game_Manager._GAME_MANAGER.GetCurrentGeneral() == GameGeneral.BOAT)
         {
             HandleInputs();
         }
-        if(Physics.Raycast(transform.position + new Vector3(0f,0f,-15f), transform.forward, out hit, 100f))
+        if(Physics.Raycast(rayPositionForward, transform.forward, out hitForward, 50f))
         {
-            normal = hit.normal;
-            Debug.DrawRay(hit.point, hit.normal * 30f, Color.yellow);
-            Debug.DrawRay(transform.position, transform.forward * 1000, Color.white);
+            if(hitForward.distance < rayDistanceCheck)
+            {
+                Debug.DrawRay(hitForward.point, hitForward.normal, Color.yellow);
+            }
+
+            Debug.DrawRay(rayPositionForward, transform.forward * 1000, Color.white);
         }
         else
         {
-            Debug.DrawRay(transform.position, transform.forward * 1000, Color.white);
+            Debug.DrawRay(rayPositionForward, transform.forward * 1000, Color.red);
+        }
+        if (Physics.Raycast(rayPositionRight, transform.right, out hitRight, 50f))
+        {
+            Debug.DrawRay(rayPositionRight, transform.right * 1000, Color.white);
+            if (hitRight.distance < rayDistanceCheck)
+            {
+                Debug.DrawRay(hitRight.point, hitRight.normal, Color.yellow);
+            }
+        }
+        else
+        {
+            Debug.DrawRay(rayPositionRight, transform.right * 1000 * 1000, Color.red);
+        }
+        if (Physics.Raycast(rayPositionLeft, -transform.right, out hitLeft, 50f))
+        {
+            Debug.DrawRay(rayPositionLeft, -transform.right * 1000, Color.white);
+            if (hitForward.distance < rayDistanceCheck)
+            {
+                Debug.DrawRay(hitLeft.point, hitLeft.normal, Color.yellow);
+            }
+        }
+        else
+        {
+            Debug.DrawRay(rayPositionLeft, -transform.right * 1000 * 1000, Color.red);
         }
     } 
 
@@ -83,7 +122,7 @@ public class Movement : MonoBehaviour
             //Rotation Force
             if (currentSpeed != 0)
             {
-                rb.AddForceAtPosition(steerDirection * transform.right * steerSpeed, pointTransform.position);
+                rb.AddForceAtPosition(steerDirection * transform.right * steerSpeed, steerPointTransform.position);
             }
 
             //Forward Force
@@ -96,8 +135,6 @@ public class Movement : MonoBehaviour
         if (force == 0 || velocity.magnitude == 0)
             return;
 
-        //force = 1 => need 1 s to reach velocity (if mass is 1) => force can be max 1 / Time.fixedDeltaTime
-        //force = Mathf.Clamp(force, -rigidbody.mass / Time.fixedDeltaTime, rigidbody.mass / Time.fixedDeltaTime);
         if(force < 0f)
         {
             force /= backwardsForcePenalty; 
@@ -125,6 +162,6 @@ public class Movement : MonoBehaviour
     {
         //Gizmos.DrawRay(transform.position, transform.forward * 20);
         //Gizmos.DrawRay(hit.point, normal * 30);
-        Gizmos.DrawSphere(hit.point, 5f);
+        //Gizmos.DrawSphere(hit.point, 5f);
     }
 }
