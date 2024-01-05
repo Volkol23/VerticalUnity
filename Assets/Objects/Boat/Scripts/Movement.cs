@@ -20,6 +20,8 @@ public class Movement : MonoBehaviour
 
     [SerializeField] private float steerSpeed;
 
+    [SerializeField] private Transform[] rayPositions;
+
     private float steerDirection;
 
     private Rigidbody rb;
@@ -30,6 +32,7 @@ public class Movement : MonoBehaviour
     RaycastHit hitForward;
     RaycastHit hitRight;
     RaycastHit hitLeft;
+    RaycastHit hitPos; 
 
     private void Awake()
     {
@@ -82,6 +85,18 @@ public class Movement : MonoBehaviour
         {
             Debug.DrawRay(rayPositionLeft, -transform.right * 1000 * 1000, Color.red);
         }
+
+        foreach(Transform rayPos in rayPositions)
+        {
+            if(Physics.Raycast(rayPos.position, rayPos.forward, out hitPos, 50f))
+            {
+                Debug.DrawRay(rayPos.position, rayPos.forward * 50f, Color.white);
+            }
+            else 
+            {
+                Debug.DrawRay(rayPos.position, rayPos.forward * 50f, Color.red);
+            }
+        }
     } 
 
     private void HandleInputs()
@@ -123,6 +138,8 @@ public class Movement : MonoBehaviour
             if (currentSpeed != 0)
             {
                 rb.AddForceAtPosition(steerDirection * transform.right * steerSpeed, steerPointTransform.position);
+
+                rb.AddForceAtPosition(steerDirection * -transform.right * steerSpeed, smoothPointTransform.position);
             }
 
             //Forward Force

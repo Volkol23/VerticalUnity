@@ -6,6 +6,7 @@ public class Boat_Colliders : MonoBehaviour
 {
     private GameGeneral gameGeneral;
 
+    private bool colliding;
     private void Update()
     {
         gameGeneral = Game_Manager._GAME_MANAGER.GetCurrentGeneral();
@@ -32,5 +33,25 @@ public class Boat_Colliders : MonoBehaviour
                 Mission_Manager._MISSION_MANAGER.StartMission();
             }
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (gameGeneral == GameGeneral.BOAT)
+        {
+            if(collision.gameObject.layer == 0)
+            {
+                colliding = true;
+            }
+            else
+            {
+                colliding = false;
+            }
+        }
+    }
+
+    public bool GetColliding()
+    {
+        return colliding; 
     }
 }
