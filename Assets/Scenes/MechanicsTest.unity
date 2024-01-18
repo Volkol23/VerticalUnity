@@ -3697,6 +3697,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6329149696495742026, guid: 16c379a140eaec84d9dc7cbfad928152,
         type: 3}
+      propertyPath: rayDistanceCheck
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329149696495742026, guid: 16c379a140eaec84d9dc7cbfad928152,
+        type: 3}
+      propertyPath: maxChangeDirectionTime
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329149696495742026, guid: 16c379a140eaec84d9dc7cbfad928152,
+        type: 3}
       propertyPath: rayPositions.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -24648,6 +24658,21 @@ PrefabInstance:
       propertyPath: seatTransform
       value: 
       objectReference: {fileID: 289388393}
+    - target: {fileID: 4662735159657197266, guid: ecc0761b2aa4cad44b3acde97085bcce,
+        type: 3}
+      propertyPath: acceleration
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4662735159657197266, guid: ecc0761b2aa4cad44b3acde97085bcce,
+        type: 3}
+      propertyPath: rotationLerp
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4662735159657197266, guid: ecc0761b2aa4cad44b3acde97085bcce,
+        type: 3}
+      propertyPath: deacceleration
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 6747953135026192989, guid: ecc0761b2aa4cad44b3acde97085bcce,
         type: 3}
       propertyPath: m_Name

@@ -24,7 +24,15 @@ public class Movement : MonoBehaviour
 
     private float steerDirection;
 
+    private float currentTime;
+    [SerializeField]
+    private float maxChangeDirectionTime;
+    [SerializeField]
+    private bool collindingTimer;
+
     private Rigidbody rb;
+
+    private Boat_Colliders colliders;
 
     Vector3 rayPositionForward;
     Vector3 rayPositionRight;
@@ -32,11 +40,14 @@ public class Movement : MonoBehaviour
     RaycastHit hitForward;
     RaycastHit hitRight;
     RaycastHit hitLeft;
-    RaycastHit hitPos; 
+    RaycastHit hitPos;
+
+    Vector3 normalCheck;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        colliders = GetComponent<Boat_Colliders>();
         backwardsForcePenalty = maxSpeed;
     }
     private void Update()
@@ -53,6 +64,12 @@ public class Movement : MonoBehaviour
             if(hitForward.distance < rayDistanceCheck)
             {
                 Debug.DrawRay(hitForward.point, hitForward.normal, Color.yellow);
+                normalCheck = hitForward.normal;
+                collindingTimer = true;
+            }
+            else
+            {
+                collindingTimer = false;
             }
 
             Debug.DrawRay(rayPositionForward, transform.forward * 1000, Color.white);
@@ -67,6 +84,12 @@ public class Movement : MonoBehaviour
             if (hitRight.distance < rayDistanceCheck)
             {
                 Debug.DrawRay(hitRight.point, hitRight.normal, Color.yellow);
+                normalCheck = hitRight.normal;
+                collindingTimer = true;
+            }
+            else
+            {
+                collindingTimer = false;
             }
         }
         else
@@ -79,6 +102,12 @@ public class Movement : MonoBehaviour
             if (hitForward.distance < rayDistanceCheck)
             {
                 Debug.DrawRay(hitLeft.point, hitLeft.normal, Color.yellow);
+                normalCheck = hitLeft.normal;
+                collindingTimer = true;
+            }
+            else
+            {
+                collindingTimer = false;
             }
         }
         else
@@ -96,6 +125,15 @@ public class Movement : MonoBehaviour
             {
                 Debug.DrawRay(rayPos.position, rayPos.forward * 50f, Color.red);
             }
+        }
+
+        if (collindingTimer && currentTime < maxChangeDirectionTime)
+        {
+            currentTime += Time.deltaTime;
+        }
+        else
+        {
+            currentTime = 0;
         }
     } 
 
@@ -134,6 +172,7 @@ public class Movement : MonoBehaviour
         {
             Vector3 forwardVector = Vector3.Scale(new Vector3(1f, 0f, 1f), transform.forward);
 
+            Vector3 smoothVector = Vector3.Scale(new Vector3(1f, 0f, 1f), normalCheck);
             //Rotation Force
             if (currentSpeed != 0)
             {
@@ -142,8 +181,26 @@ public class Movement : MonoBehaviour
                 rb.AddForceAtPosition(steerDirection * -transform.right * steerSpeed, smoothPointTransform.position);
             }
 
-            //Forward Force
-            ApplyForceToReachVelocity(rb, forwardVector * maxSpeed, currentSpeed);
+            if (!colliders.GetColliding())
+            {
+                //collindingTimer = false;
+                //Forward Force
+                //ApplyForceToReachVelocity(rb, forwardVector * maxSpeed, currentSpeed);
+            }
+            else
+            {
+                //collindingTimer = true;
+            }
+
+            if (collindingTimer)
+            {
+                Vector3 direction = (forwardVector + smoothVector).normalized;
+                ApplyForceToReachVelocity(rb, direction * maxSpeed, currentSpeed);
+            }
+            else 
+            {
+                ApplyForceToReachVelocity(rb, forwardVector * maxSpeed, currentSpeed);
+            }
         }
     }
 
