@@ -37,7 +37,7 @@ Transform:
   - {fileID: 4635980803683886266}
   - {fileID: 302139444402835389}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &8026722108188791626
 CharacterController:
@@ -61,7 +61,7 @@ CharacterController:
   m_Height: 5.05
   m_Radius: 0.83
   m_SlopeLimit: 45
-  m_StepOffset: 0.9
+  m_StepOffset: 3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 2.69, z: 0}
@@ -79,9 +79,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 10
   speed: 0
-  acceleration: 5
-  deacceleration: 20
-  rotationSpeed: 2
+  acceleration: 20
+  deacceleration: 50
+  rotationSpeed: 0.1
   gravity: 10
 --- !u!114 &3390635568310670437
 MonoBehaviour:

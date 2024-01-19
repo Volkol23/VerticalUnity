@@ -11,7 +11,6 @@ public class Character_Behaviour : MonoBehaviour
     [SerializeField] private float deacceleration;
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float gravity;
-    [SerializeField] private float rotationLerp;
 
     //Movement Variables
     private Vector3 finalVelocity = Vector3.zero;
@@ -42,10 +41,12 @@ public class Character_Behaviour : MonoBehaviour
             HandleRotation();
             HandleMovement();
             HandleGravity();
+            characterController.detectCollisions = true;
         }
         else
         {
             speed = 0;
+            characterController.detectCollisions = false;
         }
     }
 
@@ -92,13 +93,13 @@ public class Character_Behaviour : MonoBehaviour
 
     private void HandleRotation()
     {
-        //Roatate character relative to the forward of the camera
-        float rotation = Vector3.SignedAngle(direction, -transform.forward, transform.up);
+        Quaternion currentRotation = transform.rotation;
 
-        if (direction != transform.forward /*&& rotation > rotationThreshold*/)
+        if(accelerationIncrease != 0)
         {
-            //transform.Rotate(Vector3.up * rotation * Time.deltaTime * rotationSpeed);
-            Vector3.Lerp(direction, transform.forward, rotationLerp * Time.deltaTime);
+            //Rotate in direction of the camera
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, rotationSpeed);
         }
     }
 
@@ -116,8 +117,6 @@ public class Character_Behaviour : MonoBehaviour
         {
             finalVelocity.y += lastDirection.y * gravity * Time.deltaTime;
         }
-
-        //characterController.la
     }
 
     public void SetDockPosition(Transform dockTransform)

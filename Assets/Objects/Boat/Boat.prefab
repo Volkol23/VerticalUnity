@@ -5259,11 +5259,18 @@ MonoBehaviour:
   maxSpeed: 30
   steerPointTransform: {fileID: 1594208892654307088}
   smoothPointTransform: {fileID: 2791737419320421853}
-  rayDistanceCheck: 3
+  rayDistanceCheck: 0.5
   offsetForward: 14.25
   offsetRight: 5.73
   offsetLeft: -5.73
   steerSpeed: 10
+  rayPositions:
+  - {fileID: 4913995656820238028}
+  - {fileID: 1503987409290120069}
+  - {fileID: 5729110384650690588}
+  - {fileID: 4787435934014418959}
+  maxChangeDirectionTime: 0.05
+  collindingTimer: 0
 --- !u!114 &7424113213165512229
 MonoBehaviour:
   m_ObjectHideFlags: 0
