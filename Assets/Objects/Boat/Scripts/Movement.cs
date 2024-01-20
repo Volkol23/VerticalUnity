@@ -77,6 +77,7 @@ public class Movement : MonoBehaviour
         else
         {
             Debug.DrawRay(rayPositionForward, transform.forward * 1000, Color.red);
+            collindingTimer = false;
         }
         if (Physics.Raycast(rayPositionRight, transform.right, out hitRight, 50f))
         {
@@ -95,11 +96,12 @@ public class Movement : MonoBehaviour
         else
         {
             Debug.DrawRay(rayPositionRight, transform.right * 1000 * 1000, Color.red);
+            collindingTimer = false;
         }
         if (Physics.Raycast(rayPositionLeft, -transform.right, out hitLeft, 50f))
         {
             Debug.DrawRay(rayPositionLeft, -transform.right * 1000, Color.white);
-            if (hitForward.distance < rayDistanceCheck)
+            if (hitLeft.distance < rayDistanceCheck)
             {
                 Debug.DrawRay(hitLeft.point, hitLeft.normal, Color.yellow);
                 normalCheck = hitLeft.normal;
@@ -113,18 +115,7 @@ public class Movement : MonoBehaviour
         else
         {
             Debug.DrawRay(rayPositionLeft, -transform.right * 1000 * 1000, Color.red);
-        }
-
-        foreach(Transform rayPos in rayPositions)
-        {
-            if(Physics.Raycast(rayPos.position, rayPos.forward, out hitPos, 50f))
-            {
-                Debug.DrawRay(rayPos.position, rayPos.forward * 50f, Color.white);
-            }
-            else 
-            {
-                Debug.DrawRay(rayPos.position, rayPos.forward * 50f, Color.red);
-            }
+            collindingTimer = false;
         }
 
         if (collindingTimer && currentTime < maxChangeDirectionTime)
@@ -183,23 +174,12 @@ public class Movement : MonoBehaviour
 
             if (!colliders.GetColliding())
             {
-                //collindingTimer = false;
-                //Forward Force
-                //ApplyForceToReachVelocity(rb, forwardVector * maxSpeed, currentSpeed);
+                ApplyForceToReachVelocity(rb, forwardVector * maxSpeed, currentSpeed);
             }
-            else
-            {
-                //collindingTimer = true;
-            }
-
-            if (collindingTimer)
+            else if (collindingTimer && currentTime > 0f)
             {
                 Vector3 direction = (forwardVector + smoothVector).normalized;
                 ApplyForceToReachVelocity(rb, direction * maxSpeed, currentSpeed);
-            }
-            else 
-            {
-                ApplyForceToReachVelocity(rb, forwardVector * maxSpeed, currentSpeed);
             }
         }
     }

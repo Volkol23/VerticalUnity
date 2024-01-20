@@ -43,7 +43,14 @@ public class Boat_Colliders : MonoBehaviour
             {
                 colliding = true;
             }
-            else
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (gameGeneral == GameGeneral.BOAT)
+        {
+            if (collision.gameObject.layer == 0)
             {
                 colliding = false;
             }
