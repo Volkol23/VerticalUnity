@@ -180,6 +180,7 @@ public class Movement : MonoBehaviour
             {
                 Vector3 direction = (forwardVector + smoothVector).normalized;
                 ApplyForceToReachVelocity(rb, direction * maxSpeed, currentSpeed);
+                rb.AddForceAtPosition(-transform.forward * maxSpeed/8, smoothPointTransform.position);
             }
         }
     }
