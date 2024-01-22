@@ -52,16 +52,29 @@ public class Movement : MonoBehaviour
     }
     private void Update()
     {
-        rayPositionForward = transform.position + transform.forward * offsetForward;
-        rayPositionRight = transform.position + transform.right * offsetRight;
-        rayPositionLeft = transform.position + transform.right * offsetLeft;
         if (Game_Manager._GAME_MANAGER.GetCurrentGeneral() == GameGeneral.BOAT)
         {
             HandleInputs();
+            rb.isKinematic = false;
         }
-        if(Physics.Raycast(rayPositionForward, transform.forward, out hitForward, 50f))
+        else
         {
-            if(hitForward.distance < rayDistanceCheck)
+            currentSpeed = 0f;
+            rb.isKinematic = true;
+        }
+
+        RaycastsBehaviour();
+    }
+
+    private void RaycastsBehaviour()
+    {
+        rayPositionForward = transform.position + transform.forward * offsetForward;
+        rayPositionRight = transform.position + transform.right * offsetRight;
+        rayPositionLeft = transform.position + transform.right * offsetLeft;
+
+        if (Physics.Raycast(rayPositionForward, transform.forward, out hitForward, 50f))
+        {
+            if (hitForward.distance < rayDistanceCheck)
             {
                 Debug.DrawRay(hitForward.point, hitForward.normal, Color.yellow);
                 normalCheck = hitForward.normal;
@@ -126,7 +139,7 @@ public class Movement : MonoBehaviour
         {
             currentTime = 0;
         }
-    } 
+    }
 
     private void HandleInputs()
     {

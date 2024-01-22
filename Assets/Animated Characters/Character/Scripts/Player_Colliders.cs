@@ -22,10 +22,14 @@ public class Player_Colliders : MonoBehaviour
     {
         if(gameGeneral == GameGeneral.PLAYER)
         {
+            UI_Manager._UI_MANAGER.ActivateUIPromptText();
+
             if (other.gameObject.CompareTag("ChangeBoatPlayer"))
             {
                 if (Input_Manager._INPUT_MANAGER.GetActionChangeValue())
                 {
+                    UI_Manager._UI_MANAGER.DeactivateUIPromptText();
+
                     Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.BOAT);
                 }
             }
@@ -33,6 +37,8 @@ public class Player_Colliders : MonoBehaviour
             {
                 if (Input_Manager._INPUT_MANAGER.GetActionChangeValue())
                 {
+                    UI_Manager._UI_MANAGER.DeactivateUIPromptText();
+
                     int idObject = other.GetComponent<Mission_Object_Behaviour>().GetObjectId();
                     Mission_Manager._MISSION_MANAGER.GetMissionObject(idObject);
                     other.GetComponent<Mission_Object_Behaviour>().ObjectGet();
@@ -43,6 +49,8 @@ public class Player_Colliders : MonoBehaviour
             {
                 if (Input_Manager._INPUT_MANAGER.GetActionChangeValue())
                 {
+                    UI_Manager._UI_MANAGER.DeactivateUIPromptText();
+
                     Mission_Manager._MISSION_MANAGER.InitMission();
                     characterAnimator.BowAnimation();
                 }
@@ -51,13 +59,39 @@ public class Player_Colliders : MonoBehaviour
             {
                 if (Input_Manager._INPUT_MANAGER.GetActionChangeValue())
                 {
-                    if(SceneManager.GetActiveScene().buildIndex == 3)
+                    UI_Manager._UI_MANAGER.DeactivateUIPromptText();
+
+                    if (SceneManager.GetActiveScene().buildIndex == 3)
                     {
                         Game_Manager._GAME_MANAGER.GoToScene((int)SceneIndex.MAINMENU);
                     }
 
                     Game_Manager._GAME_MANAGER.GoToScene(SceneManager.GetActiveScene().buildIndex + 1);
+
                 }
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (gameGeneral == GameGeneral.PLAYER)
+        {
+            if (other.gameObject.CompareTag("ChangeBoatPlayer"))
+            {
+                UI_Manager._UI_MANAGER.DeactivateUIPromptText();
+            }
+            if (other.gameObject.CompareTag("UnderworldGate"))
+            {
+                UI_Manager._UI_MANAGER.DeactivateUIPromptText();
+            }
+            if (other.gameObject.CompareTag("MissionCharacter"))
+            {
+                UI_Manager._UI_MANAGER.DeactivateUIPromptText();
+            }
+            if (other.gameObject.CompareTag("MissionObject"))
+            {
+                UI_Manager._UI_MANAGER.DeactivateUIPromptText();
             }
         }
     }

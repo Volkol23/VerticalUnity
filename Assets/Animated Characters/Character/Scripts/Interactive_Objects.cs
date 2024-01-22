@@ -44,9 +44,9 @@ public class Interactive_Objects : MonoBehaviour
         Game_Manager._GAME_MANAGER.SaveDock();
     }
 
-    public Transform GetClosestDock()
+    public GameObject GetClosestDock()
     {
         GetDockPosition();
-        return dockTransform;
+        return closestDock;
     }
 }

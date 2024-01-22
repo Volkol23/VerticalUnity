@@ -15,7 +15,7 @@ public class Game_Manager : MonoBehaviour
     private MissionType missionLevel;
 
     private Transform playerPosition;
-    private Transform boatPostion;
+    private Transform boatPosition;
 
     private void Awake()
     {
@@ -142,7 +142,7 @@ public class Game_Manager : MonoBehaviour
         player.GetComponent<Character_Behaviour>().SetDockPosition(playerPosition);
 
         GameObject boat = GameObject.FindGameObjectWithTag("Boat");
-        boat.GetComponent<Movement>().SetDockPosition(boatPostion);
+        boat.GetComponent<Movement>().SetDockPosition(boatPosition);
     }
 
     public void SaveDock()
@@ -156,10 +156,10 @@ public class Game_Manager : MonoBehaviour
             if (savePoint.GetSavePoint())
             {
                 playerPosition = savePoint.GetDockPositon();
-                boatPostion = savePoint.GetBoatPosition();
+                boatPosition = savePoint.GetBoatPosition();
             }
         }
         playerPosition.rotation = Quaternion.identity;
-        boatPostion.rotation = Quaternion.identity;
+        boatPosition.rotation = Quaternion.identity;
     }
 }

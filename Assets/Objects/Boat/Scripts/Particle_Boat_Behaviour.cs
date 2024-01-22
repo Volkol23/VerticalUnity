@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Particle_Boat_Behaviour : MonoBehaviour
 {
-    private ParticleSystem particleSystem;
+    private new ParticleSystem particleSystem;
 
     private ParticleSystem.MainModule mainModule;
 

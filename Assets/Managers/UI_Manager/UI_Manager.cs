@@ -38,6 +38,8 @@ public class UI_Manager : MonoBehaviour
     [SerializeField] private GameObject missionObjective;
     [SerializeField] private TMP_Text missionOnbjectiveText;
     [SerializeField] private GameObject currentRiver;
+    [SerializeField] private GameObject uiPrompt;
+    [SerializeField] private TMP_Text uiPromptText;
 
     [Header("DialogueUI")]
     [SerializeField] private GameObject dialogueBox;
@@ -77,11 +79,6 @@ public class UI_Manager : MonoBehaviour
 
             animatorFade = backgroundFade.GetComponent<Animator>();
         }
-    }
-
-    private void Update()
-    {
-
     }
     private void GoToPlay()
     {
@@ -232,5 +229,20 @@ public class UI_Manager : MonoBehaviour
     public void DeactivateCurrentRiver()
     {
         currentRiver.SetActive(false);
+    }
+
+    public void ActivateUIPromptText()
+    {
+        uiPrompt.SetActive(true);
+    }
+
+    public void DeactivateUIPromptText()
+    {
+        uiPrompt.SetActive(false);
+    }
+
+    public void UpdateUIPromptText(string uiText) 
+    {
+        uiPromptText.text = uiText;
     }
 }
