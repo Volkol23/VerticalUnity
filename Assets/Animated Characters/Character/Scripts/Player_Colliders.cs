@@ -26,6 +26,7 @@ public class Player_Colliders : MonoBehaviour
 
             if (other.gameObject.CompareTag("ChangeBoatPlayer"))
             {
+                UI_Manager._UI_MANAGER.UpdateUIPromptText(0);
                 if (Input_Manager._INPUT_MANAGER.GetActionChangeValue())
                 {
                     UI_Manager._UI_MANAGER.DeactivateUIPromptText();
@@ -35,6 +36,7 @@ public class Player_Colliders : MonoBehaviour
             }
             if(other.gameObject.CompareTag("MissionObject"))
             {
+                UI_Manager._UI_MANAGER.UpdateUIPromptText(3);
                 if (Input_Manager._INPUT_MANAGER.GetActionChangeValue())
                 {
                     UI_Manager._UI_MANAGER.DeactivateUIPromptText();
@@ -47,6 +49,7 @@ public class Player_Colliders : MonoBehaviour
             }
             if (other.gameObject.CompareTag("MissionCharacter"))
             {
+                UI_Manager._UI_MANAGER.UpdateUIPromptText(2);
                 if (Input_Manager._INPUT_MANAGER.GetActionChangeValue())
                 {
                     UI_Manager._UI_MANAGER.DeactivateUIPromptText();
@@ -57,6 +60,7 @@ public class Player_Colliders : MonoBehaviour
             }
             if (other.gameObject.CompareTag("UnderworldGate"))
             {
+                UI_Manager._UI_MANAGER.UpdateUIPromptText(4);
                 if (Input_Manager._INPUT_MANAGER.GetActionChangeValue())
                 {
                     UI_Manager._UI_MANAGER.DeactivateUIPromptText();

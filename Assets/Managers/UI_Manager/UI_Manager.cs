@@ -40,6 +40,7 @@ public class UI_Manager : MonoBehaviour
     [SerializeField] private GameObject currentRiver;
     [SerializeField] private GameObject uiPrompt;
     [SerializeField] private TMP_Text uiPromptText;
+    [SerializeField] private string[] promptStringText;
 
     [Header("DialogueUI")]
     [SerializeField] private GameObject dialogueBox;
@@ -241,8 +242,9 @@ public class UI_Manager : MonoBehaviour
         uiPrompt.SetActive(false);
     }
 
-    public void UpdateUIPromptText(string uiText) 
+    // 0 - Subir al barco 1 - Bajar del barco 2 - Hablar con personajes 3 - Coger objetos 4 - Entrar en el siguiente nivel
+    public void UpdateUIPromptText(int idText) 
     {
-        uiPromptText.text = uiText;
+        uiPromptText.text = promptStringText[idText];
     }
 }

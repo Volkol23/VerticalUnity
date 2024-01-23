@@ -20733,6 +20733,12 @@ MonoBehaviour:
   currentRiver: {fileID: 698406055}
   uiPrompt: {fileID: 505618192}
   uiPromptText: {fileID: 1843231099}
+  promptStringText:
+  - Pulsa E/ Boton X para subir al barco
+  - Pulsa E/ Boton X para bajar del barco
+  - Pulsa E/ Boton X para hablar
+  - Pulsa E/ Boton X para coger
+  - Pulsa E/ Boton X para entrar
   dialogueBox: {fileID: 507386143}
   dialogueText: {fileID: 1735933958}
   nextDialogueButton: {fileID: 1626905223}
