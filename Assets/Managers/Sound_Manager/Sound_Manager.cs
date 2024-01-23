@@ -114,7 +114,17 @@ public class Sound_Manager : MonoBehaviour
             oneShotAudioSource = oneShotGameObject.AddComponent<AudioSource>();
             oneShotAudioSource.outputAudioMixerGroup = GetMixerGroup(type);
         }
-        oneShotAudioSource.PlayOneShot(GetSFXClip(sfx));
+
+        AudioClip sfxClip = GetSFXClip(sfx);
+        if (sfxClip != null)
+        {
+            oneShotAudioSource.clip = sfxClip;
+            oneShotAudioSource.Play();
+        }
+        else
+        {
+            Debug.LogError("SFX clip is null for " + sfx);
+        }
     }
 
     public void PlayMusicSound(TypeOfSound type, Music music)
@@ -126,7 +136,17 @@ public class Sound_Manager : MonoBehaviour
             oneShotAudioSource.outputAudioMixerGroup = GetMixerGroup(type);
             oneShotAudioSource.loop = true;
         }
-        oneShotAudioSource.PlayOneShot(GetMusicClip(music));
+
+        AudioClip musicClip = GetMusicClip(music);
+        if (musicClip != null)
+        {
+            oneShotAudioSource.clip = musicClip;
+            oneShotAudioSource.Play();
+        }
+        else
+        {
+            Debug.LogError("Music clip is null for " + music);
+        }
     }
 
     //Asigna el mixerGroup correnpondiente al clip especifico
