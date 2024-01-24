@@ -65,6 +65,7 @@ public class Game_Manager : MonoBehaviour
                 Mission_Manager._MISSION_MANAGER.StartMission();
                 Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.level1);
                 UI_Manager._UI_MANAGER.ActivateGameUI();
+                UI_Manager._UI_MANAGER.UpdateCurrentRiver(3);
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
                 SaveDock();
@@ -74,6 +75,7 @@ public class Game_Manager : MonoBehaviour
                 missionLevel = MissionType.MINOTAUR;
                 Mission_Manager._MISSION_MANAGER.StartMission();
                 Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.level2);
+                UI_Manager._UI_MANAGER.UpdateCurrentRiver(4);
                 SaveDock();
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
@@ -83,6 +85,7 @@ public class Game_Manager : MonoBehaviour
                 missionLevel = MissionType.ICEWOLF;
                 Mission_Manager._MISSION_MANAGER.StartMission();
                 Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.mainStory);
+                UI_Manager._UI_MANAGER.UpdateCurrentRiver(5);
                 SaveDock();
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
@@ -93,6 +96,7 @@ public class Game_Manager : MonoBehaviour
                 Mission_Manager._MISSION_MANAGER.StartMission();
                 Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.level1);
                 UI_Manager._UI_MANAGER.ActivateGameUI();
+                UI_Manager._UI_MANAGER.UpdateCurrentRiver(3);
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
                 SaveDock();

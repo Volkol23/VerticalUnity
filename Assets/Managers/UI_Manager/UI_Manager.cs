@@ -37,7 +37,8 @@ public class UI_Manager : MonoBehaviour
     [SerializeField] private GameObject abilitys;
     [SerializeField] private GameObject missionObjective;
     [SerializeField] private TMP_Text missionOnbjectiveText;
-    [SerializeField] private GameObject currentRiver;
+    [SerializeField] private TMP_Text currentRiver;
+    [SerializeField] private string[] currentRiverText;
     [SerializeField] private GameObject uiPrompt;
     [SerializeField] private TMP_Text uiPromptText;
     [SerializeField] private string[] promptStringText;
@@ -193,9 +194,20 @@ public class UI_Manager : MonoBehaviour
         missionOnbjectiveText.text = objectiveText;
     }
 
-    public void ActivateCurrentRiver()
+    public void UpdateCurrentRiver(int index)
     {
-        currentRiver.SetActive(true);
+        switch (index)
+        {
+            case (int)SceneIndex.LEVEL1:
+                currentRiver.text = currentRiverText[0];
+                break;
+            case (int)SceneIndex.LEVEL2:
+                currentRiver.text = currentRiverText[1];
+                break;
+            case (int)SceneIndex.LEVEL3:
+                currentRiver.text = currentRiverText[2];
+                break;
+        }
     }
 
     public void DeactivatePauseMenu()
@@ -225,11 +237,6 @@ public class UI_Manager : MonoBehaviour
     public void DeactivateMissionObjective()
     {
         missionObjective.SetActive(false);
-    }
-
-    public void DeactivateCurrentRiver()
-    {
-        currentRiver.SetActive(false);
     }
 
     public void ActivateUIPromptText()
