@@ -13,6 +13,7 @@ public class Movement : MonoBehaviour
 
     [SerializeField] private Transform steerPointTransform;
     [SerializeField] private Transform smoothPointTransform;
+    [SerializeField] private Vector3 boatRotation;
     [SerializeField] private float rayDistanceCheck;
     [SerializeField] private float offsetForward;
     [SerializeField] private float offsetRight;
@@ -24,6 +25,8 @@ public class Movement : MonoBehaviour
 
     private float steerDirection;
 
+    private Vector3 direction = Vector3.zero;
+
     private float currentTime;
     [SerializeField]
     private float maxChangeDirectionTime;
@@ -33,6 +36,9 @@ public class Movement : MonoBehaviour
     private Rigidbody rb;
 
     private Boat_Colliders colliders;
+
+    //External objects
+    private Camera mainCamera;
 
     Vector3 rayPositionForward;
     Vector3 rayPositionRight;
@@ -49,6 +55,8 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         colliders = GetComponent<Boat_Colliders>();
         backwardsForcePenalty = maxSpeed;
+        mainCamera = Camera.main;
+        direction = transform.forward;
     }
     private void Update()
     {
@@ -174,27 +182,36 @@ public class Movement : MonoBehaviour
     {
         if (Game_Manager._GAME_MANAGER.GetCurrentGeneral() == GameGeneral.BOAT)
         {
-            Vector3 forwardVector = Vector3.Scale(new Vector3(1f, 0f, 1f), transform.forward);
+            direction = mainCamera.transform.forward;
+            direction = Vector3.Scale(new Vector3(1f, 0f, 1f), direction);
 
             Vector3 smoothVector = Vector3.Scale(new Vector3(1f, 0f, 1f), normalCheck);
             //Rotation Force
-            if (currentSpeed != 0)
+            if (currentSpeed != 0 && steerDirection != 0)
             {
-                rb.AddForceAtPosition(steerDirection * transform.right * steerSpeed, steerPointTransform.position);
+                rb.AddForceAtPosition(-steerDirection * transform.right * steerSpeed, steerPointTransform.position);
 
-                rb.AddForceAtPosition(steerDirection * -transform.right * steerSpeed, smoothPointTransform.position);
+                rb.AddForceAtPosition(-steerDirection * -transform.right * steerSpeed, smoothPointTransform.position);
             }
 
             if (!colliders.GetColliding())
             {
-                ApplyForceToReachVelocity(rb, forwardVector * maxSpeed, currentSpeed);
+                ApplyForceToReachVelocity(rb, direction * maxSpeed, currentSpeed);
             }
             else if (collindingTimer && currentTime > 0f)
             {
-                Vector3 direction = (forwardVector + smoothVector).normalized;
+                Vector3 directionTest = (direction + smoothVector).normalized;
                 ApplyForceToReachVelocity(rb, direction * maxSpeed, currentSpeed);
                 rb.AddForceAtPosition(-transform.forward * maxSpeed/8, smoothPointTransform.position);
             }
+        }
+    }
+
+    private void HandleRotation()
+    {
+        if (currentSpeed != 0)
+        {
+            transform.rotation.SetFromToRotation(transform.rotation.eulerAngles, mainCamera.transform.forward);
         }
     }
 
