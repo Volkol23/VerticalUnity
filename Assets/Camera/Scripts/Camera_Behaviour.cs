@@ -6,6 +6,7 @@ public class Camera_Behaviour : MonoBehaviour
 {
     [Header("Camera Variables")]
     [SerializeField] private GameObject target;
+    [SerializeField] private GameObject boat;
     [SerializeField] private float targetDistance;
     [SerializeField] private float cameraLerp;
     [SerializeField] private float sensivity;
@@ -25,8 +26,8 @@ public class Camera_Behaviour : MonoBehaviour
     int layerMask;
     private void Awake()
     {
-        SetTarget();
-
+        SetTarget("CameraTarget");
+        boat = GameObject.FindGameObjectWithTag("Boat");
         layerMask = 7;
     }
 
@@ -51,26 +52,61 @@ public class Camera_Behaviour : MonoBehaviour
         }
         else
         {
-            //Handle Inputs 
-            rotationX += Input_Manager._INPUT_MANAGER.GetCameraRotationValue().y * sensivity;
-            rotationY += Input_Manager._INPUT_MANAGER.GetCameraRotationValue().x * sensivity;
-
-            //Control min and max angle of the camera
-            rotationX = Mathf.Clamp(rotationX, minRotation, maxRotation);
-
-            transform.eulerAngles = new Vector3(rotationX, rotationY, 0);
-
-            //Apply smooth movement to the Camera
-            Vector3 finalPosition = Vector3.Lerp(transform.position, target.transform.position - transform.forward * targetDistance, cameraLerp * Time.deltaTime);
-
-            //Check if there are objects in between
-            if (Physics.Linecast(target.transform.position, finalPosition, out hitInfo, layerMask))
+            if(gameGeneral == GameGeneral.PLAYER)
             {
-                //if(hitInfo.)
-                finalPosition = hitInfo.point;
-            }
+                //Handle Inputs 
+                rotationX += Input_Manager._INPUT_MANAGER.GetCameraRotationValue().y * sensivity;
+                rotationY += Input_Manager._INPUT_MANAGER.GetCameraRotationValue().x * sensivity;
 
-            transform.position = finalPosition;
+                //Control min and max angle of the camera
+                rotationX = Mathf.Clamp(rotationX, minRotation, maxRotation);
+
+                transform.eulerAngles = new Vector3(rotationX, rotationY, 0);
+
+                //Apply smooth movement to the Camera
+                Vector3 finalPosition = Vector3.Lerp(transform.position, target.transform.position - transform.forward * targetDistance, cameraLerp * Time.deltaTime);
+
+                //Check if there are objects in between
+                if (Physics.Linecast(target.transform.position, finalPosition, out hitInfo, layerMask))
+                {
+                    //if(hitInfo.)
+                    finalPosition = hitInfo.point;
+                }
+
+                transform.position = finalPosition;
+            } 
+            else if (gameGeneral == GameGeneral.BOAT)
+            {
+                if (!boat.GetComponent<Movement>().GetBoatStoped())
+                {
+                    transform.position = target.transform.position;
+                    transform.rotation = target.transform.rotation;
+                }
+                else
+                {
+                    //Handle Inputs 
+                    rotationX += Input_Manager._INPUT_MANAGER.GetCameraRotationValue().y * sensivity;
+                    rotationY += Input_Manager._INPUT_MANAGER.GetCameraRotationValue().x * sensivity;
+
+                    //Control min and max angle of the camera
+                    rotationX = Mathf.Clamp(rotationX, minRotation, maxRotation);
+
+                    transform.eulerAngles = new Vector3(rotationX, rotationY, 0);
+
+                    //Apply smooth movement to the Camera
+                    Vector3 finalPosition = Vector3.Lerp(transform.position, target.transform.position - transform.forward * targetDistance, cameraLerp * Time.deltaTime);
+
+                    //Check if there are objects in between
+                    if (Physics.Linecast(target.transform.position, finalPosition, out hitInfo, layerMask))
+                    {
+                        //if(hitInfo.)
+                        finalPosition = hitInfo.point;
+                    }
+
+                    transform.position = finalPosition;
+                }
+            }
+            
         }
         
     }
@@ -83,7 +119,14 @@ public class Camera_Behaviour : MonoBehaviour
         minRotation = 0;
         maxRotation = 60f;
 
-        SetTarget();
+        if (!boat.GetComponent<Movement>().GetBoatStoped())
+        {
+            SetTarget("BoatCamera");
+        }
+        else
+        {
+            SetTarget("Boat");
+        }
     }
 
     private void SetupPlayer()
@@ -94,18 +137,11 @@ public class Camera_Behaviour : MonoBehaviour
         minRotation = -40;
         maxRotation = 50f;
 
-        SetTarget();
+        SetTarget("CameraTarget");
 
     }
-    private void SetTarget()
+    private void SetTarget(string tag)
     {
-        if(gameGeneral == GameGeneral.PLAYER)
-        {
-            target = GameObject.FindGameObjectWithTag("CameraTarget");
-        }
-        if(gameGeneral == GameGeneral.BOAT)
-        {
-            target = GameObject.FindGameObjectWithTag("Boat");
-        }
+       target = GameObject.FindGameObjectWithTag(tag);
     }
 }

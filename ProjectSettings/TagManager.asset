@@ -16,6 +16,7 @@ TagManager:
   - Spot
   - BoatPosition
   - Dock
+  - BoatCamera
   layers:
   - Default
   - TransparentFX

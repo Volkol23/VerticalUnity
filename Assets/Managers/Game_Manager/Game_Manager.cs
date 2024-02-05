@@ -164,6 +164,6 @@ public class Game_Manager : MonoBehaviour
             }
         }
         playerPosition.rotation = Quaternion.identity;
-        boatPosition.rotation = Quaternion.identity;
+        //boatPosition.rotation = Quaternion.identity;
     }
 }

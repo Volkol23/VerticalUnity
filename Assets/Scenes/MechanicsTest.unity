@@ -4987,40 +4987,40 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 428694946}
     m_Modifications:
-    - target: {fileID: 545804963038765663, guid: 16c379a140eaec84d9dc7cbfad928152,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.6116282
-      objectReference: {fileID: 0}
-    - target: {fileID: 545804963038765663, guid: 16c379a140eaec84d9dc7cbfad928152,
-        type: 3}
-      propertyPath: m_Center.x
-      value: 0.0041362382
-      objectReference: {fileID: 0}
-    - target: {fileID: 545804963038765663, guid: 16c379a140eaec84d9dc7cbfad928152,
-        type: 3}
-      propertyPath: m_Center.z
-      value: -0.19795452
-      objectReference: {fileID: 0}
-    - target: {fileID: 3252311514836059571, guid: 16c379a140eaec84d9dc7cbfad928152,
-        type: 3}
-      propertyPath: m_Radius
-      value: 0.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 4939655854939540206, guid: 16c379a140eaec84d9dc7cbfad928152,
+    - target: {fileID: 2556521236926444445, guid: 16c379a140eaec84d9dc7cbfad928152,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.178
+      value: 0.408
       objectReference: {fileID: 0}
-    - target: {fileID: 6329149696495742026, guid: 16c379a140eaec84d9dc7cbfad928152,
+    - target: {fileID: 2556521236926444445, guid: 16c379a140eaec84d9dc7cbfad928152,
         type: 3}
-      propertyPath: rayDistanceCheck
-      value: 3
+      propertyPath: m_LocalPosition.z
+      value: -1.377
       objectReference: {fileID: 0}
-    - target: {fileID: 6329149696495742026, guid: 16c379a140eaec84d9dc7cbfad928152,
+    - target: {fileID: 2556521236926444445, guid: 16c379a140eaec84d9dc7cbfad928152,
         type: 3}
-      propertyPath: maxChangeDirectionTime
-      value: 0.02
+      propertyPath: m_LocalRotation.w
+      value: 0.9890977
+      objectReference: {fileID: 0}
+    - target: {fileID: 2556521236926444445, guid: 16c379a140eaec84d9dc7cbfad928152,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2556521236926444445, guid: 16c379a140eaec84d9dc7cbfad928152,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.14726111
+      objectReference: {fileID: 0}
+    - target: {fileID: 2556521236926444445, guid: 16c379a140eaec84d9dc7cbfad928152,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2556521236926444445, guid: 16c379a140eaec84d9dc7cbfad928152,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -16.936
       objectReference: {fileID: 0}
     - target: {fileID: 6450784072982177868, guid: 16c379a140eaec84d9dc7cbfad928152,
         type: 3}
@@ -5876,6 +5876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  boat: {fileID: 0}
   targetDistance: 20
   cameraLerp: 3
   sensivity: 0.2
@@ -24936,11 +24937,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dock (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 1951570275139158143, guid: 996138d93723d7946984a2d693aa3f24,
-        type: 3}
-      propertyPath: savePoint
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2905007192071153612, guid: 996138d93723d7946984a2d693aa3f24,
         type: 3}
       propertyPath: m_RootOrder
@@ -31668,6 +31664,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dock
+      objectReference: {fileID: 0}
+    - target: {fileID: 1951570275139158143, guid: 996138d93723d7946984a2d693aa3f24,
+        type: 3}
+      propertyPath: savePoint
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2905007192071153612, guid: 996138d93723d7946984a2d693aa3f24,
         type: 3}

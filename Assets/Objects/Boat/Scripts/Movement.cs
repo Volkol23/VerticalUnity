@@ -10,6 +10,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private float currentSpeed;
     [SerializeField] private float maxSpeed;
     [SerializeField] static private float backwardsForcePenalty;
+    [SerializeField] private float rotationSpeed;
 
     [SerializeField] private Transform steerPointTransform;
     [SerializeField] private Transform smoothPointTransform;
@@ -36,6 +37,8 @@ public class Movement : MonoBehaviour
     private Rigidbody rb;
 
     private Boat_Colliders colliders;
+
+    private bool isInputPressed;
 
     //External objects
     private Camera mainCamera;
@@ -157,6 +160,7 @@ public class Movement : MonoBehaviour
             {
                 currentSpeed += acceleration * Time.deltaTime;
             }
+            isInputPressed = true;
         }
         if (Input_Manager._INPUT_MANAGER.GetBrakeValue())
         {
@@ -164,6 +168,7 @@ public class Movement : MonoBehaviour
             {
                 currentSpeed -= acceleration * Time.deltaTime;
             }
+            isInputPressed = true;
         }
         if (!Input_Manager._INPUT_MANAGER.GetAccelerateValue() && !Input_Manager._INPUT_MANAGER.GetBrakeValue())
         {
@@ -175,6 +180,7 @@ public class Movement : MonoBehaviour
             {
                 currentSpeed -= acceleration * Time.deltaTime;
             }
+            isInputPressed = false;
         }
         steerDirection = Input_Manager._INPUT_MANAGER.GetSteerValue().x;
     }
@@ -182,8 +188,12 @@ public class Movement : MonoBehaviour
     {
         if (Game_Manager._GAME_MANAGER.GetCurrentGeneral() == GameGeneral.BOAT)
         {
-            direction = mainCamera.transform.forward;
-            direction = Vector3.Scale(new Vector3(1f, 0f, 1f), direction);
+            //HandleRotationAutomatic();
+            //direction = mainCamera.transform.forward;
+            //direction = Quaternion.Euler(0f, mainCamera.transform.eulerAngles.y, 0f);
+            //direction = Vector3.Scale(new Vector3(1f, 0f, 1f), direction);
+            Vector3 forwardVector = Vector3.Scale(new Vector3(1f, 0f, 1f), transform.forward);
+            direction = forwardVector;
 
             Vector3 smoothVector = Vector3.Scale(new Vector3(1f, 0f, 1f), normalCheck);
             //Rotation Force
@@ -207,11 +217,13 @@ public class Movement : MonoBehaviour
         }
     }
 
-    private void HandleRotation()
+    private void HandleRotationAutomatic()
     {
-        if (currentSpeed != 0)
+        if (currentSpeed != 0 && isInputPressed)
         {
-            transform.rotation.SetFromToRotation(transform.rotation.eulerAngles, mainCamera.transform.forward);
+            Quaternion rotation = Quaternion.LookRotation(new Vector3(mainCamera.transform.forward.x, 0f, mainCamera.transform.forward.z));
+            rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.fixedDeltaTime);
+            rb.MoveRotation(rotation);
         }
     }
 
@@ -243,6 +255,17 @@ public class Movement : MonoBehaviour
         transform.rotation = dockTransform.rotation;
     }
 
+    public bool GetBoatStoped()
+    {
+        if(currentSpeed < 0.2f && currentSpeed > -0.2f && steerDirection == 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
     private void OnDrawGizmos()
     {
         //Gizmos.DrawRay(transform.position, transform.forward * 20);
