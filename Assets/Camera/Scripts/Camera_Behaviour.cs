@@ -15,6 +15,7 @@ public class Camera_Behaviour : MonoBehaviour
     [SerializeField] private float maxRotation;
 
     private GameGeneral gameGeneral;
+    private Transform fixedPosition;
 
     private float rotationX;
     private float rotationY;
@@ -99,16 +100,12 @@ public class Camera_Behaviour : MonoBehaviour
                     //Check if there are objects in between
                     if (Physics.Linecast(target.transform.position, finalPosition, out hitInfo, layerMask))
                     {
-                        //if(hitInfo.)
                         finalPosition = hitInfo.point;
                     }
-
-                    transform.position = finalPosition;
+                        transform.position = finalPosition;
                 }
             }
-            
         }
-        
     }
 
     private void SetupBoat()
@@ -122,6 +119,7 @@ public class Camera_Behaviour : MonoBehaviour
         if (!boat.GetComponent<Movement>().GetBoatStoped())
         {
             SetTarget("BoatCamera");
+            fixedPosition = target.transform;
         }
         else
         {

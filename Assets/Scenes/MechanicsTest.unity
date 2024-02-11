@@ -5226,6 +5226,26 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6371119413717654660, guid: 16c379a140eaec84d9dc7cbfad928152,
+        type: 3}
+      propertyPath: waterLerp
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6371119413717654660, guid: 16c379a140eaec84d9dc7cbfad928152,
+        type: 3}
+      propertyPath: waterDepth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6371119413717654660, guid: 16c379a140eaec84d9dc7cbfad928152,
+        type: 3}
+      propertyPath: maxWaterDepth
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6371119413717654660, guid: 16c379a140eaec84d9dc7cbfad928152,
+        type: 3}
+      propertyPath: minWaterDepth
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 6450784072982177868, guid: 16c379a140eaec84d9dc7cbfad928152,
         type: 3}
       propertyPath: m_Name

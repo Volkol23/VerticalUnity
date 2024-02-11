@@ -11,7 +11,10 @@ public class Bouyancy_Object : MonoBehaviour
     [SerializeField] private float surfaceDrag = 0f;           //Surface Forces
     [SerializeField] private float surfaceAngularDrag = 0.05f;
     [SerializeField] private float floatingForce = 15f;        //Overall floating force
-    [SerializeField] private float waterDepth = 0f;            //Water Depth
+    [SerializeField] private float waterDepth = 0f;  //Water Depth
+    [SerializeField] private float minWaterDepth;
+    [SerializeField] private float maxWaterDepth;
+    [SerializeField] private float waterLerp;
 
     private bool underwater;
     private int bouyancyObjectsUnderWater;
@@ -24,8 +27,15 @@ public class Bouyancy_Object : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
+    private void Update()
+    {
+        waterLerp = (Time.time - Time.deltaTime) / Time.deltaTime;
+        
+    }
+
     void FixedUpdate()
     {
+        waterDepth = Mathf.Lerp(minWaterDepth, maxWaterDepth, waterLerp);
         //Reset bouyancy objects under water
         bouyancyObjectsUnderWater = 0;
 
