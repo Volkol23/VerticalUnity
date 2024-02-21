@@ -17,6 +17,8 @@ TagManager:
   - BoatPosition
   - Dock
   - BoatCamera
+  - Hazard
+  - DeathTrap
   layers:
   - Default
   - TransparentFX

@@ -17,6 +17,11 @@ public class Game_Manager : MonoBehaviour
     private Transform playerPosition;
     private Transform boatPosition;
 
+    private float health;
+    [SerializeField]
+    private float cooldownDamage;
+    private float cooldownTime;
+
     private void Awake()
     {
         if(_GAME_MANAGER != null && _GAME_MANAGER != this)
@@ -30,7 +35,7 @@ public class Game_Manager : MonoBehaviour
         }
 
         currentGeneral = GameGeneral.MENU;
-
+        cooldownTime = 0f;
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
@@ -68,6 +73,7 @@ public class Game_Manager : MonoBehaviour
                 UI_Manager._UI_MANAGER.UpdateCurrentRiver(3);
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
+                SetHealthDamage();
                 SaveDock();
                 break;
             case 4:
@@ -79,6 +85,7 @@ public class Game_Manager : MonoBehaviour
                 SaveDock();
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
+                SetHealthDamage();
                 break;
             case 5:
                 ChangeGeneral(GameGeneral.PLAYER);
@@ -89,6 +96,7 @@ public class Game_Manager : MonoBehaviour
                 SaveDock();
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
+                SetHealthDamage();
                 break;
             case 6: // Test Mechanic Scene
                 ChangeGeneral(GameGeneral.PLAYER);
@@ -99,6 +107,7 @@ public class Game_Manager : MonoBehaviour
                 UI_Manager._UI_MANAGER.UpdateCurrentRiver(3);
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
+                SetHealthDamage();
                 SaveDock();
                 break;
         }
@@ -110,10 +119,31 @@ public class Game_Manager : MonoBehaviour
         {
             ResetPlayerPosition();
         }
+        cooldownTime += Time.deltaTime;
+        if(health <= 0)
+        {
+            ResetPlayerPosition();
+            health = 100;
+        }
     }
     public void ChangeGeneral(GameGeneral gameGeneralState)
     {
         currentGeneral = gameGeneralState;
+    }
+
+    private void SetHealthDamage()
+    {
+        health = 100f;
+    }
+
+    public void GetDamage(float damage)
+    {
+        if(cooldownTime > cooldownDamage)
+        {
+            health -= damage;
+            Debug.Log(health);
+            cooldownTime = 0f;
+        }
     }
 
     public GameGeneral GetCurrentGeneral()

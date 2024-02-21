@@ -16,6 +16,12 @@ public class Bouyancy_Object : MonoBehaviour
     [SerializeField] private float maxWaterDepth;
     [SerializeField] private float waterLerp;
 
+    [SerializeField]
+    private float timeLerp;
+
+    [SerializeField]
+    private bool lerpChange;
+
     private bool underwater;
     private int bouyancyObjectsUnderWater;
 
@@ -25,17 +31,39 @@ public class Bouyancy_Object : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        timeLerp = 0f;
     }
 
     private void Update()
     {
-        waterLerp = (Time.time - Time.deltaTime) / Time.deltaTime;
-        
+        WaterLerpChange();
+    }
+
+    private void WaterLerpChange()
+    {
+        if (timeLerp > 0.99f)
+        {
+            lerpChange = false;
+        }
+        if (timeLerp < 0.01f)
+        {
+            lerpChange = true;
+        }
+
+        if (lerpChange)
+        {
+            timeLerp += waterLerp * Time.deltaTime;
+        }
+        else
+        {
+            timeLerp -= waterLerp * Time.deltaTime;
+        }
+        timeLerp = Mathf.Clamp01(timeLerp);
     }
 
     void FixedUpdate()
     {
-        waterDepth = Mathf.Lerp(minWaterDepth, maxWaterDepth, waterLerp);
+        waterDepth = Mathf.Lerp(minWaterDepth, maxWaterDepth, timeLerp);
         //Reset bouyancy objects under water
         bouyancyObjectsUnderWater = 0;
 

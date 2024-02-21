@@ -188,10 +188,6 @@ public class Movement : MonoBehaviour
     {
         if (Game_Manager._GAME_MANAGER.GetCurrentGeneral() == GameGeneral.BOAT)
         {
-            //HandleRotationAutomatic();
-            //direction = mainCamera.transform.forward;
-            //direction = Quaternion.Euler(0f, mainCamera.transform.eulerAngles.y, 0f);
-            //direction = Vector3.Scale(new Vector3(1f, 0f, 1f), direction);
             Vector3 forwardVector = Vector3.Scale(new Vector3(1f, 0f, 1f), transform.forward);
             direction = forwardVector;
 
@@ -257,7 +253,7 @@ public class Movement : MonoBehaviour
 
     public bool GetBoatStoped()
     {
-        if(currentSpeed < 0.2f && currentSpeed > -0.2f && steerDirection == 0)
+        if(currentSpeed < 1f && currentSpeed > -1f && steerDirection == 0)
         {
             return true;
         }

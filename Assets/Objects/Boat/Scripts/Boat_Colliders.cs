@@ -65,6 +65,13 @@ public class Boat_Colliders : MonoBehaviour
             {
                 colliding = true;
             }
+
+            if (collision.gameObject.CompareTag("Hazard"))
+            {
+                Debug.Log("DamageTick");
+                float damage = collision.gameObject.GetComponent<HazardBehaviour>().GetDamageTick();
+                Game_Manager._GAME_MANAGER.GetDamage(damage);
+            }
         }
     }
 
