@@ -22,7 +22,7 @@ public class Camera_Behaviour : MonoBehaviour
 
     private RaycastHit hitInfo;
 
-    private GameObject DialogueCameraView;
+    private GameObject dialogueCameraView;
 
     int layerMask;
     private void Awake()
@@ -111,7 +111,7 @@ public class Camera_Behaviour : MonoBehaviour
     private void SetupBoat()
     {
         targetDistance = 30f;
-        cameraLerp = 3f;
+        cameraLerp = 0.7f;
         sensivity = 0.1f;
         minRotation = 0;
         maxRotation = 60f;
@@ -125,6 +125,8 @@ public class Camera_Behaviour : MonoBehaviour
         {
             SetTarget("Boat");
         }
+
+
     }
 
     private void SetupPlayer()

@@ -72,6 +72,13 @@ public class Boat_Colliders : MonoBehaviour
                 float damage = collision.gameObject.GetComponent<HazardBehaviour>().GetDamageTick();
                 Game_Manager._GAME_MANAGER.GetDamage(damage);
             }
+
+            if (collision.gameObject.CompareTag("DeathTrap"))
+            {
+                Debug.Log("DamageLarge");
+                float damage = collision.gameObject.GetComponent<HazardBehaviour>().GetDamageTick();
+                Game_Manager._GAME_MANAGER.GetDamage(damage);
+            }
         }
     }
 
