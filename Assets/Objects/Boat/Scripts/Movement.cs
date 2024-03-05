@@ -154,6 +154,7 @@ public class Movement : MonoBehaviour
 
     private void HandleInputs()
     {
+        steerDirection = Input_Manager._INPUT_MANAGER.GetSteerValue().x;
         if (Input_Manager._INPUT_MANAGER.GetAccelerateValue())
         {
             if (currentSpeed < maxSpeed)
@@ -182,7 +183,10 @@ public class Movement : MonoBehaviour
             }
             isInputPressed = false;
         }
-        steerDirection = Input_Manager._INPUT_MANAGER.GetSteerValue().x;
+        if(currentSpeed > -1f)
+        {
+            steerDirection = -steerDirection;
+        }
     }
     private void FixedUpdate()
     {
@@ -195,9 +199,9 @@ public class Movement : MonoBehaviour
             //Rotation Force
             if (currentSpeed != 0 && steerDirection != 0)
             {
-                rb.AddForceAtPosition(-steerDirection * transform.right * steerSpeed, steerPointTransform.position);
+                rb.AddForceAtPosition(steerDirection * transform.right * steerSpeed, steerPointTransform.position);
 
-                rb.AddForceAtPosition(-steerDirection * -transform.right * steerSpeed, smoothPointTransform.position);
+                rb.AddForceAtPosition(steerDirection * -transform.right * steerSpeed, smoothPointTransform.position);
             }
 
             if (!colliders.GetColliding())
