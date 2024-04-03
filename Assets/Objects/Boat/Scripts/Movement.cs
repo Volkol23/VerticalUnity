@@ -24,6 +24,8 @@ public class Movement : MonoBehaviour
 
     [SerializeField] private Transform[] rayPositions;
 
+    [SerializeField] private float collisionForce;
+
     private float steerDirection;
 
     private Vector3 direction = Vector3.zero;
@@ -44,12 +46,8 @@ public class Movement : MonoBehaviour
     private Camera mainCamera;
 
     Vector3 rayPositionForward;
-    Vector3 rayPositionRight;
-    Vector3 rayPositionLeft;
     RaycastHit hitForward;
-    RaycastHit hitRight;
-    RaycastHit hitLeft;
-    RaycastHit hitPos;
+    RaycastHit hitRay;
 
     Vector3 normalCheck;
 
@@ -80,15 +78,14 @@ public class Movement : MonoBehaviour
     private void RaycastsBehaviour()
     {
         rayPositionForward = transform.position + transform.forward * offsetForward;
-        rayPositionRight = transform.position + transform.right * offsetRight;
-        rayPositionLeft = transform.position + transform.right * offsetLeft;
 
         if (Physics.Raycast(rayPositionForward, transform.forward, out hitForward, 50f))
         {
             if (hitForward.distance < rayDistanceCheck)
             {
-                Debug.DrawRay(hitForward.point, hitForward.normal, Color.yellow);
-                normalCheck = hitForward.normal;
+                Debug.DrawRay(hitForward.point, hitForward.normal * rayDistanceCheck, Color.yellow);
+                Vector3 directionForce = Vector3.Scale(new Vector3(1f, 0f, 1f), hitForward.normal);
+                rb.AddForce(directionForce * collisionForce, ForceMode.Impulse);
                 collindingTimer = true;
             }
             else
@@ -103,52 +100,24 @@ public class Movement : MonoBehaviour
             Debug.DrawRay(rayPositionForward, transform.forward * 1000, Color.red);
             collindingTimer = false;
         }
-        if (Physics.Raycast(rayPositionRight, transform.right, out hitRight, 50f))
-        {
-            Debug.DrawRay(rayPositionRight, transform.right * 1000, Color.white);
-            if (hitRight.distance < rayDistanceCheck)
-            {
-                Debug.DrawRay(hitRight.point, hitRight.normal, Color.yellow);
-                normalCheck = hitRight.normal;
-                collindingTimer = true;
-            }
-            else
-            {
-                collindingTimer = false;
-            }
-        }
-        else
-        {
-            Debug.DrawRay(rayPositionRight, transform.right * 1000 * 1000, Color.red);
-            collindingTimer = false;
-        }
-        if (Physics.Raycast(rayPositionLeft, -transform.right, out hitLeft, 50f))
-        {
-            Debug.DrawRay(rayPositionLeft, -transform.right * 1000, Color.white);
-            if (hitLeft.distance < rayDistanceCheck)
-            {
-                Debug.DrawRay(hitLeft.point, hitLeft.normal, Color.yellow);
-                normalCheck = hitLeft.normal;
-                collindingTimer = true;
-            }
-            else
-            {
-                collindingTimer = false;
-            }
-        }
-        else
-        {
-            Debug.DrawRay(rayPositionLeft, -transform.right * 1000 * 1000, Color.red);
-            collindingTimer = false;
-        }
 
-        if (collindingTimer && currentTime < maxChangeDirectionTime)
+        foreach (Transform rayPos in rayPositions)
         {
-            currentTime += Time.deltaTime;
-        }
-        else
-        {
-            currentTime = 0;
+            if(Physics.Raycast(rayPos.position, rayPos.forward, out hitRay, 50f))
+            {
+                if(hitRay.distance < rayDistanceCheck)
+                {
+                    Debug.DrawRay(hitRay.point, hitRay.normal * rayDistanceCheck, Color.yellow);
+                    Vector3 directionForce = Vector3.Scale(new Vector3(1f, 0f, 1f), hitRay.normal);
+                    rb.AddForce(directionForce * collisionForce, ForceMode.Impulse);
+                }
+                Debug.DrawRay(rayPos.position, rayPos.forward * 1000, Color.white);
+            }
+            else
+            {
+                Debug.DrawRay(rayPos.position, rayPos.forward * 1000, Color.red);
+                collindingTimer = false;
+            }
         }
     }
 
@@ -190,6 +159,8 @@ public class Movement : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        RaycastsBehaviour();
+
         if (Game_Manager._GAME_MANAGER.GetCurrentGeneral() == GameGeneral.BOAT)
         {
             Vector3 forwardVector = Vector3.Scale(new Vector3(1f, 0f, 1f), transform.forward);
@@ -204,16 +175,17 @@ public class Movement : MonoBehaviour
                 rb.AddForceAtPosition(steerDirection * -transform.right * steerSpeed, smoothPointTransform.position);
             }
 
-            if (!colliders.GetColliding())
-            {
+            
+            //if (!colliders.GetColliding())
+            //{
                 ApplyForceToReachVelocity(rb, direction * maxSpeed, currentSpeed);
-            }
-            else if (collindingTimer && currentTime > 0f)
-            {
-                Vector3 directionTest = (direction + smoothVector).normalized;
-                ApplyForceToReachVelocity(rb, direction * maxSpeed, currentSpeed);
-                rb.AddForceAtPosition(-transform.forward * maxSpeed / 8, smoothPointTransform.position);
-            }
+            //}
+            //else if (collindingTimer && currentTime > 0f)
+            //{
+            //    Vector3 directionTest = (direction + smoothVector).normalized;
+            //    ApplyForceToReachVelocity(rb, direction * maxSpeed, currentSpeed);
+            //    rb.AddForceAtPosition(-transform.forward * maxSpeed / 8, smoothPointTransform.position);
+            //}
         }
     }
 

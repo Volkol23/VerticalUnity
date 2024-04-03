@@ -19,6 +19,7 @@ TagManager:
   - BoatCamera
   - Hazard
   - DeathTrap
+  - SoulPosition
   layers:
   - Default
   - TransparentFX

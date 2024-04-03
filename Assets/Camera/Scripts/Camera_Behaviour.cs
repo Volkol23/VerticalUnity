@@ -30,16 +30,12 @@ public class Camera_Behaviour : MonoBehaviour
     private float changeModeTime = 2f;
     private float currentTime;
 
-
     private GameGeneral gameGeneral;
 
     private float rotationX;
     private float rotationY;
 
     private RaycastHit hitInfo;
-
-    private float timeAutomatic;
-    private bool automatic;
 
     private GameObject dialogueCameraView;
 
@@ -83,14 +79,21 @@ public class Camera_Behaviour : MonoBehaviour
     }
     private void LateUpdate()
     {
-        switch (cameraMode)
+        if (gameGeneral == GameGeneral.BOAT)
         {
-            case CameraMode.MANUAL:
-                ManualMode();
-                break;
-            case CameraMode.AUTOMATIC:
-                AutomaticMode();
-                break;
+            switch (cameraMode)
+            {
+                case CameraMode.MANUAL:
+                    ManualMode();
+                    break;
+                case CameraMode.AUTOMATIC:
+                    AutomaticMode();
+                    break;
+            }
+        }
+        else if (gameGeneral == GameGeneral.PLAYER)
+        {
+            ManualMode();
         }
 
         if (Mission_Manager._MISSION_MANAGER.GetInDialogue() || UI_Manager._UI_MANAGER.GetPauseActive())
@@ -99,7 +102,7 @@ public class Camera_Behaviour : MonoBehaviour
         }
         else
         {
-            if(gameGeneral == GameGeneral.PLAYER)
+            if (gameGeneral == GameGeneral.PLAYER)
             {
                 //Apply smooth movement to the Camera
                 Vector3 finalPosition = Vector3.Lerp(transform.position, target.transform.position - transform.forward * targetDistance, cameraLerp * Time.deltaTime);
@@ -124,9 +127,10 @@ public class Camera_Behaviour : MonoBehaviour
                 {
                     finalPosition = hitInfo.point;
                 }
-                transform.position = finalPosition;           
+                transform.position = finalPosition;
             }
         }
+        
     }
 
     private void ManualMode()
@@ -160,7 +164,7 @@ public class Camera_Behaviour : MonoBehaviour
 
     private void SetupPlayer()
     {
-        targetDistance = 25f;
+        targetDistance = 15f;
         cameraLerp = 12f;
         sensivity = 0.2f;
         minRotation = -40;

@@ -50,6 +50,7 @@ public class Game_Manager : MonoBehaviour
                 Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.mainMenu);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
+                SetHealthDamage();
                 break;
             case 1:
                 Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.mainStory);
@@ -63,6 +64,7 @@ public class Game_Manager : MonoBehaviour
                 Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.introScene);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
+                SetHealthDamage();
                 break;
             case 3:
                 ChangeGeneral(GameGeneral.PLAYER);
