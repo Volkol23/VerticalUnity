@@ -75,6 +75,7 @@ public class Input_Manager : MonoBehaviour
                 resetValue = inputActions.BoatController.Reset.IsPressed();
                 break;
             case GameGeneral.MENU:
+                actionChangeValue = inputActions.UI.ActionChange.IsPressed();
                 ChangeMenuInpts();
                 break;
         }
@@ -177,6 +178,7 @@ public class Input_Manager : MonoBehaviour
 
     public bool GetActionChangeValue()
     {
+        Debug.Log("ACtionValue");
         return actionChangeValue;
     }
 

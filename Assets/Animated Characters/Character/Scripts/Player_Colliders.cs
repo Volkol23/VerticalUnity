@@ -22,7 +22,7 @@ public class Player_Colliders : MonoBehaviour
     {
         if(gameGeneral == GameGeneral.PLAYER)
         {
-            UI_Manager._UI_MANAGER.ActivateUIPromptText();
+            //UI_Manager._UI_MANAGER.ActivateUIPromptText();
 
             if (other.gameObject.CompareTag("ChangeBoatPlayer"))
             {

@@ -175,6 +175,7 @@ public class Movement : MonoBehaviour
                 rb.AddForceAtPosition(steerDirection * -transform.right * steerSpeed, smoothPointTransform.position);
             }
 
+            //Water current
             
             //if (!colliders.GetColliding())
             //{

@@ -15,7 +15,7 @@ public class Boat_Colliders : MonoBehaviour
     {
         if (gameGeneral == GameGeneral.BOAT)
         {
-            UI_Manager._UI_MANAGER.ActivateUIPromptText();
+            //UI_Manager._UI_MANAGER.ActivateUIPromptText();
 
             if (other.gameObject.CompareTag("ChangePlayerBoat"))
             {

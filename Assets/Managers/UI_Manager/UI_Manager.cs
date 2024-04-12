@@ -34,7 +34,6 @@ public class UI_Manager : MonoBehaviour
     [Header("GameUI")]
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject gameUI;
-    [SerializeField] private GameObject abilitys;
     [SerializeField] private GameObject missionObjective;
     [SerializeField] private TMP_Text missionOnbjectiveText;
     [SerializeField] private TMP_Text currentRiver;
@@ -127,7 +126,7 @@ public class UI_Manager : MonoBehaviour
 
     private void Resume()
     {
-        Game_Manager._GAME_MANAGER.ChangeGeneral(gameGeneralPause);
+        Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.BOAT);
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
         pauseActive = false;
@@ -183,11 +182,6 @@ public class UI_Manager : MonoBehaviour
         pauseMenu.SetActive(true);
     }
 
-    public void ActivateAbilities()
-    {
-        abilitys.SetActive(true);
-    }
-
     public void ActivateMissionObjective(string objectiveText)
     {
         missionObjective.SetActive(true);
@@ -215,11 +209,6 @@ public class UI_Manager : MonoBehaviour
         pauseMenu.SetActive(false);
     }
 
-    public void DeactivateAbilities()
-    {
-        abilitys.SetActive(false);
-    }
-
     public void ActivateDialogueBox()
     {
         dialogueBox.SetActive(true);
@@ -242,6 +231,7 @@ public class UI_Manager : MonoBehaviour
     public void ActivateUIPromptText()
     {
         uiPrompt.SetActive(true);
+        Debug.Log("Activate");
     }
 
     public void DeactivateUIPromptText()
@@ -249,7 +239,7 @@ public class UI_Manager : MonoBehaviour
         uiPrompt.SetActive(false);
     }
 
-    // 0 - Subir al barco 1 - Bajar del barco 2 - Hablar con personajes 3 - Coger objetos 4 - Entrar en el siguiente nivel
+    // 0 - Coger objetos 1 - Continue action
     public void UpdateUIPromptText(int idText) 
     {
         uiPromptText.text = promptStringText[idText];

@@ -1,5 +1,5 @@
 {
-    "name": "Boat_Input_Actions",
+    "name": "BoatInputActions",
     "maps": [
         {
             "name": "BoatController",
@@ -548,6 +548,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ActionChange",
+                    "type": "Button",
+                    "id": "01f1b4b6-f869-4d60-b8cd-ec99c553a913",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -966,6 +975,28 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "TrackedDeviceOrientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "15de772c-1451-458e-9575-77d5b12ce930",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActionChange",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7b254d1d-74d3-4505-aad8-fbf998eaed70",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActionChange",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

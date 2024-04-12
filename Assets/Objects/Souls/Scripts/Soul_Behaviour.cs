@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Soul_Behaviour : MonoBehaviour
 {
-
+    [SerializeField] private float soulMode;
     [SerializeField] private Transform soulPosition;
 
     void Start()

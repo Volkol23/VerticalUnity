@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 192d1875a6e58394dbe290fb94aea38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  savePoint: 0
+  savePoint: 1
   dockPosition: {fileID: 8803680429019760198}
   boatPosition: {fileID: 756710545019079905}
 --- !u!1 &1231854148543632881
@@ -219,7 +219,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1.2724338}
   m_Center: {x: -2.2683357e-12, y: 0, z: -0.13621709}

@@ -20,6 +20,9 @@ TagManager:
   - Hazard
   - DeathTrap
   - SoulPosition
+  - StartSoul
+  - ObjectSoul
+  - WarnSoul
   layers:
   - Default
   - TransparentFX

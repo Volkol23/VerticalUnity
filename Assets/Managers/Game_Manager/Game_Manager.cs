@@ -67,7 +67,7 @@ public class Game_Manager : MonoBehaviour
                 SetHealthDamage();
                 break;
             case 3:
-                ChangeGeneral(GameGeneral.PLAYER);
+                ChangeGeneral(GameGeneral.BOAT);
                 missionLevel = MissionType.ARACNHE;
                 Mission_Manager._MISSION_MANAGER.StartMission();
                 Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.level1);
@@ -101,7 +101,7 @@ public class Game_Manager : MonoBehaviour
                 SetHealthDamage();
                 break;
             case 6: // Test Mechanic Scene
-                ChangeGeneral(GameGeneral.PLAYER);
+                ChangeGeneral(GameGeneral.BOAT);
                 missionLevel = MissionType.ARACNHE;
                 Mission_Manager._MISSION_MANAGER.StartMission();
                 Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.level1);
