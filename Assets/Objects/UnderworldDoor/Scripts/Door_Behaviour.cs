@@ -14,13 +14,13 @@ public class Door_Behaviour : MonoBehaviour
 
     void Update()
     {
-        if (Mission_Manager._MISSION_MANAGER.GetCurrentMission().GetCompleteMission())
-        {
-            trigger.enabled = true;
-        }
-        else
-        {
-            trigger.enabled = false;
-        }
+        //if (Mission_Manager._MISSION_MANAGER.GetCurrentMission().GetCompleteMission())
+        //{
+        //    trigger.enabled = true;
+        //}
+        //else
+        //{
+        //    trigger.enabled = false;
+        //}
     }
 }

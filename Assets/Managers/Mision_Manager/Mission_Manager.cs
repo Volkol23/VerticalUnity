@@ -58,7 +58,7 @@ public class Mission_Manager : MonoBehaviour
                 }
                 else
                 {
-                    Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.PLAYER);
+                    //Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.PLAYER);
                 }
             }
             else if (indexDialogue == currentMission.GetEndDialogue().Length)
@@ -72,7 +72,7 @@ public class Mission_Manager : MonoBehaviour
                     Game_Manager._GAME_MANAGER.GoToScene((int)SceneIndex.LEVEL1);
                 }
                 inDialogue = false;
-                Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.PLAYER);
+                Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.BOAT);
             }
             if (inDialogue)
             {

@@ -127,6 +127,7 @@ public class Game_Manager : MonoBehaviour
             ResetPlayerPosition();
             health = 100;
         }
+        Score_Manager._SCORE_MANAGER.GetHealthValue(health);
     }
     public void ChangeGeneral(GameGeneral gameGeneralState)
     {

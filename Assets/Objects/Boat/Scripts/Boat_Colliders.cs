@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Boat_Colliders : MonoBehaviour
 {
@@ -39,9 +40,40 @@ public class Boat_Colliders : MonoBehaviour
             }
             if (other.gameObject.CompareTag("MissionTrigger"))
             {
-                UI_Manager._UI_MANAGER.DeactivateUIPromptText();
-
                 Mission_Manager._MISSION_MANAGER.StartMission();
+            }
+            if (other.gameObject.CompareTag("MissionObject"))
+            {
+                UI_Manager._UI_MANAGER.ActivateUIPromptText();
+                UI_Manager._UI_MANAGER.UpdateUIPromptText(3);
+                if (Input_Manager._INPUT_MANAGER.GetActionChangeValue())
+                {
+                    UI_Manager._UI_MANAGER.DeactivateUIPromptText();
+
+                    int idObject = other.GetComponent<Mission_Object_Behaviour>().GetObjectId();
+                    Mission_Manager._MISSION_MANAGER.GetMissionObject(idObject);
+                    other.GetComponent<Mission_Object_Behaviour>().ObjectGet();
+                    Score_Manager._SCORE_MANAGER.ActivateObjectPlus();
+                }
+            }
+            if (other.gameObject.CompareTag("UnderworldGate"))
+            {
+                //UI_Manager._UI_MANAGER.ActivateUIPromptText();
+                //UI_Manager._UI_MANAGER.UpdateUIPromptText(3);
+                //if (Input_Manager._INPUT_MANAGER.GetActionChangeValue())
+                //{
+                //UI_Manager._UI_MANAGER.DeactivateUIPromptText();
+                Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.MENU);
+                UI_Manager._UI_MANAGER.StopTimer();
+                Score_Manager._SCORE_MANAGER.CheckScore();
+                UI_Manager._UI_MANAGER.UpdateScoreTab(Score_Manager._SCORE_MANAGER.UpdateTotalScore());
+                UI_Manager._UI_MANAGER.ActivateScoreTab();
+                //if (SceneManager.GetActiveScene().buildIndex == 3)
+                //{
+                //    Game_Manager._GAME_MANAGER.GoToScene((int)SceneIndex.MAINMENU);
+                //}
+                //Game_Manager._GAME_MANAGER.GoToScene(SceneManager.GetActiveScene().buildIndex + 1);
+                //}
             }
         }
     }

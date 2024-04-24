@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1702742964930359973}
   - component: {fileID: 1352244111558642704}
   - component: {fileID: 2123887103376462439}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: UnderworldGate
   m_TagString: UnderworldGate
   m_Icon: {fileID: 0}
@@ -53,8 +53,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.7689006, y: 6.667051, z: 1.7269921}
-  m_Center: {x: -0.06818664, y: 2.8166974, z: 0.36349633}
+  m_Size: {x: 3.7448807, y: 3.0913002, z: 5.8738694}
+  m_Center: {x: -0.5945723, y: 0.7285861, z: 0.6764688}
 --- !u!114 &2123887103376462439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,13 +133,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7930922270791842448, guid: 8ef6bfa719565eb48820a4dc1d166dcd,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7930922270791842448, guid: 8ef6bfa719565eb48820a4dc1d166dcd,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: -6860489601001859644, guid: 8ef6bfa719565eb48820a4dc1d166dcd,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6860489601001859644, guid: 8ef6bfa719565eb48820a4dc1d166dcd,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -3001288557971086532, guid: 8ef6bfa719565eb48820a4dc1d166dcd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -3001288557971086532, guid: 8ef6bfa719565eb48820a4dc1d166dcd,
         type: 3}
@@ -150,6 +165,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: fbxGate
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8ef6bfa719565eb48820a4dc1d166dcd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8ef6bfa719565eb48820a4dc1d166dcd,
         type: 3}

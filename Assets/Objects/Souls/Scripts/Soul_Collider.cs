@@ -25,6 +25,7 @@ public class Soul_Collider : MonoBehaviour
             //ID texto de alma
             if (startTrigger)
             {
+                UI_Manager._UI_MANAGER.StopTimer();
                 UI_Manager._UI_MANAGER.UpdateUIPromptText(0);
                 Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.MENU);
                 startTrigger = false;
@@ -36,6 +37,7 @@ public class Soul_Collider : MonoBehaviour
             //ID texto de alma
             if (objectTrigger)
             {
+                UI_Manager._UI_MANAGER.StopTimer();
                 UI_Manager._UI_MANAGER.UpdateUIPromptText(1);
                 Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.MENU);
                 Debug.Log("StartTrigger");
@@ -48,6 +50,7 @@ public class Soul_Collider : MonoBehaviour
             //ID texto de alma
             if (warnTrigger)
             {
+                UI_Manager._UI_MANAGER.StopTimer();
                 UI_Manager._UI_MANAGER.UpdateUIPromptText(2);
                 Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.MENU);
                 Debug.Log("StartTrigger");
@@ -68,6 +71,7 @@ public class Soul_Collider : MonoBehaviour
         {
             if (Input_Manager._INPUT_MANAGER.GetActionChangeValue())
             {
+                UI_Manager._UI_MANAGER.StartTimer();
                 Debug.Log("Pressed");
                 UI_Manager._UI_MANAGER.DeactivateUIPromptText();
                 Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.BOAT);
@@ -77,6 +81,7 @@ public class Soul_Collider : MonoBehaviour
         {
             if (Input_Manager._INPUT_MANAGER.GetActionChangeValue())
             {
+                UI_Manager._UI_MANAGER.StartTimer();
                 Debug.Log("Pressed");
                 UI_Manager._UI_MANAGER.DeactivateUIPromptText();
                 Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.BOAT);
@@ -86,6 +91,7 @@ public class Soul_Collider : MonoBehaviour
         {
             if (Input_Manager._INPUT_MANAGER.GetActionChangeValue())
             {
+                UI_Manager._UI_MANAGER.StartTimer();
                 Debug.Log("Pressed");
                 UI_Manager._UI_MANAGER.DeactivateUIPromptText();
                 Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.BOAT);

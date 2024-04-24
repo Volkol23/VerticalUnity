@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -41,6 +42,14 @@ public class UI_Manager : MonoBehaviour
     [SerializeField] private GameObject uiPrompt;
     [SerializeField] private TMP_Text uiPromptText;
     [SerializeField] private string[] promptStringText;
+    [SerializeField] private GameObject timerObject;
+    // Timer
+    [SerializeField] private TMP_Text timeText;
+    [SerializeField] private float timerMission = 0;
+    [SerializeField] private bool timerIsRunning = false;
+    [SerializeField] private float timeLeft;
+    [SerializeField] private GameObject scoreTab;
+    [SerializeField] private TMP_Text scoreText;
 
     [Header("DialogueUI")]
     [SerializeField] private GameObject dialogueBox;
@@ -80,6 +89,25 @@ public class UI_Manager : MonoBehaviour
 
             animatorFade = backgroundFade.GetComponent<Animator>();
         }
+    }
+    private void Update()
+    {
+        //Timer
+        if (timerIsRunning)
+        {
+            if (timerMission >= 0)
+            {
+                timerMission += Time.deltaTime;
+            }
+            else
+            {
+                Debug.Log("Time paused");
+                timeLeft = timerMission;
+                timerMission = 0;
+                timerIsRunning = false;
+            }
+        }
+        DisplayTime(timerMission);
     }
     private void GoToPlay()
     {
@@ -243,5 +271,40 @@ public class UI_Manager : MonoBehaviour
     public void UpdateUIPromptText(int idText) 
     {
         uiPromptText.text = promptStringText[idText];
+    }
+
+    public void DisplayTime(float timeToDisplay)
+    {
+        float minutes = Mathf.FloorToInt(timeToDisplay / 60);
+        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
+
+        timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    public void StartTimer()
+    {
+        timerIsRunning = true;
+    }
+
+    public void StopTimer()
+    {
+        Score_Manager._SCORE_MANAGER.CalculateTimeScore(timerMission);
+        timerIsRunning = false;
+    }
+
+    public void ActivateScoreTab()
+    {
+        scoreTab.SetActive(true);
+    }
+
+    public void DeactivateScoreTab()
+    {
+        scoreTab.SetActive(false);
+    }
+
+    public void UpdateScoreTab(float score)
+    {
+        scoreText.text = score.ToString();
+        scoreText.text = string.Format("{0:0;\"0\";}", score);
     }
 }
