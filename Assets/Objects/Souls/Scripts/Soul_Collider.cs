@@ -21,11 +21,12 @@ public class Soul_Collider : MonoBehaviour
     {
         if (other.gameObject.CompareTag("StartSoul"))
         {
-            UI_Manager._UI_MANAGER.ActivateUIPromptText();
             //ID texto de alma
             if (startTrigger)
             {
+                UI_Manager._UI_MANAGER.ActivateUIPromptText();
                 UI_Manager._UI_MANAGER.StopTimer();
+                Sound_Manager._SOUND_MANAGER.PlaySFXSound(Sound_Manager.TypeOfSound.sfx, Sound_Manager.SFX.soulNotification);
                 UI_Manager._UI_MANAGER.UpdateUIPromptText(0);
                 Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.MENU);
                 startTrigger = false;
@@ -33,11 +34,12 @@ public class Soul_Collider : MonoBehaviour
         }
         if (other.gameObject.CompareTag("ObjectSoul"))
         {
-            UI_Manager._UI_MANAGER.ActivateUIPromptText();
             //ID texto de alma
             if (objectTrigger)
             {
+                UI_Manager._UI_MANAGER.ActivateUIPromptText();
                 UI_Manager._UI_MANAGER.StopTimer();
+                Sound_Manager._SOUND_MANAGER.PlaySFXSound(Sound_Manager.TypeOfSound.sfx, Sound_Manager.SFX.soulNotification);
                 UI_Manager._UI_MANAGER.UpdateUIPromptText(1);
                 Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.MENU);
                 Debug.Log("StartTrigger");
@@ -46,11 +48,12 @@ public class Soul_Collider : MonoBehaviour
         }
         if (other.gameObject.CompareTag("WarnSoul"))
         {
-            UI_Manager._UI_MANAGER.ActivateUIPromptText();
             //ID texto de alma
             if (warnTrigger)
             {
+                UI_Manager._UI_MANAGER.ActivateUIPromptText();
                 UI_Manager._UI_MANAGER.StopTimer();
+                Sound_Manager._SOUND_MANAGER.PlaySFXSound(Sound_Manager.TypeOfSound.sfx, Sound_Manager.SFX.soulNotification);
                 UI_Manager._UI_MANAGER.UpdateUIPromptText(2);
                 Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.MENU);
                 Debug.Log("StartTrigger");

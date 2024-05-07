@@ -15,6 +15,11 @@ public class Score_Manager : MonoBehaviour
 
     [SerializeField] private float defaultFinishTime;
 
+    [SerializeField] private float percentageHealth;
+    [SerializeField] private float percentageTime;
+
+    [SerializeField] private GameObject[] starsUI;
+
     private void Awake()
     {
         if (_SCORE_MANAGER != null && _SCORE_MANAGER != this)
@@ -30,7 +35,7 @@ public class Score_Manager : MonoBehaviour
 
     public void GetHealthValue(float health)
     {
-        healthValue = health * 0.5f;
+        healthValue = health;
     }
 
     public void ActivateObjectPlus()
@@ -56,10 +61,13 @@ public class Score_Manager : MonoBehaviour
             timeScore = maxPoints - contableTime;
         }
         Debug.Log("TimeScore" + timeScore);
+        percentageTime = (timeScore / maxPoints) * 100f;
     }
 
     public void CheckScore()
     {
+        Debug.Log("Vida: " + healthValue);
+        percentageHealth = (healthValue / maxPoints) * 100f;
         totalScore = healthValue + timeScore;
         if (objectPlus)
         {
@@ -70,6 +78,36 @@ public class Score_Manager : MonoBehaviour
 
     public float UpdateTotalScore()
     {
-       return totalScore;
+        for(int i = 0; i < starsUI.Length; i++)
+        {
+            switch (i)
+            {
+                case 0:
+                    starsUI[i].GetComponent<Star_Score_Behaviour>().StartFillScore(GetPercetageTime());
+                    break;
+                case 1:
+                    starsUI[i].GetComponent<Star_Score_Behaviour>().StartFillScore(0f, GetItemValue());
+                    break;
+                case 2:
+                    starsUI[i].GetComponent<Star_Score_Behaviour>().StartFillScore(GetPercentageHealth());
+                    break;
+            }
+        }
+        return totalScore;
+    }
+
+    public float GetPercentageHealth()
+    {
+        return percentageHealth;
+    }
+
+    public float GetPercetageTime()
+    {
+        return percentageTime;
+    }
+
+    public bool GetItemValue()
+    {
+        return objectPlus;
     }
 }

@@ -127,16 +127,20 @@ public class Game_Manager : MonoBehaviour
             ResetPlayerPosition();
             health = 100;
         }
-        Score_Manager._SCORE_MANAGER.GetHealthValue(health);
     }
     public void ChangeGeneral(GameGeneral gameGeneralState)
     {
         currentGeneral = gameGeneralState;
+        Score_Manager._SCORE_MANAGER.GetHealthValue(health);
     }
 
     private void SetHealthDamage()
     {
         health = 100f;
+    }
+    public float GetPlayerHealth()
+    {
+        return health;
     }
 
     public void GetDamage(float damage)
@@ -178,8 +182,10 @@ public class Game_Manager : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<Character_Behaviour>().SetDockPosition(playerPosition);
 
+        ChangeGeneral(GameGeneral.MENU);
         GameObject boat = GameObject.FindGameObjectWithTag("Boat");
         boat.GetComponent<Movement>().SetDockPosition(boatPosition);
+        ChangeGeneral(GameGeneral.BOAT);
     }
 
     public void SaveDock()
@@ -196,7 +202,7 @@ public class Game_Manager : MonoBehaviour
                 boatPosition = savePoint.GetBoatPosition();
             }
         }
-        playerPosition.rotation = Quaternion.identity;
+        //playerPosition.rotation = Quaternion.identity;
         //boatPosition.rotation = Quaternion.identity;
     }
 }

@@ -48,8 +48,12 @@ public class UI_Manager : MonoBehaviour
     [SerializeField] private float timerMission = 0;
     [SerializeField] private bool timerIsRunning = false;
     [SerializeField] private float timeLeft;
+    // Score
     [SerializeField] private GameObject scoreTab;
     [SerializeField] private TMP_Text scoreText;
+    [SerializeField] private Image healthBar;
+    [SerializeField] private GameObject objectChecker;
+
 
     [Header("DialogueUI")]
     [SerializeField] private GameObject dialogueBox;
@@ -107,6 +111,7 @@ public class UI_Manager : MonoBehaviour
                 timerIsRunning = false;
             }
         }
+        healthBar.fillAmount = Game_Manager._GAME_MANAGER.GetPlayerHealth() * 0.01f;
         DisplayTime(timerMission);
     }
     private void GoToPlay()
@@ -210,6 +215,10 @@ public class UI_Manager : MonoBehaviour
         pauseMenu.SetActive(true);
     }
 
+    public void ActiveObjectChecker()
+    {
+        objectChecker.SetActive(Score_Manager._SCORE_MANAGER.GetItemValue());
+    }
     public void ActivateMissionObjective(string objectiveText)
     {
         missionObjective.SetActive(true);

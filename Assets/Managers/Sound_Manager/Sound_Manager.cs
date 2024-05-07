@@ -36,26 +36,11 @@ public class Sound_Manager : MonoBehaviour
 
     public enum SFX
     {
-        defaultTest,
-        bark1,
-        bark2,
-        bark3,
-        bark4,
-        cry1,
-        cry2,
-        transitionDoor,
-        door1,
-        door2,
-        door3,
-        openInventory,
-        click,
-        clickConfirm,
-        clickDenied,
-        puzzleComplete,
-        taquillaOpen,
-        taquillaClose,
-        clothesOn,
-        chairCasaMarta
+        missionAccomplished,
+        newLevelEnter,
+        soulAlert,
+        soulNotification,
+        startCourse
     }
     public enum TypeOfSound
     {
@@ -66,7 +51,9 @@ public class Sound_Manager : MonoBehaviour
 
     //Objetos de que contienen los sonidos
     private GameObject oneShotGameObject;
+    private GameObject oneShotSfxGameObject;
     private AudioSource oneShotAudioSource;
+    private AudioSource oneShotSfxAudioSource;
 
     private void Awake()
     {
@@ -108,18 +95,19 @@ public class Sound_Manager : MonoBehaviour
     //Funciones que crean el componente del audio
     public void PlaySFXSound(TypeOfSound type, SFX sfx)
     {
-        if (oneShotGameObject == null)
+        if (oneShotSfxGameObject == null)
         {
-            oneShotGameObject = new GameObject("One Shot Sound");
-            oneShotAudioSource = oneShotGameObject.AddComponent<AudioSource>();
-            oneShotAudioSource.outputAudioMixerGroup = GetMixerGroup(type);
+            oneShotSfxGameObject = new GameObject("One Sfx Sound");
+            oneShotSfxAudioSource = oneShotSfxGameObject.AddComponent<AudioSource>();
+            oneShotSfxAudioSource.outputAudioMixerGroup = GetMixerGroup(type);
         }
 
         AudioClip sfxClip = GetSFXClip(sfx);
         if (sfxClip != null)
         {
-            oneShotAudioSource.clip = sfxClip;
-            oneShotAudioSource.Play();
+            oneShotSfxAudioSource.clip = sfxClip;
+            oneShotSfxAudioSource.Play();
+            oneShotSfxAudioSource.loop = false;
         }
         else
         {
@@ -142,6 +130,7 @@ public class Sound_Manager : MonoBehaviour
         {
             oneShotAudioSource.clip = musicClip;
             oneShotAudioSource.Play();
+            oneShotAudioSource.loop = true;
         }
         else
         {

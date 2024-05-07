@@ -64,10 +64,11 @@ public class Boat_Colliders : MonoBehaviour
                 //{
                 //UI_Manager._UI_MANAGER.DeactivateUIPromptText();
                 Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.MENU);
+                UI_Manager._UI_MANAGER.ActivateScoreTab();
                 UI_Manager._UI_MANAGER.StopTimer();
                 Score_Manager._SCORE_MANAGER.CheckScore();
                 UI_Manager._UI_MANAGER.UpdateScoreTab(Score_Manager._SCORE_MANAGER.UpdateTotalScore());
-                UI_Manager._UI_MANAGER.ActivateScoreTab();
+
                 //if (SceneManager.GetActiveScene().buildIndex == 3)
                 //{
                 //    Game_Manager._GAME_MANAGER.GoToScene((int)SceneIndex.MAINMENU);
