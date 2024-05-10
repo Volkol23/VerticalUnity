@@ -52,7 +52,8 @@ public class UI_Manager : MonoBehaviour
     [SerializeField] private GameObject scoreTab;
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] private Image healthBar;
-    [SerializeField] private GameObject objectChecker;
+    [SerializeField] private GameObject objectCheckerTrue;
+    [SerializeField] private GameObject objectCheckerFalse;
 
 
     [Header("DialogueUI")]
@@ -217,7 +218,11 @@ public class UI_Manager : MonoBehaviour
 
     public void ActiveObjectChecker()
     {
-        objectChecker.SetActive(Score_Manager._SCORE_MANAGER.GetItemValue());
+        if (Score_Manager._SCORE_MANAGER.GetItemValue())
+        {
+            objectCheckerTrue.SetActive(true);
+            objectCheckerFalse.SetActive(false);
+        }
     }
     public void ActivateMissionObjective(string objectiveText)
     {

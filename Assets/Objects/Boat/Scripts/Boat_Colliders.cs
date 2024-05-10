@@ -54,6 +54,7 @@ public class Boat_Colliders : MonoBehaviour
                     Mission_Manager._MISSION_MANAGER.GetMissionObject(idObject);
                     other.GetComponent<Mission_Object_Behaviour>().ObjectGet();
                     Score_Manager._SCORE_MANAGER.ActivateObjectPlus();
+                    UI_Manager._UI_MANAGER.ActiveObjectChecker();
                 }
             }
             if (other.gameObject.CompareTag("UnderworldGate"))
