@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Splines;
 using UnityEngineInternal;
 
 public class Movement : MonoBehaviour
@@ -25,6 +27,8 @@ public class Movement : MonoBehaviour
     [SerializeField] private Transform[] rayPositions;
 
     [SerializeField] private float collisionForce;
+
+    [SerializeField] private Spline waterRiver;
 
     private float steerDirection;
 
@@ -51,6 +55,9 @@ public class Movement : MonoBehaviour
 
     Vector3 normalCheck;
 
+    [SerializeField]
+    float m_Interpolation = .5f;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -59,19 +66,29 @@ public class Movement : MonoBehaviour
         mainCamera = Camera.main;
         direction = transform.forward;
     }
+
+    private void Start()
+    {
+        //Spline spline = GetComponent<SplineContainer>()[0];
+        //waterRiver.
+
+        SplineUtility.Evaluate(waterRiver, m_Interpolation, out float3 position, out float3 direction, out float3 up);
+        Debug.Log(direction);
+    }
     private void Update()
     {
         if (Game_Manager._GAME_MANAGER.GetCurrentGeneral() == GameGeneral.BOAT)
         {
             HandleInputs();
             rb.isKinematic = false;
+            SplineUtility.GetNearestPoint(waterRiver, transform.position, out float3 nearest, out float t);
+            //Debug.Log(nearest * t);
         }
         else
         {
             currentSpeed = 0f;
             rb.isKinematic = true;
         }
-
         RaycastsBehaviour();
     }
 

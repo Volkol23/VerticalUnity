@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Boat_Colliders : MonoBehaviour
 {
     private GameGeneral gameGeneral;
+    [SerializeField] private ParticleSystem particle;
 
     private bool colliding;
     private void Update()
@@ -105,11 +106,13 @@ public class Boat_Colliders : MonoBehaviour
                 Debug.Log("DamageTick");
                 float damage = collision.gameObject.GetComponent<HazardBehaviour>().GetDamageTick();
                 Game_Manager._GAME_MANAGER.GetDamage(damage);
+                particle.Play();
             }
 
             if (collision.gameObject.CompareTag("DeathTrap"))
             {
                 Debug.Log("DamageLarge");
+                particle.Play();
                 float damage = collision.gameObject.GetComponent<HazardBehaviour>().GetDamageTick();
                 Game_Manager._GAME_MANAGER.GetDamage(damage);
             }

@@ -43,12 +43,15 @@ public class UI_Manager : MonoBehaviour
     [SerializeField] private TMP_Text uiPromptText;
     [SerializeField] private string[] promptStringText;
     [SerializeField] private GameObject timerObject;
-    // Timer
+    [SerializeField] private GameObject tutorialUI;
+
+    [Header("Timer")]
     [SerializeField] private TMP_Text timeText;
     [SerializeField] private float timerMission = 0;
     [SerializeField] private bool timerIsRunning = false;
     [SerializeField] private float timeLeft;
-    // Score
+
+    [Header("Score")]
     [SerializeField] private GameObject scoreTab;
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] private Image healthBar;
@@ -320,5 +323,15 @@ public class UI_Manager : MonoBehaviour
     {
         scoreText.text = score.ToString();
         scoreText.text = string.Format("{0:0;\"0\";}", score);
+    }
+
+    public void ActivateTutorialUI()
+    {
+        tutorialUI.SetActive(true);
+    }
+
+    public void DeactivateTutotrialUI()
+    {
+        tutorialUI.SetActive(false);
     }
 }
