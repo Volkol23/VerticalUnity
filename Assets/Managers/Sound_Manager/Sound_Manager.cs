@@ -45,7 +45,8 @@ public class Sound_Manager : MonoBehaviour
         trapRound,
         shieldMove,
         congratulations,
-        starAppear
+        starAppear,
+        monsterGrowl
     }
     public enum TypeOfSound
     {

@@ -69,18 +69,27 @@ public class Boat_Colliders : MonoBehaviour
                 UI_Manager._UI_MANAGER.UpdateScoreTab(Score_Manager._SCORE_MANAGER.UpdateTotalScore());
 
                 UI_Manager._UI_MANAGER.ActivateUIPromptText();
-                UI_Manager._UI_MANAGER.UpdateUIPromptText(3);
+                UI_Manager._UI_MANAGER.UpdateUIPromptText(4);
 
+                Debug.Log(SceneManager.GetActiveScene().buildIndex)
+            }
+        }
+        if (gameGeneral == GameGeneral.MENU)
+        {
+            if (other.gameObject.CompareTag("UnderworldGate"))
+            {
                 if (Input_Manager._INPUT_MANAGER.GetActionChangeValue())
                 {
                     UI_Manager._UI_MANAGER.DeactivateUIPromptText();
-                    if (SceneManager.GetActiveScene().buildIndex == 3)
+
+                    if (SceneManager.GetActiveScene().buildIndex == 5)
                     {
                         Game_Manager._GAME_MANAGER.GoToScene((int)SceneIndex.MAINMENU);
                     }
                     Game_Manager._GAME_MANAGER.GoToScene(SceneManager.GetActiveScene().buildIndex + 1);
                 }
             }
+
         }
     }
 

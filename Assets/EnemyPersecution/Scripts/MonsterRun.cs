@@ -11,6 +11,14 @@ public class MonsterRun : MonoBehaviour
     [SerializeField] bool running; 
 
     [SerializeField] Spline splines;
+    [SerializeField] GameObject monsterPersecution;
+
+    private SplineAnimate splineAnimate;
+
+    private void Awake()
+    {
+        splineAnimate = monsterPersecution.GetComponent<SplineAnimate>();   
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +32,19 @@ public class MonsterRun : MonoBehaviour
         
     }
 
-    private void StartCorsue()
+    public void StartCorsue()
     {
+        splineAnimate.Play();
+        Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.level3Chase);
+    }
 
+    public void StopCouerse()
+    {
+        splineAnimate.Pause();
+    }
+
+    public void ResetCourse()
+    {
+        splineAnimate.Restart(false);
     }
 }

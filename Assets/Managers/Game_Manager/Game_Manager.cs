@@ -22,6 +22,7 @@ public class Game_Manager : MonoBehaviour
     private float cooldownDamage;
     private float cooldownTime;
 
+
     private void Awake()
     {
         if(_GAME_MANAGER != null && _GAME_MANAGER != this)
@@ -104,7 +105,7 @@ public class Game_Manager : MonoBehaviour
                 ChangeGeneral(GameGeneral.BOAT);
                 missionLevel = MissionType.ICEWOLF;
                 Mission_Manager._MISSION_MANAGER.StartMission();
-                Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.mainStory);
+                Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.level3);
                 UI_Manager._UI_MANAGER.DeactivateScoreTab();
                 UI_Manager._UI_MANAGER.DeactivateMainMenu();
                 UI_Manager._UI_MANAGER.ActivateGameUI();

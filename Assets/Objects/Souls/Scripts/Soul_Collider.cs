@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Soul_Collider : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class Soul_Collider : MonoBehaviour
     private bool objectTrigger = true;
     [SerializeField]
     private bool warnTrigger = true;
+    [SerializeField]
+    MonsterRun monster;
     private void Update()
     {
         gameGeneral = Game_Manager._GAME_MANAGER.GetCurrentGeneral();
@@ -30,7 +33,22 @@ public class Soul_Collider : MonoBehaviour
                 UI_Manager._UI_MANAGER.UpdateUIPromptText(0);
                 Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.MENU);
                 startTrigger = false;
-            }            
+            }
+            else
+            {
+                UI_Manager._UI_MANAGER.ActivateUIPromptText();
+                UI_Manager._UI_MANAGER.StopTimer();
+                Sound_Manager._SOUND_MANAGER.PlaySFXSound(Sound_Manager.TypeOfSound.sfx, Sound_Manager.SFX.soulNotification);
+                Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.MENU);
+                if (SceneManager.GetActiveScene().buildIndex == 5)
+                {
+                    UI_Manager._UI_MANAGER.UpdateUIPromptText(6);
+                }
+                if (SceneManager.GetActiveScene().buildIndex == 4)
+                {
+                    UI_Manager._UI_MANAGER.UpdateUIPromptText(5);
+                }
+            }
         }
         if (other.gameObject.CompareTag("ObjectSoul"))
         {
@@ -78,6 +96,10 @@ public class Soul_Collider : MonoBehaviour
                 Debug.Log("Pressed");
                 UI_Manager._UI_MANAGER.DeactivateUIPromptText();
                 Game_Manager._GAME_MANAGER.ChangeGeneral(GameGeneral.BOAT);
+                if (SceneManager.GetActiveScene().buildIndex == 5)
+                {
+                    monster.StartCorsue();
+                }
             }
         }
         if (other.gameObject.CompareTag("ObjectSoul"))

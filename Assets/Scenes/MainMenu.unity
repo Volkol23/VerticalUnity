@@ -4529,6 +4529,9 @@ MonoBehaviour:
     sfx: 5
     audioClip: {fileID: 8300000, guid: 318c7dc0fd88d904198e1b9b8d7565fc, type: 3}
   - type: 2
+    sfx: 10
+    audioClip: {fileID: 8300000, guid: deccc6a47cfddcf46899c2d4cce0854a, type: 3}
+  - type: 2
     sfx: 9
     audioClip: {fileID: 8300000, guid: b5e2ab6df7ace7e47a2179be97afa3a6, type: 3}
 --- !u!4 &955356482
@@ -7835,6 +7838,12 @@ MonoBehaviour:
   - Cuidado! Hay unas trapas que me pueden absorber, creo que modifican la corriente
     hacia ellas espero que podamos llegar sanos y salvos.
   - Pulsa E/ Boton X para coger el objeto
+  - Felicidades por completar el nivel, se ha desbloqueado el siguiente
+  - "Hola! Soy tu compa\xF1ero de viaje, necesito llegar al otro lado de el r\xEDo.
+    Yo luch\xE9 en la guerra espartana me gusta mucho la espada que us\xE9."
+  - "Hola! Soy tu compa\xF1ero de viaje, necesito llegar al otro lado de el r\xEDo.
+    Cuidado atr\xE1s, est\xE1 el mounstro de el inframuendo, atento a ello, y llega
+    al final."
   timerObject: {fileID: 1626441359}
   tutorialUI: {fileID: 54380904}
   timeText: {fileID: 1408208423}
