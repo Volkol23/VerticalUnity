@@ -71,7 +71,7 @@ public class Boat_Colliders : MonoBehaviour
                 UI_Manager._UI_MANAGER.ActivateUIPromptText();
                 UI_Manager._UI_MANAGER.UpdateUIPromptText(4);
 
-                Debug.Log(SceneManager.GetActiveScene().buildIndex)
+                Debug.Log(SceneManager.GetActiveScene().buildIndex);
             }
         }
         if (gameGeneral == GameGeneral.MENU)

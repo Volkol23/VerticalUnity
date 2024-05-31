@@ -2420,9 +2420,9 @@ GameObject:
   m_Component:
   - component: {fileID: 299648306}
   - component: {fileID: 299648305}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SoulTrigger
-  m_TagString: Untagged
+  m_TagString: StartSoul
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2773,7 +2773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb338fc0d2e306148a1cde7b33883f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 1131042320}
   minTargetDistance: 0
   maxTargetDistance: 0
   targetDistance: 0
@@ -9149,6 +9149,12 @@ Transform:
 --- !u!4 &1131042319 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4939655854939540206, guid: 16c379a140eaec84d9dc7cbfad928152,
+    type: 3}
+  m_PrefabInstance: {fileID: 1131042317}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1131042320 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1209802239783947329, guid: 16c379a140eaec84d9dc7cbfad928152,
     type: 3}
   m_PrefabInstance: {fileID: 1131042317}
   m_PrefabAsset: {fileID: 0}

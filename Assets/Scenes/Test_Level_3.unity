@@ -4590,7 +4590,7 @@ GameObject:
   m_Component:
   - component: {fileID: 505759940}
   - component: {fileID: 505759939}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: StartTrigger
   m_TagString: StartSoul
   m_Icon: {fileID: 0}
@@ -11036,12 +11036,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecc0761b2aa4cad44b3acde97085bcce, type: 3}
---- !u!1 &1199456691 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8238904073004147180, guid: ecc0761b2aa4cad44b3acde97085bcce,
-    type: 3}
-  m_PrefabInstance: {fileID: 1199456690}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1199539657
 GameObject:
   m_ObjectHideFlags: 0
@@ -16995,6 +16989,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1776136560}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1776136562 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1209802239783947329, guid: 16c379a140eaec84d9dc7cbfad928152,
+    type: 3}
+  m_PrefabInstance: {fileID: 1776136560}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1780370559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17244,7 +17244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb338fc0d2e306148a1cde7b33883f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1199456691}
+  target: {fileID: 1776136562}
   minTargetDistance: 0
   maxTargetDistance: 0
   targetDistance: 0
