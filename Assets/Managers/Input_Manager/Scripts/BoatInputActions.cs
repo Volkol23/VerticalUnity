@@ -89,6 +89,42 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": ""Press"",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""dc59ac3f-bfa5-4031-879e-0ac002e0b259"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Level1"",
+                    ""type"": ""Button"",
+                    ""id"": ""9cf949a7-b5c2-42ee-abd0-63a67cc1a3f8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Level2"",
+                    ""type"": ""Button"",
+                    ""id"": ""464fea60-db17-4399-826f-34c809f45b6d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Level3"",
+                    ""type"": ""Button"",
+                    ""id"": ""36bd7e84-46e6-46a2-9f18-59beb2ec1f1c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -267,6 +303,50 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Reset"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d1eb2153-048e-4a0d-a444-096105242882"",
+                    ""path"": ""<Keyboard>/0"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7a8e186e-d168-432d-b141-c959031ef9e0"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Level1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a37bac4d-9d80-469f-afbf-ae78493900f8"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Level2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fb535f32-c9d3-492e-9ac7-f5e1d0504ef7"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Level3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -317,6 +397,42 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Press(behavior=2)"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""095189fb-876f-4e87-9b0b-abd5f8807523"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Level1"",
+                    ""type"": ""Button"",
+                    ""id"": ""9bbbe619-644b-4a72-82c7-6d22c7838f60"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Level2"",
+                    ""type"": ""Button"",
+                    ""id"": ""405c4653-a20c-455b-a1d3-bb70873ebda2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Level3"",
+                    ""type"": ""Button"",
+                    ""id"": ""c3c289ce-2587-4bc1-8e4f-c7f61f5b6f4a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
                     ""initialStateCheck"": false
                 }
             ],
@@ -474,6 +590,50 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Reset"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""901268f2-aecb-43e6-94ee-e7791b0871af"",
+                    ""path"": ""<Keyboard>/0"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bf5f030a-397b-45b7-9e14-2ef1532abc50"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Level1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4675afa5-790c-41e0-ae77-3b8e69156fa0"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Level2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0e8efc42-cd68-40d3-8ca1-2d75f43749f0"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Level3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -578,6 +738,42 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""7e35e2b9-5ecb-4540-8b2f-0d388deda452"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Level1"",
+                    ""type"": ""Button"",
+                    ""id"": ""123fcdcd-0e86-4dfc-8c9c-5e6e6a88734c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Level2"",
+                    ""type"": ""Button"",
+                    ""id"": ""d459bd61-b027-4353-a448-9249ea6aa49c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Level3"",
+                    ""type"": ""Button"",
+                    ""id"": ""b483c9a6-7b9b-4a79-aef4-0197c13f28ff"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
                     ""initialStateCheck"": false
                 }
             ],
@@ -1021,6 +1217,50 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""ActionChange"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a56632ff-5469-4461-9747-120a01b69903"",
+                    ""path"": ""<Keyboard>/0"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""76e557ce-2e3e-4874-b316-ea1290a36d14"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Level1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c2622792-76b9-4e46-bb56-ece3be0ab21f"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Level2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3d6dee1d-b578-43a5-bacd-6350fa0d9623"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Level3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -1036,6 +1276,10 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
         m_BoatController_Rotate = m_BoatController.FindAction("Rotate", throwIfNotFound: true);
         m_BoatController_Pause = m_BoatController.FindAction("Pause", throwIfNotFound: true);
         m_BoatController_ActionChange = m_BoatController.FindAction("ActionChange", throwIfNotFound: true);
+        m_BoatController_Menu = m_BoatController.FindAction("Menu", throwIfNotFound: true);
+        m_BoatController_Level1 = m_BoatController.FindAction("Level1", throwIfNotFound: true);
+        m_BoatController_Level2 = m_BoatController.FindAction("Level2", throwIfNotFound: true);
+        m_BoatController_Level3 = m_BoatController.FindAction("Level3", throwIfNotFound: true);
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
@@ -1043,6 +1287,10 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
         m_Player_ActionChange = m_Player.FindAction("ActionChange", throwIfNotFound: true);
         m_Player_Reset = m_Player.FindAction("Reset", throwIfNotFound: true);
+        m_Player_Menu = m_Player.FindAction("Menu", throwIfNotFound: true);
+        m_Player_Level1 = m_Player.FindAction("Level1", throwIfNotFound: true);
+        m_Player_Level2 = m_Player.FindAction("Level2", throwIfNotFound: true);
+        m_Player_Level3 = m_Player.FindAction("Level3", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1056,6 +1304,10 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
         m_UI_ActionChange = m_UI.FindAction("ActionChange", throwIfNotFound: true);
+        m_UI_Menu = m_UI.FindAction("Menu", throwIfNotFound: true);
+        m_UI_Level1 = m_UI.FindAction("Level1", throwIfNotFound: true);
+        m_UI_Level2 = m_UI.FindAction("Level2", throwIfNotFound: true);
+        m_UI_Level3 = m_UI.FindAction("Level3", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1124,6 +1376,10 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_BoatController_Rotate;
     private readonly InputAction m_BoatController_Pause;
     private readonly InputAction m_BoatController_ActionChange;
+    private readonly InputAction m_BoatController_Menu;
+    private readonly InputAction m_BoatController_Level1;
+    private readonly InputAction m_BoatController_Level2;
+    private readonly InputAction m_BoatController_Level3;
     public struct BoatControllerActions
     {
         private @BoatInputActions m_Wrapper;
@@ -1135,6 +1391,10 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
         public InputAction @Rotate => m_Wrapper.m_BoatController_Rotate;
         public InputAction @Pause => m_Wrapper.m_BoatController_Pause;
         public InputAction @ActionChange => m_Wrapper.m_BoatController_ActionChange;
+        public InputAction @Menu => m_Wrapper.m_BoatController_Menu;
+        public InputAction @Level1 => m_Wrapper.m_BoatController_Level1;
+        public InputAction @Level2 => m_Wrapper.m_BoatController_Level2;
+        public InputAction @Level3 => m_Wrapper.m_BoatController_Level3;
         public InputActionMap Get() { return m_Wrapper.m_BoatController; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1165,6 +1425,18 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
             @ActionChange.started += instance.OnActionChange;
             @ActionChange.performed += instance.OnActionChange;
             @ActionChange.canceled += instance.OnActionChange;
+            @Menu.started += instance.OnMenu;
+            @Menu.performed += instance.OnMenu;
+            @Menu.canceled += instance.OnMenu;
+            @Level1.started += instance.OnLevel1;
+            @Level1.performed += instance.OnLevel1;
+            @Level1.canceled += instance.OnLevel1;
+            @Level2.started += instance.OnLevel2;
+            @Level2.performed += instance.OnLevel2;
+            @Level2.canceled += instance.OnLevel2;
+            @Level3.started += instance.OnLevel3;
+            @Level3.performed += instance.OnLevel3;
+            @Level3.canceled += instance.OnLevel3;
         }
 
         private void UnregisterCallbacks(IBoatControllerActions instance)
@@ -1190,6 +1462,18 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
             @ActionChange.started -= instance.OnActionChange;
             @ActionChange.performed -= instance.OnActionChange;
             @ActionChange.canceled -= instance.OnActionChange;
+            @Menu.started -= instance.OnMenu;
+            @Menu.performed -= instance.OnMenu;
+            @Menu.canceled -= instance.OnMenu;
+            @Level1.started -= instance.OnLevel1;
+            @Level1.performed -= instance.OnLevel1;
+            @Level1.canceled -= instance.OnLevel1;
+            @Level2.started -= instance.OnLevel2;
+            @Level2.performed -= instance.OnLevel2;
+            @Level2.canceled -= instance.OnLevel2;
+            @Level3.started -= instance.OnLevel3;
+            @Level3.performed -= instance.OnLevel3;
+            @Level3.canceled -= instance.OnLevel3;
         }
 
         public void RemoveCallbacks(IBoatControllerActions instance)
@@ -1216,6 +1500,10 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Pause;
     private readonly InputAction m_Player_ActionChange;
     private readonly InputAction m_Player_Reset;
+    private readonly InputAction m_Player_Menu;
+    private readonly InputAction m_Player_Level1;
+    private readonly InputAction m_Player_Level2;
+    private readonly InputAction m_Player_Level3;
     public struct PlayerActions
     {
         private @BoatInputActions m_Wrapper;
@@ -1225,6 +1513,10 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputAction @ActionChange => m_Wrapper.m_Player_ActionChange;
         public InputAction @Reset => m_Wrapper.m_Player_Reset;
+        public InputAction @Menu => m_Wrapper.m_Player_Menu;
+        public InputAction @Level1 => m_Wrapper.m_Player_Level1;
+        public InputAction @Level2 => m_Wrapper.m_Player_Level2;
+        public InputAction @Level3 => m_Wrapper.m_Player_Level3;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1249,6 +1541,18 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
             @Reset.started += instance.OnReset;
             @Reset.performed += instance.OnReset;
             @Reset.canceled += instance.OnReset;
+            @Menu.started += instance.OnMenu;
+            @Menu.performed += instance.OnMenu;
+            @Menu.canceled += instance.OnMenu;
+            @Level1.started += instance.OnLevel1;
+            @Level1.performed += instance.OnLevel1;
+            @Level1.canceled += instance.OnLevel1;
+            @Level2.started += instance.OnLevel2;
+            @Level2.performed += instance.OnLevel2;
+            @Level2.canceled += instance.OnLevel2;
+            @Level3.started += instance.OnLevel3;
+            @Level3.performed += instance.OnLevel3;
+            @Level3.canceled += instance.OnLevel3;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -1268,6 +1572,18 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
             @Reset.started -= instance.OnReset;
             @Reset.performed -= instance.OnReset;
             @Reset.canceled -= instance.OnReset;
+            @Menu.started -= instance.OnMenu;
+            @Menu.performed -= instance.OnMenu;
+            @Menu.canceled -= instance.OnMenu;
+            @Level1.started -= instance.OnLevel1;
+            @Level1.performed -= instance.OnLevel1;
+            @Level1.canceled -= instance.OnLevel1;
+            @Level2.started -= instance.OnLevel2;
+            @Level2.performed -= instance.OnLevel2;
+            @Level2.canceled -= instance.OnLevel2;
+            @Level3.started -= instance.OnLevel3;
+            @Level3.performed -= instance.OnLevel3;
+            @Level3.canceled -= instance.OnLevel3;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1300,6 +1616,10 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_UI_TrackedDevicePosition;
     private readonly InputAction m_UI_TrackedDeviceOrientation;
     private readonly InputAction m_UI_ActionChange;
+    private readonly InputAction m_UI_Menu;
+    private readonly InputAction m_UI_Level1;
+    private readonly InputAction m_UI_Level2;
+    private readonly InputAction m_UI_Level3;
     public struct UIActions
     {
         private @BoatInputActions m_Wrapper;
@@ -1315,6 +1635,10 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
         public InputAction @TrackedDevicePosition => m_Wrapper.m_UI_TrackedDevicePosition;
         public InputAction @TrackedDeviceOrientation => m_Wrapper.m_UI_TrackedDeviceOrientation;
         public InputAction @ActionChange => m_Wrapper.m_UI_ActionChange;
+        public InputAction @Menu => m_Wrapper.m_UI_Menu;
+        public InputAction @Level1 => m_Wrapper.m_UI_Level1;
+        public InputAction @Level2 => m_Wrapper.m_UI_Level2;
+        public InputAction @Level3 => m_Wrapper.m_UI_Level3;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1357,6 +1681,18 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
             @ActionChange.started += instance.OnActionChange;
             @ActionChange.performed += instance.OnActionChange;
             @ActionChange.canceled += instance.OnActionChange;
+            @Menu.started += instance.OnMenu;
+            @Menu.performed += instance.OnMenu;
+            @Menu.canceled += instance.OnMenu;
+            @Level1.started += instance.OnLevel1;
+            @Level1.performed += instance.OnLevel1;
+            @Level1.canceled += instance.OnLevel1;
+            @Level2.started += instance.OnLevel2;
+            @Level2.performed += instance.OnLevel2;
+            @Level2.canceled += instance.OnLevel2;
+            @Level3.started += instance.OnLevel3;
+            @Level3.performed += instance.OnLevel3;
+            @Level3.canceled += instance.OnLevel3;
         }
 
         private void UnregisterCallbacks(IUIActions instance)
@@ -1394,6 +1730,18 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
             @ActionChange.started -= instance.OnActionChange;
             @ActionChange.performed -= instance.OnActionChange;
             @ActionChange.canceled -= instance.OnActionChange;
+            @Menu.started -= instance.OnMenu;
+            @Menu.performed -= instance.OnMenu;
+            @Menu.canceled -= instance.OnMenu;
+            @Level1.started -= instance.OnLevel1;
+            @Level1.performed -= instance.OnLevel1;
+            @Level1.canceled -= instance.OnLevel1;
+            @Level2.started -= instance.OnLevel2;
+            @Level2.performed -= instance.OnLevel2;
+            @Level2.canceled -= instance.OnLevel2;
+            @Level3.started -= instance.OnLevel3;
+            @Level3.performed -= instance.OnLevel3;
+            @Level3.canceled -= instance.OnLevel3;
         }
 
         public void RemoveCallbacks(IUIActions instance)
@@ -1420,6 +1768,10 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
         void OnRotate(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnActionChange(InputAction.CallbackContext context);
+        void OnMenu(InputAction.CallbackContext context);
+        void OnLevel1(InputAction.CallbackContext context);
+        void OnLevel2(InputAction.CallbackContext context);
+        void OnLevel3(InputAction.CallbackContext context);
     }
     public interface IPlayerActions
     {
@@ -1428,6 +1780,10 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
         void OnPause(InputAction.CallbackContext context);
         void OnActionChange(InputAction.CallbackContext context);
         void OnReset(InputAction.CallbackContext context);
+        void OnMenu(InputAction.CallbackContext context);
+        void OnLevel1(InputAction.CallbackContext context);
+        void OnLevel2(InputAction.CallbackContext context);
+        void OnLevel3(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
@@ -1442,5 +1798,9 @@ public partial class @BoatInputActions: IInputActionCollection2, IDisposable
         void OnTrackedDevicePosition(InputAction.CallbackContext context);
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
         void OnActionChange(InputAction.CallbackContext context);
+        void OnMenu(InputAction.CallbackContext context);
+        void OnLevel1(InputAction.CallbackContext context);
+        void OnLevel2(InputAction.CallbackContext context);
+        void OnLevel3(InputAction.CallbackContext context);
     }
 }

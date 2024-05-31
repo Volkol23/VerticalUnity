@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Splines;
 
 public class Shield_Behaviour : MonoBehaviour
 {
@@ -44,11 +45,11 @@ public class Shield_Behaviour : MonoBehaviour
 
     private void SetUpSpeed()
     {
-        if (transform.position == finalPosition)
+        if (transform.position.z > finalPosition.z)
         {
             isForward = false;
         }
-        if (transform.position == initPosition)
+        if (transform.position.z < initPosition.z)
         {
             isForward = true;
         }

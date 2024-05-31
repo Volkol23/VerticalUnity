@@ -40,7 +40,12 @@ public class Sound_Manager : MonoBehaviour
         newLevelEnter,
         soulAlert,
         soulNotification,
-        startCourse
+        startCourse,
+        pickUpObject,
+        trapRound,
+        shieldMove,
+        congratulations,
+        starAppear
     }
     public enum TypeOfSound
     {

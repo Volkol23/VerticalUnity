@@ -81,8 +81,6 @@ public class Movement : MonoBehaviour
         {
             HandleInputs();
             rb.isKinematic = false;
-            SplineUtility.GetNearestPoint(waterRiver, transform.position, out float3 nearest, out float t);
-            //Debug.Log(nearest * t);
         }
         else
         {

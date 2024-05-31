@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missionName: Help him
   missionType: 1
-  missionObjectiveText: Find a piece of wood to remake his axe
-  missionObjectText: 
-  missionStartText: Can you help finding a piece of wood?
-  missionCompletedText: Thanks for bringing me these wood.
+  missionObjectiveText: Encuentra a la espada que en muchas guerras utilizaste
+  objects:
+  - {fileID: 11400000, guid: 585cb9ce4a426f94a89c20621dac56e4, type: 2}
+  missionObjectText: La espada que lucho en todas las guerras que participe
+  dialogueIntro: []
+  dialogueEnd: []

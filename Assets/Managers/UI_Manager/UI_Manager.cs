@@ -70,6 +70,7 @@ public class UI_Manager : MonoBehaviour
 
     [Header("Fade")]
     [SerializeField] private GameObject backgroundFade;
+    [SerializeField] private GameObject chargingScene;
 
     private bool pauseActive;
 
@@ -195,6 +196,15 @@ public class UI_Manager : MonoBehaviour
         Mission_Manager._MISSION_MANAGER.NextDialogue();
     }
 
+    public void ActivateChargingImage()
+    {
+        chargingScene.SetActive(true);
+    }
+
+    public void DeactivateChargingImage()
+    {
+        chargingScene.SetActive(false);
+    }
     public void FadeIn()
     {
         animatorFade.SetTrigger("Start");
@@ -203,6 +213,16 @@ public class UI_Manager : MonoBehaviour
     public void FadeOut()
     {
         animatorFade.SetTrigger("End");
+    }
+
+    public void ActivateMainMenu()
+    {
+        menu.SetActive(true);
+    }
+
+    public void DeactivateMainMenu()
+    {
+        menu.SetActive(false);
     }
 
     public void ActivateGameUI()
@@ -312,6 +332,7 @@ public class UI_Manager : MonoBehaviour
     public void ActivateScoreTab()
     {
         scoreTab.SetActive(true);
+        Sound_Manager._SOUND_MANAGER.PlaySFXSound(Sound_Manager.TypeOfSound.sfx, Sound_Manager.SFX.starAppear);
     }
 
     public void DeactivateScoreTab()

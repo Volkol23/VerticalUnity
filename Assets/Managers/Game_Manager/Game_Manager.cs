@@ -47,21 +47,28 @@ public class Game_Manager : MonoBehaviour
             case 0:
                 ChangeGeneral(GameGeneral.MENU);
                 missionLevel = MissionType.NOMISSION;
+                UI_Manager._UI_MANAGER.ActivateMainMenu();
+                UI_Manager._UI_MANAGER.DeactivateGameUI();
                 Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.mainMenu);
+                UI_Manager._UI_MANAGER.DeactivateScoreTab();
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 SetHealthDamage();
                 break;
             case 1:
+                UI_Manager._UI_MANAGER.DeactivateMainMenu();
                 Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.mainStory);
+                UI_Manager._UI_MANAGER.DeactivateScoreTab();
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
                 break;
             case 2:
                 ChangeGeneral(GameGeneral.MENU);
                 missionLevel = MissionType.HADES;
+                UI_Manager._UI_MANAGER.DeactivateMainMenu();
                 Mission_Manager._MISSION_MANAGER.StartMission();
                 Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.introScene);
+                UI_Manager._UI_MANAGER.DeactivateScoreTab();
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 SetHealthDamage();
@@ -69,8 +76,10 @@ public class Game_Manager : MonoBehaviour
             case 3:
                 ChangeGeneral(GameGeneral.BOAT);
                 missionLevel = MissionType.ARACNHE;
+                UI_Manager._UI_MANAGER.DeactivateMainMenu();
                 Mission_Manager._MISSION_MANAGER.StartMission();
                 Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.level1);
+                UI_Manager._UI_MANAGER.DeactivateScoreTab();
                 UI_Manager._UI_MANAGER.ActivateGameUI();
                 UI_Manager._UI_MANAGER.UpdateCurrentRiver(3);
                 Cursor.lockState = CursorLockMode.Locked;
@@ -79,21 +88,26 @@ public class Game_Manager : MonoBehaviour
                 SaveDock();
                 break;
             case 4:
-                ChangeGeneral(GameGeneral.PLAYER);
+                ChangeGeneral(GameGeneral.BOAT);
                 missionLevel = MissionType.MINOTAUR;
                 Mission_Manager._MISSION_MANAGER.StartMission();
                 Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.level2);
+                UI_Manager._UI_MANAGER.DeactivateScoreTab();
+                UI_Manager._UI_MANAGER.DeactivateMainMenu();
+                UI_Manager._UI_MANAGER.ActivateGameUI();
                 UI_Manager._UI_MANAGER.UpdateCurrentRiver(4);
-                SaveDock();
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
                 SetHealthDamage();
                 break;
             case 5:
-                ChangeGeneral(GameGeneral.PLAYER);
+                ChangeGeneral(GameGeneral.BOAT);
                 missionLevel = MissionType.ICEWOLF;
                 Mission_Manager._MISSION_MANAGER.StartMission();
                 Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.mainStory);
+                UI_Manager._UI_MANAGER.DeactivateScoreTab();
+                UI_Manager._UI_MANAGER.DeactivateMainMenu();
+                UI_Manager._UI_MANAGER.ActivateGameUI();
                 UI_Manager._UI_MANAGER.UpdateCurrentRiver(5);
                 SaveDock();
                 Cursor.lockState = CursorLockMode.Locked;
@@ -104,9 +118,11 @@ public class Game_Manager : MonoBehaviour
                 ChangeGeneral(GameGeneral.BOAT);
                 missionLevel = MissionType.ARACNHE;
                 Mission_Manager._MISSION_MANAGER.StartMission();
+                UI_Manager._UI_MANAGER.DeactivateScoreTab();
                 Sound_Manager._SOUND_MANAGER.PlayMusicSound(Sound_Manager.TypeOfSound.music, Sound_Manager.Music.level1);
                 UI_Manager._UI_MANAGER.ActivateGameUI();
                 UI_Manager._UI_MANAGER.UpdateCurrentRiver(3);
+                UI_Manager._UI_MANAGER.StartTimer();
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
                 SetHealthDamage();
@@ -172,9 +188,11 @@ public class Game_Manager : MonoBehaviour
     IEnumerator LoadSceneCorutine(int  sceneIndex)
     {
         UI_Manager._UI_MANAGER.FadeOut();
+        UI_Manager._UI_MANAGER.ActivateChargingImage();
         yield return new WaitForSeconds(1f);
         SceneManager.LoadSceneAsync(sceneIndex, LoadSceneMode.Single);
         UI_Manager._UI_MANAGER.FadeIn();
+        UI_Manager._UI_MANAGER.DeactivateChargingImage();
     }
     
     public void ResetPlayerPosition()

@@ -52,6 +52,20 @@ public class Input_Manager : MonoBehaviour
             inputActions.Player.Pause.performed += PauseValue;
             inputActions.BoatController.Pause.performed += PauseValue;
 
+            inputActions.BoatController.Menu.performed += Menu;
+            inputActions.BoatController.Level1.performed += Level1;
+            inputActions.BoatController.Level2.performed += Level2;
+            inputActions.BoatController.Level3.performed += Level3;
+
+            inputActions.Player.Menu.performed += Menu;
+            inputActions.Player.Level1.performed += Level1;
+            inputActions.Player.Level2.performed += Level2;
+            inputActions.Player.Level3.performed += Level3;
+
+            inputActions.UI.Menu.performed += Menu;
+            inputActions.UI.Level1.performed += Level1;
+            inputActions.UI.Level2.performed += Level2;
+            inputActions.UI.Level3.performed += Level3;
 
         }
     }
@@ -135,6 +149,25 @@ public class Input_Manager : MonoBehaviour
         UI_Manager._UI_MANAGER.Pause();
     }
     
+    private void Menu(InputAction.CallbackContext context)
+    {
+        Game_Manager._GAME_MANAGER.GoToScene((int)SceneIndex.MAINMENU);
+    }
+
+    private void Level1(InputAction.CallbackContext context)
+    {
+        Game_Manager._GAME_MANAGER.GoToScene((int)SceneIndex.LEVEL1);
+    }
+
+    private void Level2(InputAction.CallbackContext context)
+    {
+        Game_Manager._GAME_MANAGER.GoToScene((int)SceneIndex.LEVEL2);
+    }
+
+    private void Level3(InputAction.CallbackContext context)
+    {
+        Game_Manager._GAME_MANAGER.GoToScene((int)SceneIndex.LEVEL3);
+    }
     public void DisableInputs()
     {
         playerInput.DeactivateInput();

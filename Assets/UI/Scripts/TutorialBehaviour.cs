@@ -22,4 +22,25 @@ public class TutorialBehaviour : MonoBehaviour
     {
         
     }
+
+    private void ActiveTutoArrow()
+    {
+
+    }
+    private void ActiveTutoObject()
+    {
+
+    }
+    private void ActiveTutoTime()
+    {
+
+    }
+    private void ActiveTutoScore()
+    {
+
+    }
+    private void ActiveTutoControls()
+    {
+
+    }
 }
